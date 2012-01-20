@@ -26,6 +26,21 @@ def create_app():
     return app
 
 
-if __name__ == '__main__':
+def main():
+    import sys
+    if len(sys.argv) > 1:
+        cmd = sys.argv[1]
+    else:
+        cmd = 'runserver'
+
     app = create_app()
-    app.run()
+    if cmd == 'runserver':
+        app.run()
+    elif cmd == 'shell':
+        from code import interact
+        with app.test_request_context():
+            interact(local={'app': app})
+
+
+if __name__ == '__main__':
+    main()
