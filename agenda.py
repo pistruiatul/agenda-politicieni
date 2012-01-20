@@ -1,5 +1,6 @@
 import flask
 import database
+import webpages
 
 
 default_config = {
@@ -7,17 +8,9 @@ default_config = {
 }
 
 
-webpages = flask.Blueprint('webpages', __name__)
-
-
-@webpages.route('/')
-def home():
-    return "hello world!"
-
-
 def create_app():
     app = flask.Flask(__name__, instance_relative_config=True)
-    app.register_blueprint(webpages)
+    app.register_blueprint(webpages.webpages)
     app.config['SQLALCHEMY_DATABASE_URI'] = (
         'sqlite:///%s/agenda.db' % app.instance_path)
     app.config.update(default_config)
