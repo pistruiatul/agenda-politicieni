@@ -1,0 +1,1684 @@
+[
+  {
+    "email": "cristianadomnitei@cdep.ro",
+    "id": 1,
+    "name": "Cristian Mihai Adomni\u0163ei"
+  },
+  {
+    "email": "florin.anghel@cdep.ro",
+    "id": 2,
+    "name": "Florin Serghei Anghel"
+  },
+  {
+    "email": "george.dumitrica@cdep.ro",
+    "id": 3,
+    "name": "George Ionu\u0163 Dumitric\u0103"
+  },
+  {
+    "email": "georgica.dumitru@cdep.ro",
+    "id": 4,
+    "name": "Georgic\u0103 Dumitru"
+  },
+  {
+    "email": "ion.dumitru@cdep.ro",
+    "id": 5,
+    "name": "Ion Dumitru"
+  },
+  {
+    "email": "dusa_mircea@cdep.ro",
+    "id": 6,
+    "name": "Mircea Du\u015fa"
+  },
+  {
+    "email": "andras.edler@cdep.ro",
+    "id": 7,
+    "name": "Andr\u00e1s Gy\u00f6rgy Edler"
+  },
+  {
+    "email": "erdei@cdep.ro",
+    "id": 8,
+    "name": "Istv\u00e1n Erdei Dol\u00f3czki"
+  },
+  {
+    "email": "farago.petru@cdep.ro",
+    "id": 9,
+    "name": "Petru Farago"
+  },
+  {
+    "email": "anna.farkas@cdep.ro",
+    "id": 10,
+    "name": "Anna-Lili Farkas"
+  },
+  {
+    "email": "relu.fenechiu@cdep.ro",
+    "id": 11,
+    "name": "Relu Fenechiu"
+  },
+  {
+    "email": "gheorghe.firczak@cdep.ro",
+    "id": 12,
+    "name": "Gheorghe Firczak"
+  },
+  {
+    "email": "ai@cdep.ro",
+    "id": 13,
+    "name": "Istv\u00e1n Antal"
+  },
+  {
+    "email": "damian.florea@cdep.ro",
+    "id": 14,
+    "name": "Damian Florea"
+  },
+  {
+    "email": "adrian.florescu@cdep.ro",
+    "id": 15,
+    "name": "Adrian Florescu"
+  },
+  {
+    "id": 16,
+    "name": "Doru-Claudian Frunzulic\u0103"
+  },
+  {
+    "email": "stelian.fuia@cdep.ro",
+    "id": 17,
+    "name": "Stelian Fuia"
+  },
+  {
+    "email": "gheorghe.gabor@cdep.ro",
+    "id": 18,
+    "name": "Gheorghe Gabor"
+  },
+  {
+    "email": "ovidiu.gant@cdep.ro",
+    "id": 19,
+    "name": "Ovidiu Victor Gan\u0163"
+  },
+  {
+    "email": "gratiela.gavrilescu@cdep.ro",
+    "id": 20,
+    "name": "Gra\u0163iela Leocadia Gavrilescu"
+  },
+  {
+    "email": "daniel.geanta@cdep.ro",
+    "id": 21,
+    "name": "Florian Daniel Geant\u0103"
+  },
+  {
+    "email": "filip.georgescu@cdep.ro",
+    "id": 22,
+    "name": "Filip Georgescu"
+  },
+  {
+    "email": "andrei.gerea@cdep.ro",
+    "id": 23,
+    "name": "Andrei Dominic Gerea"
+  },
+  {
+    "email": "gheorghe.antochi@cdep.ro",
+    "id": 24,
+    "name": "Gheorghe Antochi"
+  },
+  {
+    "email": "tinel.gheorghe@cdep.ro",
+    "id": 25,
+    "name": "Tinel Gheorghe"
+  },
+  {
+    "email": "vasile.gherasim@cdep.ro",
+    "id": 26,
+    "name": "Vasile Gherasim"
+  },
+  {
+    "email": "cornel.ghita@cdep.ro",
+    "id": 27,
+    "name": "Cornel Ghi\u0163\u0103"
+  },
+  {
+    "email": "stelian.ghita@cdep.ro",
+    "id": 28,
+    "name": "Stelian Ghi\u0163\u0103-Eftemie"
+  },
+  {
+    "email": "marian.ghiveciu@cdep.ro",
+    "id": 29,
+    "name": "Marian Ghiveciu"
+  },
+  {
+    "email": "giurgiu_mircia@cdep.ro",
+    "id": 30,
+    "name": "Mircia Giurgiu"
+  },
+  {
+    "email": "vasile.gliga@cdep.ro",
+    "id": 31,
+    "name": "Vasile Ghiorghe Gliga"
+  },
+  {
+    "email": "marius.gondor@cdep.ro",
+    "id": 32,
+    "name": "Marius-Sorin G\u00f6nd\u00f6r"
+  },
+  {
+    "email": "alinagorghiu@yahoo.com",
+    "id": 33,
+    "name": "Alina-\u015etefania Gorghiu"
+  },
+  {
+    "email": "dan.gospodaru@cdep.ro",
+    "id": 34,
+    "name": "Gabriel-Dan Gospodaru"
+  },
+  {
+    "email": "mapostolache@cdep.ro",
+    "id": 35,
+    "name": "Mihai Cristian Apostolache"
+  },
+  {
+    "email": "horia.grama@cdep.ro",
+    "id": 36,
+    "name": "Horia Grama"
+  },
+  {
+    "email": "m.grosaru@cdep.ro",
+    "id": 37,
+    "name": "Mircea Grosaru"
+  },
+  {
+    "email": "adrian.gurzau@cdep.ro",
+    "id": 38,
+    "name": "Adrian Gurz\u0103u"
+  },
+  {
+    "email": "florentin.gust@cdep.ro",
+    "id": 39,
+    "name": "Florentin Gust B\u0103lo\u015fin"
+  },
+  {
+    "email": "gheorghe.hogea@cdep.ro",
+    "id": 40,
+    "name": "Gheorghe Hogea"
+  },
+  {
+    "email": "titi.holban@cdep.ro",
+    "id": 41,
+    "name": "Titi Holban"
+  },
+  {
+    "email": "ioan.holdis@cdep.ro",
+    "id": 42,
+    "name": "Ioan Holdi\u015f"
+  },
+  {
+    "email": "pavel.horj@cdep.ro",
+    "id": 43,
+    "name": "Pavel Horj"
+  },
+  {
+    "email": "viorelh@cdep.ro",
+    "id": 44,
+    "name": "Viorel Hrebenciuc"
+  },
+  {
+    "email": "monica.iacob@cdep.ro",
+    "id": 45,
+    "name": "Monica Maria Iacob Ridzi"
+  },
+  {
+    "email": "sanda.ardeleanu@cdep.ro",
+    "id": 46,
+    "name": "Sanda-Maria Ardeleanu"
+  },
+  {
+    "email": "stelica.iacob@cdep.ro",
+    "id": 47,
+    "name": "Stelic\u0103 Iacob Strugaru"
+  },
+  {
+    "email": "gheorghe.ialomitianu@cdep.ro",
+    "id": 48,
+    "name": "Gheorghe Ialomi\u0163ianu"
+  },
+  {
+    "email": "iancu.iulian@cdep.ro",
+    "id": 49,
+    "name": "Iulian Iancu"
+  },
+  {
+    "email": "ibram.iusein@cdep.ro",
+    "id": 50,
+    "name": "Iusein Ibram"
+  },
+  {
+    "email": "dragos.iftime@cdep.ro",
+    "id": 51,
+    "name": "Drago\u015f-Adrian Iftime"
+  },
+  {
+    "email": "chestor.ig.mir@cdep.ro",
+    "id": 52,
+    "name": "Miron Ignat"
+  },
+  {
+    "email": "george.ionescu@cdep.ro",
+    "id": 53,
+    "name": "George Ionescu"
+  },
+  {
+    "email": "fiordache@cdep.ro",
+    "id": 54,
+    "name": "Florin Iordache"
+  },
+  {
+    "email": "luminita.iordache@cdep.ro",
+    "id": 55,
+    "name": "Lumini\u0163a Iordache"
+  },
+  {
+    "email": "zanfir.iorgus@cdep.ro",
+    "id": 56,
+    "name": "Zanfir Iorgu\u015f"
+  },
+  {
+    "email": "viorel.arion@cdep.ro",
+    "id": 57,
+    "name": "Viorel Arion"
+  },
+  {
+    "email": "mircea.irimescu@cdep.ro",
+    "id": 58,
+    "name": "Mircea Irimescu"
+  },
+  {
+    "email": "cornel.itu@cdep.ro",
+    "id": 59,
+    "name": "Cornel Itu"
+  },
+  {
+    "email": "jipaflorinaruxandra@cdep.ro",
+    "id": 60,
+    "name": "Florina Ruxandra Jipa"
+  },
+  {
+    "email": "nicolae.jolta@cdep.ro",
+    "id": 61,
+    "name": "Nicolae Jol\u0163a"
+  },
+  {
+    "email": "equi_can@cdep.ro",
+    "id": 62,
+    "name": "Atilla-B\u00e9la-L\u00e1szl\u00f3 Kelemen"
+  },
+  {
+    "email": "kelemenhunor@cdep.ro",
+    "id": 63,
+    "name": "Hunor Kelemen"
+  },
+  {
+    "email": "kerekes@cdep.ro",
+    "id": 64,
+    "name": "K\u00e1roly Kerekes"
+  },
+  {
+    "email": "attila.korodi@cdep.ro",
+    "id": 65,
+    "name": "Attila Korodi"
+  },
+  {
+    "email": "josif.koto@cdep.ro",
+    "id": 66,
+    "name": "Iosif K\u00f6t\u0151"
+  },
+  {
+    "id": 67,
+    "name": "Petru Lakatos"
+  },
+  {
+    "email": "teodor.atanasiu@cdep.ro",
+    "id": 68,
+    "name": "Teodor Atanasiu"
+  },
+  {
+    "email": "doru.lese@cdep.ro",
+    "id": 69,
+    "name": "Doru Bra\u015foan Le\u015fe"
+  },
+  {
+    "email": "dliga@cdep.ro",
+    "id": 70,
+    "name": "D\u0103nu\u0163 Liga"
+  },
+  {
+    "email": "ghervazen.longher@cdep.ro",
+    "id": 71,
+    "name": "Ghervazen Longher"
+  },
+  {
+    "email": "mircea.lubanovici@cdep.ro",
+    "id": 72,
+    "name": "Mircea Lubanovici"
+  },
+  {
+    "email": "ciprian.luca@cdep.ro",
+    "id": 73,
+    "name": "Ciprian-Florin Luca"
+  },
+  {
+    "email": "mircea.lup@cdep.ro",
+    "id": 74,
+    "name": "Silvestru Mircea Lup"
+  },
+  {
+    "email": "mihai.lupu@cdep.ro",
+    "id": 75,
+    "name": "Mihai Lupu"
+  },
+  {
+    "email": "costica.macaleti@cdep.ro",
+    "id": 76,
+    "name": "Costic\u0103 Macale\u0163i"
+  },
+  {
+    "email": "claudiumanda@cdep.ro",
+    "id": 77,
+    "name": "Iulian Claudiu Manda"
+  },
+  {
+    "email": "omanol@cdep.ro",
+    "id": 78,
+    "name": "Oana Manolescu"
+  },
+  {
+    "email": "marian.avram@cdep.ro",
+    "id": 79,
+    "name": "Marian Avram"
+  },
+  {
+    "email": "dan.marian@cdep.ro",
+    "id": 80,
+    "name": "Dan Mihai Marian"
+  },
+  {
+    "email": "mircea.marin@cdep.ro",
+    "id": 81,
+    "name": "Mircea Marin"
+  },
+  {
+    "email": "antonella.marinescu@cdep.ro",
+    "id": 82,
+    "name": "Antonella Marinescu"
+  },
+  {
+    "email": "eduard.martin@cdep.ro",
+    "id": 83,
+    "name": "Eduard-Stelian Martin"
+  },
+  {
+    "email": "marton@cdep.ro",
+    "id": 84,
+    "name": "\u00c1rp\u00e1d-Francisc M\u00e1rton"
+  },
+  {
+    "email": "mateandras@cdep.ro",
+    "id": 85,
+    "name": "Andr\u00e1s-Levente M\u00e1t\u00e9"
+  },
+  {
+    "email": "constantin.mazilu@cdep.ro",
+    "id": 86,
+    "name": "Constantin Mazilu"
+  },
+  {
+    "email": "adrian.merka@cdep.ro",
+    "id": 87,
+    "name": "Adrian-Miroslav Merka"
+  },
+  {
+    "email": "severus.militaru@cdep.ro",
+    "id": 88,
+    "name": "Constantin Severus Militaru"
+  },
+  {
+    "email": "niculae_mircovici@yahoo.com",
+    "id": 89,
+    "name": "Niculae Mircovici"
+  },
+  {
+    "email": "carmen.axenie@cdep.ro",
+    "id": 90,
+    "name": "Carmen Axenie"
+  },
+  {
+    "email": "manuela.mitrea@cdep.ro",
+    "id": 91,
+    "name": "Manuela Mitrea"
+  },
+  {
+    "email": "adrian.mocanu@cdep.ro",
+    "id": 92,
+    "name": "Adrian Mocanu"
+  },
+  {
+    "email": "vasile.mocanu@cdep.ro",
+    "id": 93,
+    "name": "Vasile Mocanu"
+  },
+  {
+    "email": "ion.mocioalca@cdep.ro",
+    "id": 94,
+    "name": "Ion Mocioalc\u0103"
+  },
+  {
+    "email": "carmen.moldovan@cdep.ro",
+    "id": 95,
+    "name": "Carmen Ileana Moldovan"
+  },
+  {
+    "email": "radumoldovan@cdep.ro",
+    "id": 96,
+    "name": "Emil Radu Moldovan"
+  },
+  {
+    "email": "dan.morega@cdep.ro",
+    "id": 97,
+    "name": "Dan Ilie Morega"
+  },
+  {
+    "email": "dan.motreanu@cdep.ro",
+    "id": 98,
+    "name": "Dan-\u015etefan Motreanu"
+  },
+  {
+    "email": "petru.movila@cdep.ro",
+    "id": 99,
+    "name": "Petru Movil\u0103"
+  },
+  {
+    "email": "ioan.munteanu@cdep.ro",
+    "id": 100,
+    "name": "Ioan Munteanu"
+  },
+  {
+    "email": "viorel.balcan@cdep.ro",
+    "id": 101,
+    "name": "Viorel Balcan"
+  },
+  {
+    "email": "razvan.mustea@cdep.ro",
+    "id": 102,
+    "name": "R\u0103zvan Mustea-\u015eerban"
+  },
+  {
+    "email": "rodica_nassar@cdep.ro",
+    "id": 103,
+    "name": "Rodica Nassar"
+  },
+  {
+    "email": "anastase@cdep.ro",
+    "id": 104,
+    "name": "Adrian N\u0103stase"
+  },
+  {
+    "email": "marian.neacsu@cdep.ro",
+    "id": 105,
+    "name": "Marian Neac\u015fu"
+  },
+  {
+    "email": "catalin.nechifor@cdep.ro",
+    "id": 106,
+    "name": "C\u0103t\u0103lin-Ioan Nechifor"
+  },
+  {
+    "email": "marius.neculai@cdep.ro",
+    "id": 107,
+    "name": "Marius Neculai"
+  },
+  {
+    "email": "robert.negoita@cdep.ro",
+    "id": 108,
+    "name": "Robert Sorin Negoi\u0163\u0103"
+  },
+  {
+    "email": "clement.negrut@cdep.ro",
+    "id": 109,
+    "name": "Clement Negru\u0163"
+  },
+  {
+    "email": "dan.nica@cdep.ro",
+    "id": 110,
+    "name": "Dan Nica"
+  },
+  {
+    "email": "ciprian.nica@cdep.ro",
+    "id": 111,
+    "name": "Nicolae-Ciprian Nica"
+  },
+  {
+    "email": "alin.albu@cdep.ro",
+    "id": 112,
+    "name": "Gheorghe Albu"
+  },
+  {
+    "email": "mihai.banu@cdep.ro",
+    "id": 113,
+    "name": "Mihai Banu"
+  },
+  {
+    "email": "eugen.nicolaescu@cdep.ro",
+    "id": 114,
+    "name": "Gheorghe-Eugen Nicol\u0103escu"
+  },
+  {
+    "email": "enicolicea@cdep.ro",
+    "id": 115,
+    "name": "Eugen Nicolicea"
+  },
+  {
+    "email": "oana.niculescu@cdep.ro",
+    "id": 116,
+    "name": "Oana Niculescu-Mizil \u015etef\u0103nescu Tohme"
+  },
+  {
+    "email": "bduvaz@cdep.ro",
+    "id": 117,
+    "name": "Bogdan Nicolae Niculescu Duv\u0103z"
+  },
+  {
+    "email": "laurentiu.nistor@cdep.ro",
+    "id": 118,
+    "name": "Lauren\u0163iu Nistor"
+  },
+  {
+    "email": "nitac@cdep.ro",
+    "id": 119,
+    "name": "Constantin Ni\u0163\u0103"
+  },
+  {
+    "email": "adrian.nitu@cdep.ro",
+    "id": 120,
+    "name": "Adrian Henorel Ni\u0163u"
+  },
+  {
+    "email": "iuliu.nosa@cdep.ro",
+    "id": 121,
+    "name": "Iuliu Nosa"
+  },
+  {
+    "email": "brindusa.novac@cdep.ro",
+    "id": 122,
+    "name": "Cornelia Br\u00eendu\u015fa Novac"
+  },
+  {
+    "email": "daniel.oajdea@cdep.ro",
+    "id": 123,
+    "name": "Daniel Vasile Oajdea"
+  },
+  {
+    "email": "sulfina.barbu@cdep.ro",
+    "id": 124,
+    "name": "Sulfina Barbu"
+  },
+  {
+    "email": "corneliu.olar@cdep.ro",
+    "id": 125,
+    "name": "Corneliu Olar"
+  },
+  {
+    "email": "gergely.olosz@cdep.ro",
+    "id": 126,
+    "name": "Gergely Olosz"
+  },
+  {
+    "email": "ioan.oltean@cdep.ro",
+    "id": 127,
+    "name": "Ioan Oltean"
+  },
+  {
+    "id": 128,
+    "name": "Bogdan Olteanu"
+  },
+  {
+    "email": "gabriel.oprea@cdep.ro",
+    "id": 129,
+    "name": "Gabriel Oprea"
+  },
+  {
+    "email": "doru.opriscan@cdep.ro",
+    "id": 130,
+    "name": "Mihai Doru Opri\u015fcan"
+  },
+  {
+    "email": "ludovic.orban@cdep.ro",
+    "id": 131,
+    "name": "Ludovic Orban"
+  },
+  {
+    "email": "arpad.pal@cdep.ro",
+    "id": 132,
+    "name": "\u00c1rp\u00e1d P\u00e1l"
+  },
+  {
+    "email": "viorel.palasca@cdep.ro",
+    "id": 133,
+    "name": "Viorel Pala\u015fc\u0103"
+  },
+  {
+    "email": "ionel.palar@cdep.ro",
+    "id": 134,
+    "name": "Ionel Pal\u0103r"
+  },
+  {
+    "email": "maria.barna@cdep.ro",
+    "id": 135,
+    "name": "Maria Eugenia Barna"
+  },
+  {
+    "email": "theodor.paleologu@cdep.ro",
+    "id": 136,
+    "name": "Theodor Paleologu"
+  },
+  {
+    "id": 137,
+    "name": "M\u00f3zes Zolt\u00e1n P\u00e1lfi"
+  },
+  {
+    "email": "varujan@cdep.ro",
+    "id": 138,
+    "name": "Varujan Pambuccian"
+  },
+  {
+    "email": "sorin.pandele@cdep.ro",
+    "id": 139,
+    "name": "Sorin Andi Pandele"
+  },
+  {
+    "email": "tudor.pantiru@cdep.ro",
+    "id": 140,
+    "name": "Tudor Pan\u0163\u00eeru"
+  },
+  {
+    "email": "dumitru.pardau@cdep.ro",
+    "id": 141,
+    "name": "Dumitru Pard\u0103u"
+  },
+  {
+    "email": "nicusor.paduraru@cdep.ro",
+    "id": 142,
+    "name": "Nicu\u015for P\u0103duraru"
+  },
+  {
+    "email": "dan.pasat@cdep.ro",
+    "id": 143,
+    "name": "Dan P\u0103sat"
+  },
+  {
+    "email": "npaun@cdep.ro",
+    "id": 144,
+    "name": "Nicolae P\u0103un"
+  },
+  {
+    "email": "paslaru.florin@cdep.ro",
+    "id": 145,
+    "name": "Florin-Costin P\u00e2slaru"
+  },
+  {
+    "email": "eugen.badalan@cdep.ro",
+    "id": 146,
+    "name": "Eugen B\u0103d\u0103lan"
+  },
+  {
+    "email": "maria.peto@cdep.ro",
+    "id": 147,
+    "name": "Csilla-M\u00e1ria Pet\u00f6"
+  },
+  {
+    "email": "cristian.petrescu@cdep.ro",
+    "id": 148,
+    "name": "Cristian Petrescu"
+  },
+  {
+    "email": "petre.petrescu@cdep.ro",
+    "id": 149,
+    "name": "Petre Petrescu"
+  },
+  {
+    "email": "cornel.pieptea@cdep.ro",
+    "id": 150,
+    "name": "Cornel Pieptea"
+  },
+  {
+    "email": "stefan.pirpiliu@cdep.ro",
+    "id": 151,
+    "name": "\u015etefan Daniel Pirpiliu"
+  },
+  {
+    "email": "gabriel.plaiasu@cdep.ro",
+    "id": 152,
+    "name": "Gabriel Pl\u0103ia\u015fu"
+  },
+  {
+    "email": "cristina.pocora@cdep.ro",
+    "id": 153,
+    "name": "Cristina-Ancu\u0163a Pocora"
+  },
+  {
+    "email": "v.ponta@cdep.ro",
+    "id": 154,
+    "name": "Victor-Viorel Ponta"
+  },
+  {
+    "email": "gpop@cdep.ro",
+    "id": 155,
+    "name": "Georgian Pop"
+  },
+  {
+    "email": "virgil.pop@cdep.ro",
+    "id": 156,
+    "name": "Virgil Pop"
+  },
+  {
+    "email": "adrian.badulescu@cdep.ro",
+    "id": 157,
+    "name": "Adrian B\u0103dulescu"
+  },
+  {
+    "id": 158,
+    "name": "Daniela Popa"
+  },
+  {
+    "email": "florian.popa@cdep.ro",
+    "id": 159,
+    "name": "Florian Popa"
+  },
+  {
+    "email": "marius.popa@cdep.ro",
+    "id": 160,
+    "name": "Octavian-Marius Popa"
+  },
+  {
+    "email": "vasile.popeanga@cdep.ro",
+    "id": 161,
+    "name": "Vasile Popeang\u0103"
+  },
+  {
+    "email": "adrian.popescu@cdep.ro",
+    "id": 162,
+    "name": "Adrian Popescu"
+  },
+  {
+    "email": "cosmin.popescu@cdep.ro",
+    "id": 163,
+    "name": "Cosmin Mihai Popescu"
+  },
+  {
+    "email": "dan.popescu@cdep.ro",
+    "id": 164,
+    "name": "Dan-Mircea Popescu"
+  },
+  {
+    "email": "calin.tariceanu@cdep.ro",
+    "id": 165,
+    "name": "C\u0103lin Constantin Anton Popescu-T\u0103riceanu"
+  },
+  {
+    "email": "dusan.popov@cdep.ro",
+    "id": 166,
+    "name": "Du\u015fan Popov"
+  },
+  {
+    "email": "alin.popoviciu@cdep.ro",
+    "id": 167,
+    "name": "Alin Augustin Florin Popoviciu"
+  },
+  {
+    "email": "ioan.balan@cdep.ro",
+    "id": 168,
+    "name": "Ioan Balan"
+  },
+  {
+    "email": "florin.postolachi@cdep.ro",
+    "id": 169,
+    "name": "Florin Postolachi"
+  },
+  {
+    "email": "calin.potor@cdep.ro",
+    "id": 170,
+    "name": "C\u0103lin Potor"
+  },
+  {
+    "email": "cezar.preda@cdep.ro",
+    "id": 171,
+    "name": "Cezar-Florin Preda"
+  },
+  {
+    "email": "silviu.prigoana@cdep.ro",
+    "id": 172,
+    "name": "Vasile-Silviu Prigoan\u0103"
+  },
+  {
+    "email": "mirad@cdep.ro",
+    "id": 173,
+    "name": "Mihai Radan"
+  },
+  {
+    "email": "neculai.ratoi@cdep.ro",
+    "id": 174,
+    "name": "Neculai R\u0103\u0163oi"
+  },
+  {
+    "email": "neculai.rebenciuc@cdep.ro",
+    "id": 175,
+    "name": "Neculai Rebenciuc"
+  },
+  {
+    "email": "cristian.resmerita@cdep.ro",
+    "id": 176,
+    "name": "Cornel-Cristian Resmeri\u0163\u0103"
+  },
+  {
+    "email": "lucian.rivis@cdep.ro",
+    "id": 177,
+    "name": "Lucian Rivi\u015f-Tipei"
+  },
+  {
+    "email": "cristian.rizea@cdep.ro",
+    "id": 178,
+    "name": "Cristian Rizea"
+  },
+  {
+    "email": "nbanicioiu@cdep.ro",
+    "id": 179,
+    "name": "Nicolae B\u0103nicioiu"
+  },
+  {
+    "email": "marius.rogin@cdep.ro",
+    "id": 180,
+    "name": "Marius Rogin"
+  },
+  {
+    "email": "gheorghe.roman@cdep.ro",
+    "id": 181,
+    "name": "Gheorghe Roman"
+  },
+  {
+    "email": "sorin.roman@cdep.ro",
+    "id": 182,
+    "name": "Ioan Sorin Roman"
+  },
+  {
+    "email": "lucretia.rosca@cdep.ro",
+    "id": 183,
+    "name": "Lucre\u0163ia Ro\u015fca"
+  },
+  {
+    "email": "valentin.rusu@cdep.ro",
+    "id": 184,
+    "name": "Valentin Rusu"
+  },
+  {
+    "email": "andrei.sava@cdep.ro",
+    "id": 185,
+    "name": "Andrei-Valentin Sava"
+  },
+  {
+    "email": "adriana.saftoiu@cdep.ro",
+    "id": 186,
+    "name": "Ana Adriana S\u0103ftoiu"
+  },
+  {
+    "email": "marian.saniuta@cdep.ro",
+    "id": 187,
+    "name": "Marian-Florian S\u0103niu\u0163\u0103"
+  },
+  {
+    "email": "nini.sapunaru@cdep.ro",
+    "id": 188,
+    "name": "Nini S\u0103punaru"
+  },
+  {
+    "email": "marian.sarbu@cdep.ro",
+    "id": 189,
+    "name": "Marian S\u00e2rbu"
+  },
+  {
+    "email": "daniel.barbulescu@cdep.ro",
+    "id": 190,
+    "name": "Daniel-Ionu\u0163 B\u0103rbulescu"
+  },
+  {
+    "email": "scutaru.george@cdep.ro",
+    "id": 191,
+    "name": "Adrian George Scutaru"
+  },
+  {
+    "email": "stefan.seremi@cdep.ro",
+    "id": 192,
+    "name": "\u015etefan Seremi"
+  },
+  {
+    "email": "denes.seres@cdep.ro",
+    "id": 193,
+    "name": "D\u00e9nes Seres"
+  },
+  {
+    "email": "victor.socaciu@cdep.ro",
+    "id": 194,
+    "name": "Victor Socaciu"
+  },
+  {
+    "email": "adrian.solomon@cdep.ro",
+    "id": 195,
+    "name": "Adrian Solomon"
+  },
+  {
+    "email": "soporan.vasile@cdep.ro",
+    "id": 196,
+    "name": "Vasile Filip Soporan"
+  },
+  {
+    "email": "marius.spinu@cdep.ro",
+    "id": 197,
+    "name": "Teodor-Marius Sp\u00eenu"
+  },
+  {
+    "email": "ioan.stan@cdep.ro",
+    "id": 198,
+    "name": "Ioan Stan"
+  },
+  {
+    "email": "ion.stan@cdep.ro",
+    "id": 199,
+    "name": "Ion Stan"
+  },
+  {
+    "email": "nicolae.stan@cdep.ro",
+    "id": 200,
+    "name": "Nicolae Stan"
+  },
+  {
+    "email": "eugen.bejinariu@cdep.ro",
+    "id": 201,
+    "name": "Eugen Bejinariu"
+  },
+  {
+    "email": "astanciu@cdep.ro",
+    "id": 202,
+    "name": "Anghel Stanciu"
+  },
+  {
+    "email": "maria.stavrositu@cdep.ro",
+    "id": 203,
+    "name": "Maria Stavrositu"
+  },
+  {
+    "email": "valeriusteriu@cdep.ro",
+    "id": 204,
+    "name": "Valeriu-Andrei Steriu"
+  },
+  {
+    "email": "mihaela.stoica@cdep.ro",
+    "id": 205,
+    "name": "Mihaela Stoica"
+  },
+  {
+    "email": "sorin.stragea@cdep.ro",
+    "id": 206,
+    "name": "Sorin Constantin Stragea"
+  },
+  {
+    "email": "ionut.stroe@cdep.ro",
+    "id": 207,
+    "name": "Ionu\u0163-Marian Stroe"
+  },
+  {
+    "email": "mihai.stroe@cdep.ro",
+    "id": 208,
+    "name": "Mihai Stroe"
+  },
+  {
+    "email": "toader.stroian@cdep.ro",
+    "id": 209,
+    "name": "Toader Stroian"
+  },
+  {
+    "id": 210,
+    "name": "Raul-Victor Surdu-Soreanu"
+  },
+  {
+    "email": "mihai.surpateanu@cdep.ro",
+    "id": 211,
+    "name": "Mihai Surp\u0103\u0163eanu"
+  },
+  {
+    "email": "vasile.berci@cdep.ro",
+    "id": 212,
+    "name": "Vasile Berci"
+  },
+  {
+    "email": "mugurel.surupaceanu@cdep.ro",
+    "id": 213,
+    "name": "Mugurel Surup\u0103ceanu"
+  },
+  {
+    "email": "mihaela.sandru@cdep.ro",
+    "id": 214,
+    "name": "Mihaela Ioana \u015eandru"
+  },
+  {
+    "email": "viorel.stefan@cdep.ro",
+    "id": 215,
+    "name": "Viorel \u015etefan"
+  },
+  {
+    "email": "cstirbet@cdep.ro",
+    "id": 216,
+    "name": "Cornel \u015etirbe\u0163"
+  },
+  {
+    "email": "gigel.stirbu@cdep.ro",
+    "id": 217,
+    "name": "Gigel-Sorinel \u015etirbu"
+  },
+  {
+    "email": "valeriu.tabara@cdep.ro",
+    "id": 218,
+    "name": "Valeriu Tab\u0103r\u0103"
+  },
+  {
+    "email": "ion.tabugan@cdep.ro",
+    "id": 219,
+    "name": "Ion Tabugan"
+  },
+  {
+    "email": "mirel.talos@cdep.ro",
+    "id": 220,
+    "name": "Gheorghe-Mirel Talo\u015f"
+  },
+  {
+    "email": "culita.tarata@cdep.ro",
+    "id": 221,
+    "name": "Culi\u0163\u0103 T\u0103r\u00e2\u0163\u0103"
+  },
+  {
+    "email": "horia.teodorescu@cdep.ro",
+    "id": 222,
+    "name": "Horia Teodorescu"
+  },
+  {
+    "email": "valeriu.alecu@cdep.ro",
+    "id": 223,
+    "name": "Valeriu Alecu"
+  },
+  {
+    "email": "beres.istvan@cdep.ro",
+    "id": 224,
+    "name": "\u015etefan Vasile B\u00e9res"
+  },
+  {
+    "id": 225,
+    "name": "Ioan Timi\u015f"
+  },
+  {
+    "email": "gabriel.nicolescu@cdep.ro",
+    "id": 226,
+    "name": "Gabriel Ti\u0163a-Nicolescu"
+  },
+  {
+    "email": "angel.tilvar@cdep.ro",
+    "id": 227,
+    "name": "Angel T\u00eelv\u0103r"
+  },
+  {
+    "email": "mircea.toader@cdep.ro",
+    "id": 228,
+    "name": "Mircea-Nicu Toader"
+  },
+  {
+    "email": "alin.trasculescu@cdep.ro",
+    "id": 229,
+    "name": "Alin Silviu Tr\u0103\u015fculescu"
+  },
+  {
+    "email": "mihai.tudose@cdep.ro",
+    "id": 230,
+    "name": "Mihai Tudose"
+  },
+  {
+    "email": "raluca.turcan@cdep.ro",
+    "id": 231,
+    "name": "Raluca Turcan"
+  },
+  {
+    "email": "diana.tusa@cdep.ro",
+    "id": 232,
+    "name": "Adriana Diana Tu\u015fa"
+  },
+  {
+    "email": "claudiu.taga@cdep.ro",
+    "id": 233,
+    "name": "Claudiu \u0162aga"
+  },
+  {
+    "email": "ioan.tintean@cdep.ro",
+    "id": 234,
+    "name": "Ioan \u0162intean"
+  },
+  {
+    "email": "iosif.blaga@cdep.ro",
+    "id": 235,
+    "name": "Iosif Veniamin Blaga"
+  },
+  {
+    "email": "radu.timpau@cdep.ro",
+    "id": 236,
+    "name": "Radu Bogdan \u0162\u00eemp\u0103u"
+  },
+  {
+    "email": "florin.turcanu@cdep.ro",
+    "id": 237,
+    "name": "Florin \u0162urcanu"
+  },
+  {
+    "email": "razvan.turea@cdep.ro",
+    "id": 238,
+    "name": "R\u0103zvan \u0162urea"
+  },
+  {
+    "email": "elena.udrea@cdep.ro",
+    "id": 239,
+    "name": "Elena Gabriela Udrea"
+  },
+  {
+    "email": "uioreanu@cdep.ro",
+    "id": 240,
+    "name": "Horea-Dorin Uioreanu"
+  },
+  {
+    "email": "eugen.uricec@cdep.ro",
+    "id": 241,
+    "name": "Eugen Constantin Uricec"
+  },
+  {
+    "email": "aurel.vainer@cdep.ro",
+    "id": 242,
+    "name": "Aurel Vainer"
+  },
+  {
+    "email": "vargaat@cdep.ro",
+    "id": 243,
+    "name": "Attila Varga"
+  },
+  {
+    "email": "lucia.varga@cdep.ro",
+    "id": 244,
+    "name": "Lucia-Ana Varga"
+  },
+  {
+    "email": "aura.v@cdep.ro",
+    "id": 245,
+    "name": "Aurelia Vasile"
+  },
+  {
+    "email": "vasile.bleotu@cdep.ro",
+    "id": 246,
+    "name": "Vasile Bleotu"
+  },
+  {
+    "email": "radu.vasilica@cdep.ro",
+    "id": 247,
+    "name": "Radu Costin Vasilic\u0103"
+  },
+  {
+    "email": "gelu.visan@cdep.ro",
+    "id": 248,
+    "name": "Gelu Vi\u015fan"
+  },
+  {
+    "email": "samoil.vilcu@cdep.ro",
+    "id": 249,
+    "name": "Samoil V\u00eelcu"
+  },
+  {
+    "email": "iulian.vladu@cdep.ro",
+    "id": 250,
+    "name": "Iulian Vladu"
+  },
+  {
+    "email": "gabriel.vlase@cdep.ro",
+    "id": 251,
+    "name": "Petru Gabriel Vlase"
+  },
+  {
+    "email": "aurel.vladoiu@cdep.ro",
+    "id": 252,
+    "name": "Aurel Vl\u0103doiu"
+  },
+  {
+    "email": "madalin.voicu@cdep.ro",
+    "id": 253,
+    "name": "M\u0103d\u0103lin-\u015etefan Voicu"
+  },
+  {
+    "email": "mihai.voicu@cdep.ro",
+    "id": 254,
+    "name": "Mihai Alexandru Voicu"
+  },
+  {
+    "email": "sever.voinescu@cdep.ro",
+    "id": 255,
+    "name": "Sever Voinescu-Cotoi"
+  },
+  {
+    "email": "valerian.vreme@cdep.ro",
+    "id": 256,
+    "name": "Valerian Vreme"
+  },
+  {
+    "email": "dumitru.boabes@cdep.ro",
+    "id": 257,
+    "name": "Dumitru Boabe\u015f"
+  },
+  {
+    "email": "sorin.zamfirescu@cdep.ro",
+    "id": 258,
+    "name": "Sorin \u015etefan Zamfirescu"
+  },
+  {
+    "email": "dan.zatreanu@cdep.ro",
+    "id": 259,
+    "name": "Dan-Radu Z\u0103treanu"
+  },
+  {
+    "email": "zgonea@cdep.ro",
+    "id": 260,
+    "name": "Valeriu \u015etefan Zgonea"
+  },
+  {
+    "email": "gabriel.zisopol@cdep.ro",
+    "id": 261,
+    "name": "Drago\u015f Gabriel Zisopol"
+  },
+  {
+    "email": "gheorghe.zoicas@cdep.ro",
+    "id": 262,
+    "name": "Gheorghe Zoica\u015f"
+  },
+  {
+    "email": "radu.stroe@cdep.ro",
+    "id": 263,
+    "name": "Radu Stroe"
+  },
+  {
+    "id": 264,
+    "name": "Teodora Virginia Trandafir"
+  },
+  {
+    "email": "mariana.campeanu@cdep.ro",
+    "id": 265,
+    "name": "Mariana C\u00e2mpeanu"
+  },
+  {
+    "id": 266,
+    "name": "Adrian R\u0103dulescu"
+  },
+  {
+    "id": 267,
+    "name": "Florin-Cristian T\u0103taru"
+  },
+  {
+    "email": "marin.bobes@cdep.ro",
+    "id": 268,
+    "name": "Marin Bobe\u015f"
+  },
+  {
+    "email": "lucian.bode@cdep.ro",
+    "id": 269,
+    "name": "Lucian Nicolae Bode"
+  },
+  {
+    "email": "claudia.boghicevici@cdep.ro",
+    "id": 270,
+    "name": "Claudia Boghicevici"
+  },
+  {
+    "email": "victor.boiangiu@cdep.ro",
+    "id": 271,
+    "name": "Victor Boiangiu"
+  },
+  {
+    "email": "mihail.boldea@cdep.ro",
+    "id": 272,
+    "name": "Mihail Boldea"
+  },
+  {
+    "email": "laszlo.borbely@cdep.ro",
+    "id": 273,
+    "name": "L\u00e1szl\u00f3 Borb\u00e9ly"
+  },
+  {
+    "email": "marin.almajanu@cdep.ro",
+    "id": 274,
+    "name": "Marin Alm\u0103janu"
+  },
+  {
+    "email": "dan.bordeianu@cdep.ro",
+    "id": 275,
+    "name": "Dan Bordeianu"
+  },
+  {
+    "email": "emil.bostan@cdep.ro",
+    "id": 276,
+    "name": "Emil Bostan"
+  },
+  {
+    "email": "octavian.bot@cdep.ro",
+    "id": 277,
+    "name": "Octavian Bot"
+  },
+  {
+    "email": "ioan.botis@cdep.ro",
+    "id": 278,
+    "name": "Ioan-Nelu Boti\u015f"
+  },
+  {
+    "email": "cristian.boureanu@cdep.ro",
+    "id": 279,
+    "name": "Cristian Alexandru Boureanu"
+  },
+  {
+    "email": "radu.bratianu@cdep.ro",
+    "id": 280,
+    "name": "Matei Radu Br\u0103tianu"
+  },
+  {
+    "email": "gabriel.branza@cdep.ro",
+    "id": 281,
+    "name": "William Gabriel Br\u00eenz\u0103"
+  },
+  {
+    "email": "stefan.buciuta@cdep.ro",
+    "id": 282,
+    "name": "\u015etefan Buciuta"
+  },
+  {
+    "email": "nicolae.bud@cdep.ro",
+    "id": 283,
+    "name": "Nicolae Bud"
+  },
+  {
+    "email": "daniel.buda@cdep.ro",
+    "id": 284,
+    "name": "Daniel Buda"
+  },
+  {
+    "email": "amet_aledin@cdep.ro",
+    "id": 285,
+    "name": "Aledin Amet"
+  },
+  {
+    "email": "viorel.buda@cdep.ro",
+    "id": 286,
+    "name": "Viorel-Vasile Buda"
+  },
+  {
+    "email": "daniel.budurescu@cdep.ro",
+    "id": 287,
+    "name": "Daniel-Stamate Budurescu"
+  },
+  {
+    "email": "catalin.buhaianu@cdep.ro",
+    "id": 288,
+    "name": "C\u0103t\u0103lin Ovidiu Buh\u0103ianu-Obuf"
+  },
+  {
+    "email": "cristian.buican@cdep.ro",
+    "id": 289,
+    "name": "Cristian Buican"
+  },
+  {
+    "email": "doina.burcau@cdep.ro",
+    "id": 290,
+    "name": "Doina Burc\u0103u"
+  },
+  {
+    "email": "cristian.burlacu@cdep.ro",
+    "id": 291,
+    "name": "Cristian-Ion Burlacu"
+  },
+  {
+    "email": "ion.burnei@cdep.ro",
+    "id": 292,
+    "name": "Ion Burnei"
+  },
+  {
+    "email": "sorin.buta@cdep.ro",
+    "id": 293,
+    "name": "Sorin Gheorghe Buta"
+  },
+  {
+    "email": "calimente@cdep.ro",
+    "id": 294,
+    "name": "Mih\u0103i\u0163\u0103 Calimente"
+  },
+  {
+    "email": "canacheu@cdep.ro",
+    "id": 295,
+    "name": "Costic\u0103 Canacheu"
+  },
+  {
+    "email": "gheorghe.ana@cdep.ro",
+    "id": 296,
+    "name": "Gheorghe Ana"
+  },
+  {
+    "email": "bogdan.cantaragiu@cdep.ro",
+    "id": 297,
+    "name": "Bogdan Cantaragiu"
+  },
+  {
+    "email": "viorel.carare@cdep.ro",
+    "id": 298,
+    "name": "Viorel C\u0103rare"
+  },
+  {
+    "email": "mircea.cazan@cdep.ro",
+    "id": 299,
+    "name": "Mircea Vasile Cazan"
+  },
+  {
+    "email": "petru.calian@cdep.ro",
+    "id": 300,
+    "name": "Petru C\u0103lian"
+  },
+  {
+    "email": "ion.calin@cdep.ro",
+    "id": 301,
+    "name": "Ion C\u0103lin"
+  },
+  {
+    "id": 302,
+    "name": "C\u0103t\u0103lin Chereche\u015f"
+  },
+  {
+    "email": "doinita.chircu@cdep.ro",
+    "id": 303,
+    "name": "Doini\u0163a-Mariana Chircu"
+  },
+  {
+    "email": "constantin.chirila@cdep.ro",
+    "id": 304,
+    "name": "Constantin Chiril\u0103"
+  },
+  {
+    "email": "dumitru.chirita@cdep.ro",
+    "id": 305,
+    "name": "Dumitru Chiri\u0163\u0103"
+  },
+  {
+    "email": "ioan.chisalita@cdep.ro",
+    "id": 306,
+    "name": "Ioan Narcis Chis\u0103li\u0163\u0103"
+  },
+  {
+    "id": 307,
+    "name": "Roberta Alma Anastase"
+  },
+  {
+    "email": "daniel.chitoiu@cdep.ro",
+    "id": 308,
+    "name": "Daniel Chi\u0163oiu"
+  },
+  {
+    "email": "tudor.chiuariu@cdep.ro",
+    "id": 309,
+    "name": "Tudor-Alexandru Chiuariu"
+  },
+  {
+    "email": "cindreaioan@cdep.ro",
+    "id": 310,
+    "name": "Ioan Cindrea"
+  },
+  {
+    "email": "gheorghe.ciobanu@cdep.ro",
+    "id": 311,
+    "name": "Gheorghe Ciobanu"
+  },
+  {
+    "email": "gheorghe.ciocan@cdep.ro",
+    "id": 312,
+    "name": "Gheorghe Ciocan"
+  },
+  {
+    "email": "iustin.cionca@cdep.ro",
+    "id": 313,
+    "name": "Iustin-Marinel Cionca-Arghir"
+  },
+  {
+    "email": "bogdan.ciuca@cdep.ro",
+    "id": 314,
+    "name": "Liviu-Bogdan Ciuc\u0103"
+  },
+  {
+    "email": "tudor.ciuhodaru@cdep.ro",
+    "id": 315,
+    "name": "Tudor Ciuhodaru"
+  },
+  {
+    "email": "radu.coclici@cdep.ro",
+    "id": 316,
+    "name": "Radu Eugeniu Coclici"
+  },
+  {
+    "email": "gheorghe.coroama@cdep.ro",
+    "id": 317,
+    "name": "Gheorghe Coroam\u0103"
+  },
+  {
+    "email": "sergiu.andon@cdep.ro",
+    "id": 318,
+    "name": "Sergiu Andon"
+  },
+  {
+    "email": "dorel.covaci@cdep.ro",
+    "id": 319,
+    "name": "Dorel Covaci"
+  },
+  {
+    "email": "victor.cristea@cdep.ro",
+    "id": 320,
+    "name": "Victor Cristea"
+  },
+  {
+    "email": "horia.cristian@cdep.ro",
+    "id": 321,
+    "name": "Horia Cristian"
+  },
+  {
+    "email": "catalin.croitoru@cdep.ro",
+    "id": 322,
+    "name": "C\u0103t\u0103lin Croitoru"
+  },
+  {
+    "email": "ioan.damian@cdep.ro",
+    "id": 323,
+    "name": "Ioan Damian"
+  },
+  {
+    "email": "constantin.dascalu@cdep.ro",
+    "id": 324,
+    "name": "Constantin Dasc\u0103lu"
+  },
+  {
+    "email": "akos.derzsi@cdep.ro",
+    "id": 325,
+    "name": "\u00c1kos Derzsi"
+  },
+  {
+    "email": "ciprian.dobre@cdep.ro",
+    "id": 326,
+    "name": "Ciprian Minodor Dobre"
+  },
+  {
+    "email": "cristina.dobre@cdep.ro",
+    "id": 327,
+    "name": "Cristina Elena Dobre"
+  },
+  {
+    "email": "victor.dobre@cdep.ro",
+    "id": 328,
+    "name": "Victor Paul Dobre"
+  },
+  {
+    "email": "gabriel.andronache@cdep.ro",
+    "id": 329,
+    "name": "Gabriel Andronache"
+  },
+  {
+    "email": "andrei.dolineaschi@cdep.ro",
+    "id": 330,
+    "name": "Andrei Dolineaschi"
+  },
+  {
+    "email": "mihai.dontu@cdep.ro",
+    "id": 331,
+    "name": "Mihai-Aurel Don\u0163u"
+  },
+  {
+    "email": "gheorghedragomir@cdep.ro",
+    "id": 332,
+    "name": "Gheorghe Dragomir"
+  },
+  {
+    "email": "mircea.draghici@cdep.ro",
+    "id": 333,
+    "name": "Mircea-Gheorghe Dr\u0103ghici"
+  },
+  {
+    "email": "maria.draghici@cdep.ro",
+    "id": 334,
+    "name": "Sonia-Maria Dr\u0103ghici"
+  },
+  {
+    "email": "stefan.dragulescu@cdep.ro",
+    "id": 335,
+    "name": "Iosif \u015etefan Dr\u0103gulescu"
+  },
+  {
+    "email": "marius.dugulescu@cdep.ro",
+    "id": 336,
+    "name": "Marius Cristinel Dugulescu"
+  },
+  {
+    "email": "cristina.dumitrache@cdep.ro",
+    "id": 337,
+    "name": "Ileana Cristina Dumitrache"
+  },
+  {
+    "email": "cdumitrescu@cdep.ro",
+    "id": 338,
+    "name": "Cristian-Sorin Dumitrescu"
+  },
+  {
+    "id": 339,
+    "name": "Liana Dumitrescu"
+  }
+]
