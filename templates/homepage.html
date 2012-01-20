@@ -1,12 +1,35 @@
 {% extends 'layout.html' %}
+
+{% block h1 -%}
+  Persoane
+{%- endblock %}
+
 {% block content %}
 
 <div class="row">
   <div class="span1"></div>
   <div class="span10">
-    <p>
-      hello world!
-    </p>
+
+    <table>
+
+      <thead>
+        <th>Nume</th>
+        <th>Email</th>
+      </thead>
+
+      <tbody>
+
+      {% for person_id, person in persons.items() %}
+        <tr>
+          <td>{{ person['name'] }}</td>
+          <td>{{ person['email'] }}</td>
+        </tr>
+      {% endfor %}
+
+      </tbody>
+
+    </table>
+
   </div>
 </div>
 

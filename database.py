@@ -1,4 +1,5 @@
 import os.path
+from collections import defaultdict
 from flask import json
 from flaskext.sqlalchemy import SQLAlchemy
 
@@ -11,6 +12,13 @@ class Contact(db.Model):
     person = db.Column(db.Integer)
     name = db.Column(db.Text())
     value = db.Column(db.Text())
+
+
+def get_persons():
+    results = defaultdict(dict)
+    for record in Contact.query.all():
+        results[record.person][record.name] = record.value
+    return dict(results)
 
 
 def import_fixture(flush=True):
