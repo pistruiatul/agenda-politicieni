@@ -12,6 +12,7 @@
 </head>
 <body>
 
+<script src="{{ url_for('static', filename='modernizr-2.0.6.min.js') }}"></script>
 
 <div class="topbar">
   <div class="fill">
@@ -55,6 +56,15 @@
     </p>
   </footer>
 </div>
+
+{% if config.GOOGLE_ANALYTICS_CODE %}
+<script>
+  window._gaq = [['_setAccount','{{ config.GOOGLE_ANALYTICS_CODE }}'],['_trackPageview'],['_trackPageLoadTime']];
+  Modernizr.load({
+    load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
+  });
+</script>
+{% endif %}
 
 </body>
 </html>
