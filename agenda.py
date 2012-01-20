@@ -1,20 +1,10 @@
 import flask
-from flaskext.sqlalchemy import SQLAlchemy
+import database
 
 
 default_config = {
     'DEBUG': True,
 }
-
-
-db = SQLAlchemy()
-
-
-class Contact(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    person = db.Column(db.Integer)
-    name = db.Column(db.Text())
-    value = db.Column(db.Text())
 
 
 webpages = flask.Blueprint('webpages', __name__)
@@ -32,7 +22,7 @@ def create_app():
         'sqlite:///%s/agenda.db' % app.instance_path)
     app.config.update(default_config)
     app.config.from_pyfile('application.cfg', silent=True)
-    db.init_app(app)
+    database.db.init_app(app)
     return app
 
 
