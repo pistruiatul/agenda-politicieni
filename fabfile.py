@@ -29,3 +29,7 @@ def deploy():
 
     with cd(REMOTE_REPO):
         run("sandbox/bin/pip install -r requirements.txt")
+
+    instance = REMOTE_REPO + '/instance'
+    if not exists(instance):
+        run("mkdir -p '%s'" % instance)

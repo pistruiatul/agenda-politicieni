@@ -4,7 +4,7 @@ import webpages
 
 
 default_config = {
-    'DEBUG': True,
+    'DEBUG': False,
 }
 
 
@@ -28,11 +28,17 @@ def main():
 
     app = create_app()
     if cmd == 'runserver':
-        app.run()
+        app.run(debug=True)
     elif cmd == 'shell':
         from code import interact
         with app.test_request_context():
             interact(local={'app': app})
+    elif cmd == 'fastcgi':
+        import os.path
+        from flup.server.fcgi import WSGIServer
+        sock_path = os.path.join(app.instance_path, 'fcgi.sock')
+        server = WSGIServer(app, bindAddress=sock_path, umask=0)
+        server.run()
 
 
 if __name__ == '__main__':
