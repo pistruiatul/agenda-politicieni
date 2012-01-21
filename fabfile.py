@@ -20,7 +20,7 @@ paths = {
 }
 
 
-def deploy():
+def install():
     if not exists(REMOTE_REPO):
         run("git init '%s'" % REMOTE_REPO)
 
@@ -45,3 +45,17 @@ def start():
         "--pidfile %(var)s/fcgi.pid --make-pidfile "
         "--exec %(sandbox)s/bin/python %(repo)s/agenda.py fastcgi"
         % paths)
+
+
+def stop():
+    run("/sbin/start-stop-daemon --stop --pidfile %(var)s/fcgi.pid" % paths)
+
+
+def restart():
+    stop()
+    start()
+
+
+def deploy():
+    install()
+    restart()
