@@ -2,10 +2,6 @@
 import os.path
 import flask
 import database
-import logging
-
-
-log = logging.getLogger(__name__)
 
 
 _data_dir = os.path.join(os.path.dirname(__file__), 'data')
@@ -54,8 +50,6 @@ def suggest(person_id):
         value = flask.request.form.get('value')
 
         if not errors:
-            log.info('New suggestion from %r: name=%r, value=%r',
-                     user, name, value)
             suggestion = database.save_suggestion(user, person_id, name, value)
             flask.flash(u"Sugestia de %s pentru %s a fost salvată, mulțumim!" %
                         (prop_defs[name], suggestion.person.name))

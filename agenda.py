@@ -1,3 +1,4 @@
+import os.path
 import flask
 import database
 import webpages
@@ -22,13 +23,19 @@ def create_app():
 
 
 def main():
+    app = create_app()
+
+    import logging
+    suggestion_log_path = os.path.join(app.instance_path, 'suggestions.log')
+    suggestion_handler = logging.FileHandler(suggestion_log_path)
+    database.log.addHandler(suggestion_handler)
+
     import sys
     if len(sys.argv) > 1:
         cmd = sys.argv[1]
     else:
         cmd = 'runserver'
 
-    app = create_app()
     if cmd == 'runserver':
         app.run(debug=True)
     elif cmd == 'shell':
@@ -36,7 +43,6 @@ def main():
         with app.test_request_context():
             interact(local={'app': app})
     elif cmd == 'fastcgi':
-        import os.path
         from flup.server.fcgi import WSGIServer
         sock_path = os.path.join(app.instance_path, 'fcgi.sock')
         server = WSGIServer(app, bindAddress=sock_path, umask=0)

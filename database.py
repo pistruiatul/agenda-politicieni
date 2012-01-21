@@ -2,7 +2,10 @@ import os.path
 from datetime import datetime
 from flask import json
 from flaskext.sqlalchemy import SQLAlchemy
+import logging
 
+log = logging.getLogger(__name__)
+log.setLevel(logging.INFO)
 
 db = SQLAlchemy()
 
@@ -55,6 +58,8 @@ def get_persons():
 
 def save_suggestion(user, person_id, name, value):
     person = Person.query.get_or_404(person_id)
+    log.info('New suggestion from %r: name=%r, value=%r',
+             user, name, value)
     suggestion = Suggestion(user=user,
                             person=person,
                             name=name,
