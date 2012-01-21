@@ -51,7 +51,8 @@ def get_persons():
 
 
 def save_suggestion(person_id, name, value):
-    suggestion = Suggestion(person_id=person_id,
+    person = Person.query.get_or_404(person_id)
+    suggestion = Suggestion(person=person,
                             name=name,
                             value=value,
                             date=datetime.utcnow())
