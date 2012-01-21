@@ -59,7 +59,8 @@ def suggest(person_id):
             suggestion = database.save_suggestion(user, person_id, name, value)
             flask.flash(u"Sugestia de %s pentru %s a fost salvată, mulțumim!" %
                         (prop_defs[name], suggestion.person.name))
-            return flask.redirect(flask.url_for('webpages.home'))
+            url = flask.url_for('webpages.person', person_id=person_id)
+            return flask.redirect(url)
 
     return flask.render_template('suggest.html',
             person=database.Person.query.get_or_404(person_id),

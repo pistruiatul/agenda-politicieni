@@ -21,7 +21,8 @@
 
       {% for person_id, person in persons.items() %}
         <tr>
-          <td>{{ person['name'] }}</td>
+          {% set url = url_for('webpages.person', person_id=person_id) %}
+          <td><a href="{{ url }}">{{ person['name'] }}</a></td>
           <td>{{ person['email'] }}</td>
         </tr>
       {% endfor %}

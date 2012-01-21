@@ -17,7 +17,8 @@
 <div class="topbar">
   <div class="fill">
     <div class="container">
-      <a class="brand" href="#">Agenda de parlamentari</a>
+      {% set url = url_for('webpages.home') %}
+      <a class="brand" href="{{ url }}">Agenda de parlamentari</a>
       {#
       <ul class="nav">
         <li class="active"><a href="#">Home</a></li>

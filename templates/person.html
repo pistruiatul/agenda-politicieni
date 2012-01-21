@@ -17,6 +17,9 @@
     {% endfor -%}
     </dl>
 
+    {% set url = url_for('webpages.suggest', person_id=person.id) %}
+    <a class="btn primary" href="{{ url }}">Propune o modificare</a>
+
   </div>
 </div>
 
