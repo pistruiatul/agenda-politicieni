@@ -24,7 +24,8 @@ class Property(db.Model):
 class Suggestion(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     person_id = db.Column(db.Integer, db.ForeignKey('person.id'))
-    person = db.relationship('Person')
+    person = db.relationship('Person',
+        backref=db.backref('suggestions', lazy='dynamic'))
     name = db.Column(db.String(30))
     value = db.Column(db.Text())
     date = db.Column(db.DateTime(timezone=True))
