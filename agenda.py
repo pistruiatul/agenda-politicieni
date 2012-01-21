@@ -14,7 +14,7 @@ def create_app():
     app.config['SQLALCHEMY_DATABASE_URI'] = (
         'sqlite:///%s/agenda.db' % app.instance_path)
     app.config.update(default_config)
-    app.config.from_pyfile('application.cfg', silent=True)
+    app.config.from_pyfile('settings.py', silent=True)
     database.db.init_app(app)
     return app
 
