@@ -13,6 +13,13 @@ try: from local_fabfile import *
 except: pass
 
 
+paths = {
+    'repo': REMOTE_REPO,
+    'var': REMOTE_REPO + '/instance',
+    'sandbox': REMOTE_REPO + '/sandbox',
+}
+
+
 def deploy():
     if not exists(REMOTE_REPO):
         run("git init '%s'" % REMOTE_REPO)
@@ -22,13 +29,11 @@ def deploy():
     with cd(REMOTE_REPO):
         run("git reset incoming --hard")
 
-    sandbox = REMOTE_REPO + '/sandbox'
-    if not exists(sandbox):
-        run("virtualenv --no-site-packages '%s'" % sandbox)
-        run("echo '*' > '%s/.gitignore'" % sandbox)
+    if not exists(paths['sandbox']):
+        run("virtualenv --no-site-packages '%(sandbox)s'" % paths)
+        run("echo '*' > '%(sandbox)s/.gitignore'" % paths)
 
-    with cd(REMOTE_REPO):
-        run("sandbox/bin/pip install -r requirements.txt")
+    run("%(sandbox)s/bin/pip install -r %(repo)s/requirements.txt" % paths)
 
     instance = REMOTE_REPO + '/instance'
     if not exists(instance):
@@ -38,8 +43,5 @@ def deploy():
 def start():
     run("/sbin/start-stop-daemon --start -b "
         "--pidfile %(var)s/fcgi.pid --make-pidfile "
-        "--exec %(sandbox)s/bin/python %(repo)s/agenda.py fastcgi" % {
-            'repo': REMOTE_REPO,
-            'var': REMOTE_REPO + '/instance',
-            'sandbox': REMOTE_REPO + '/sandbox',
-        })
+        "--exec %(sandbox)s/bin/python %(repo)s/agenda.py fastcgi"
+        % paths)
