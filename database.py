@@ -1,5 +1,4 @@
 import os.path
-from collections import defaultdict
 from flask import json
 from flaskext.sqlalchemy import SQLAlchemy
 
@@ -7,18 +6,30 @@ from flaskext.sqlalchemy import SQLAlchemy
 db = SQLAlchemy()
 
 
-class Contact(db.Model):
+class Person(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    person = db.Column(db.Integer)
     name = db.Column(db.Text())
+
+
+class Property(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    person_id = db.Column(db.Integer, db.ForeignKey('person.id'))
+    person = db.relationship('Person',
+        backref=db.backref('properties', lazy='dynamic'))
+    name = db.Column(db.String(30))
     value = db.Column(db.Text())
 
 
 def get_persons():
-    results = defaultdict(dict)
-    for record in Contact.query.all():
-        results[record.person][record.name] = record.value
-    return dict(results)
+    results = {}
+
+    for person in Person.query.all():
+        results[person.id] = person_data = {'name': person.name}
+
+        for prop in person.properties.all():
+            person_data[prop.name] = prop.value
+
+    return results
 
 
 def import_fixture(flush=True):
@@ -32,11 +43,13 @@ def import_fixture(flush=True):
     with open(fixture_path, 'rb') as f:
         fixture = json.load(f)
 
-    for person in fixture:
-        person_id = person.pop('id')
-        for key in person:
-            record = Contact(person=person_id, name=key)
-            record.value = person[key]
-            db.session.add(record)
+    for person_data in fixture:
+
+        person = Person(id=person_data.pop('id'), name=person_data.pop('name'))
+        db.session.add(person)
+
+        for key in person_data:
+            prop = Property(person=person, name=key, value=person_data[key])
+            db.session.add(prop)
 
     db.session.commit()
