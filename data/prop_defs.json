@@ -1,4 +1,7 @@
 {
+  "phone": "Telefon",
   "email": "Email",
-  "phone": "Telefon"
+  "website": "Website",
+  "facebook": "Facebook",
+  "twitter": "Twitter"
 }
