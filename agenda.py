@@ -1,6 +1,7 @@
 import flask
 import database
 import webpages
+import auth
 
 
 default_config = {
@@ -16,6 +17,7 @@ def create_app():
     app.config.update(default_config)
     app.config.from_pyfile('settings.py', silent=True)
     database.db.init_app(app)
+    auth.init_app(app)
     return app
 
 

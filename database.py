@@ -7,6 +7,13 @@ from flaskext.sqlalchemy import SQLAlchemy
 db = SQLAlchemy()
 
 
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    openid_url = db.Column(db.Text())
+    name = db.Column(db.Text())
+    email = db.Column(db.Text())
+
+
 class Person(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.Text())
@@ -73,3 +80,21 @@ def import_fixture(flush=True):
             db.session.add(prop)
 
     db.session.commit()
+
+
+def get_user(openid_url):
+    return User.query.filter_by(openid_url=openid_url).first()
+
+
+def get_update_user(openid_url, name, email):
+    user = get_user(openid_url)
+    if user is None:
+        user = User(openid_url=openid_url)
+
+    if (name, email) != (user.name, user.email):
+        user.name = name
+        user.email = email
+        db.session.add(user)
+        db.session.commit()
+
+    return user

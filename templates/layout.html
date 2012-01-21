@@ -25,13 +25,18 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
       #}
-      {#
-      <form action="" class="pull-right">
-        <input class="input-small" type="text" placeholder="Username">
-        <input class="input-small" type="password" placeholder="Password">
-        <button class="btn" type="submit">Sign in</button>
-      </form>
-      #}
+      <div class="pull-right">
+      {% if g.user %}
+        <p class="logged-in">
+          {{ g.user.name }}
+          <a href="{{ url_for('auth.logout') }}">logout</a>
+        </p>
+      {% else %}
+        <form action="{{ url_for('auth.login') }}" method="post">
+          <button class="btn" type="submit">Login cu contul Google</button>
+        </form>
+      {% endif %}
+      </div>
     </div>
   </div>
 </div>
@@ -40,6 +45,11 @@
   <div class="content">
     <div class="page-header">
       <h1>{% block h1 %}{% endblock %}</h1>
+
+      {% for message in get_flashed_messages() %}
+        <p class="alert-message">{{ message }}</p>
+      {% endfor %}
+
     </div>
     {% block content %}{% endblock %}
   </div>
