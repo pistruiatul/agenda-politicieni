@@ -10,7 +10,7 @@ default_config = {
 
 def create_app():
     app = flask.Flask(__name__, instance_relative_config=True)
-    app.register_blueprint(webpages.webpages)
+    webpages.init_app(app)
     app.config['SQLALCHEMY_DATABASE_URI'] = (
         'sqlite:///%s/agenda.db' % app.instance_path)
     app.config.update(default_config)
