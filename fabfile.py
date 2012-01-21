@@ -33,3 +33,13 @@ def deploy():
     instance = REMOTE_REPO + '/instance'
     if not exists(instance):
         run("mkdir -p '%s'" % instance)
+
+
+def start():
+    run("/sbin/start-stop-daemon --start -b "
+        "--pidfile %(var)s/fcgi.pid --make-pidfile "
+        "--exec %(sandbox)s/bin/python %(repo)s/agenda.py fastcgi" % {
+            'repo': REMOTE_REPO,
+            'var': REMOTE_REPO + '/instance',
+            'sandbox': REMOTE_REPO + '/sandbox',
+        })
