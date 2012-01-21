@@ -30,6 +30,9 @@ class Property(db.Model):
 
 class Suggestion(db.Model):
     id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    user = db.relationship('User',
+        backref=db.backref('suggestions', lazy='dynamic'))
     person_id = db.Column(db.Integer, db.ForeignKey('person.id'))
     person = db.relationship('Person',
         backref=db.backref('suggestions', lazy='dynamic'))
@@ -50,9 +53,10 @@ def get_persons():
     return results
 
 
-def save_suggestion(person_id, name, value):
+def save_suggestion(user, person_id, name, value):
     person = Person.query.get_or_404(person_id)
-    suggestion = Suggestion(person=person,
+    suggestion = Suggestion(user=user,
+                            person=person,
                             name=name,
                             value=value,
                             date=datetime.utcnow())

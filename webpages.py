@@ -56,7 +56,7 @@ def suggest(person_id):
         if not errors:
             log.info('New suggestion from %r: name=%r, value=%r',
                      user, name, value)
-            suggestion = database.save_suggestion(person_id, name, value)
+            suggestion = database.save_suggestion(user, person_id, name, value)
             flask.flash(u"Sugestia de %s pentru %s a fost salvată, mulțumim!" %
                         (prop_defs[name], suggestion.person.name))
             return flask.redirect(flask.url_for('webpages.home'))
