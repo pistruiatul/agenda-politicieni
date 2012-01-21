@@ -44,6 +44,10 @@ def main():
             interact(local={'app': app})
     elif cmd == 'fastcgi':
         from flup.server.fcgi import WSGIServer
+        error_log_path = os.path.join(app.instance_path, 'error.log')
+        error_handler = logging.FileHandler(error_log_path)
+        error_handler.setLevel(logging.ERROR)
+        logging.getLogger().addHandler(error_handler)
         sock_path = os.path.join(app.instance_path, 'fcgi.sock')
         server = WSGIServer(app, bindAddress=sock_path, umask=0)
         server.run()
