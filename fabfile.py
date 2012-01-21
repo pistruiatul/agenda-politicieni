@@ -48,7 +48,8 @@ def start():
 
 
 def stop():
-    run("/sbin/start-stop-daemon --stop --pidfile %(var)s/fcgi.pid" % paths)
+    run("/sbin/start-stop-daemon --stop --retry 3 "
+        "--pidfile %(var)s/fcgi.pid" % paths)
 
 
 def restart():
