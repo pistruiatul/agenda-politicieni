@@ -26,6 +26,15 @@ def download():
     return flask.jsonify(database.get_persons())
 
 
+@webpages.route('/person/<int:person_id>')
+def person(person_id):
+    person = database.Person.query.get_or_404(person_id)
+    prop_map = {p.name: p.value for p in person.properties.all()}
+    return flask.render_template('person.html',
+                                 person=person,
+                                 prop_map=prop_map)
+
+
 @webpages.route('/person/<int:person_id>/suggest', methods=['GET', 'POST'])
 def suggest(person_id):
     if flask.request.method == 'POST':

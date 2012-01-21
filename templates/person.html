@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+
+{% block h1 -%}
+  {{ person.name }}
+{%- endblock %}
+
+{% block content %}
+
+<div class="row">
+
+  <div class="span1"></div>
+  <div class="span10">
+
+    <dl>
+    {%- for name, value in prop_map.items()|sort %}
+      <dt>{{ known_names[name] }}</dt>
+      <dd>{{ value }}</dd>
+    {% endfor -%}
+    </dl>
+
+  </div>
+
+</div>
+
+{% endblock %}
