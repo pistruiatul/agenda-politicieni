@@ -26,7 +26,7 @@ def download():
 @webpages.route('/person/<int:person_id>')
 def person(person_id):
     person = database.Person.query.get_or_404(person_id)
-    prop_map = {p.name: p.value for p in person.properties.all()}
+    prop_map = dict((p.name, p.value) for p in person.properties.all())
     suggestions = [{'name': s.name, 'value': s.value, 'date': s.date}
                    for s in person.suggestions.all()]
     return flask.render_template('person.html',
