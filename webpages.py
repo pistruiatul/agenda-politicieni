@@ -1,6 +1,10 @@
 import os.path
 import flask
 import database
+import logging
+
+
+log = logging.getLogger(__name__)
 
 
 _data_dir = os.path.join(os.path.dirname(__file__), 'data')
@@ -24,6 +28,14 @@ def download():
 
 @webpages.route('/person/<int:person_id>/suggest', methods=['GET', 'POST'])
 def suggest(person_id):
+    if flask.request.method == 'POST':
+        name = flask.request.form.get('name')
+        if name not in prop_defs:
+            flask.abort(400)
+        value = flask.request.form.get('value')
+        log.info('New suggestion: name=%r, value=%r', name, value)
+        database.save_suggestion(person_id, name, value)
+
     return flask.render_template('suggest.html',
             person=database.Person.query.get_or_404(person_id))
 

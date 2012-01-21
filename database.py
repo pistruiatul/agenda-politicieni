@@ -1,4 +1,5 @@
 import os.path
+from datetime import datetime
 from flask import json
 from flaskext.sqlalchemy import SQLAlchemy
 
@@ -20,6 +21,15 @@ class Property(db.Model):
     value = db.Column(db.Text())
 
 
+class Suggestion(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    person_id = db.Column(db.Integer, db.ForeignKey('person.id'))
+    person = db.relationship('Person')
+    name = db.Column(db.String(30))
+    value = db.Column(db.Text())
+    date = db.Column(db.DateTime(timezone=True))
+
+
 def get_persons():
     results = {}
 
@@ -30,6 +40,15 @@ def get_persons():
             person_data[prop.name] = prop.value
 
     return results
+
+
+def save_suggestion(person_id, name, value):
+    suggestion = Suggestion(person_id=person_id,
+                            name=name,
+                            value=value,
+                            date=datetime.utcnow())
+    db.session.add(suggestion)
+    db.session.commit()
 
 
 def import_fixture(flush=True):
