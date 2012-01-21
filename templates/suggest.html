@@ -8,6 +8,10 @@
 
 <div class="row">
 
+  {% for message in errors %}
+    <p class="alert-message error">{{ message }}</p>
+  {% endfor %}
+
   <form method="post">
 
     <div class="clearfix">

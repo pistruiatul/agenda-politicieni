@@ -57,6 +57,7 @@ def save_suggestion(person_id, name, value):
                             date=datetime.utcnow())
     db.session.add(suggestion)
     db.session.commit()
+    return suggestion
 
 
 def import_fixture(flush=True):
