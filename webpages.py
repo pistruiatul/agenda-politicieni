@@ -82,6 +82,11 @@ def decision(suggestion_id, decision):
     return flask.redirect(flask.url_for('webpages.suggestions'))
 
 
+def suggestions_count():
+    return database.Suggestion.query.filter_by(decision=None).count()
+
+
 def init_app(app):
     app.register_blueprint(webpages)
     app.jinja_env.globals['known_names'] = prop_defs
+    app.jinja_env.globals['suggestions_count'] = suggestions_count

@@ -68,3 +68,4 @@ def init_app(app):
     oid.init_app(app)
     oid.fs_store_path = os.path.join(app.instance_path, 'openid-store')
     app.before_request(lookup_current_user)
+    app.jinja_env.globals['is_admin'] = is_admin
