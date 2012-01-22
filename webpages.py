@@ -101,3 +101,4 @@ def init_app(app):
     app.register_blueprint(webpages)
     app.jinja_env.globals['known_names'] = prop_defs
     app.jinja_env.globals['suggestions_count'] = suggestions_count
+    app.jinja_env.filters['datetime'] = lambda v: v.strftime('%d %b, %H:%M')

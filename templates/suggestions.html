@@ -33,7 +33,7 @@
               {{- s.user.email -}}
             </a>
           </td>
-          <td>{{ s.date }}</td>
+          <td>{{ s.date|datetime }}</td>
           <td class="action">
             {% set url = url_for('webpages.decision',
                                  suggestion_id=s.id, decision='accept') %}

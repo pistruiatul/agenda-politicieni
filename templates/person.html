@@ -32,7 +32,7 @@
 
     <ul>
     {%- for s in suggestions %}
-      <li>{{ known_names[s.name] }}: {{ s.value }} ({{ s.date }})</li>
+      <li>{{ known_names[s.name] }}: {{ s.value }} ({{ s.date|datetime }})</li>
     {% endfor -%}
     </ul>
 
