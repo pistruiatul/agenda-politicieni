@@ -1,0 +1,8 @@
+This is a database migration repository.
+
+More information at
+http://code.google.com/p/sqlalchemy-migrate/
+
+
+python migrations/manage.py version_control sqlite:///<db_path> migrations
+python migrations/manage.py upgrade sqlite:///<db_path> migrations <version>

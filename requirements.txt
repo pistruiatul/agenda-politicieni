@@ -7,3 +7,6 @@ simplejson==2.3.2
 flup==1.0.2
 Flask-OpenID==1.0.1
 python-openid==2.2.5
+Tempita==0.5.1
+decorator==3.3.2
+sqlalchemy-migrate==0.7.2
