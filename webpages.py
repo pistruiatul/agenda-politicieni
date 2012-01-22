@@ -69,6 +69,24 @@ def suggestions():
             suggestions=database.Suggestion.query.all())
 
 
+@webpages.route('/suggestions/<int:id>/accept', methods=['POST'])
+@auth.require_admin
+def suggestion_accept(id):
+    suggestion = database.Suggestion.query.get(id)
+    flask.flash(u'Sugestie aprobată: %s la %s' %
+                (prop_defs[suggestion.name], suggestion.person.name))
+    return flask.redirect(flask.url_for('webpages.suggestions'))
+
+
+@webpages.route('/suggestions/<int:id>/reject', methods=['POST'])
+@auth.require_admin
+def suggestion_reject(id):
+    suggestion = database.Suggestion.query.get(id)
+    flask.flash(u'Sugestie ștearsă: %s la %s' %
+                (prop_defs[suggestion.name], suggestion.person.name))
+    return flask.redirect(flask.url_for('webpages.suggestions'))
+
+
 def init_app(app):
     app.register_blueprint(webpages)
     app.jinja_env.globals['known_names'] = prop_defs

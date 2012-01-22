@@ -48,7 +48,7 @@
       <h1>{% block h1 %}{% endblock %}</h1>
 
       {% for message in get_flashed_messages() %}
-        <p class="alert-message success">{{ message }}</p>
+        <p class="alert-message">{{ message }}</p>
       {% endfor %}
 
     </div>

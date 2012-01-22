@@ -7,8 +7,7 @@
 {% block content %}
 
 <div class="row">
-  <div class="span1"></div>
-  <div class="span10">
+  <div class="span14">
     <table>
 
       <thead>
@@ -17,6 +16,7 @@
         <th>Valoare</th>
         <th>Autor</th>
         <th>Dată</th>
+        <th>Acțiune</th>
       </thead>
 
       <tbody>
@@ -34,6 +34,12 @@
             </a>
           </td>
           <td>{{ s.date }}</td>
+          <td class="action">
+            {% set url = url_for('webpages.suggestion_accept', id=s.id) %}
+            <a class="btn small success" href="{{ url }}">aprobă</a>
+            {% set url = url_for('webpages.suggestion_reject', id=s.id) %}
+            <a class="btn small danger" href="{{ url }}">șterge</a>
+          </td>
         </tr>
       {% endfor %}
       </tbody>
@@ -41,5 +47,14 @@
     </table>
   </div>
 </div>
+
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script>
+  $('td.action .btn').click(function(evt) {
+    evt.preventDefault();
+    var frm = $('<form method="post">').attr('action', $(this).attr('href'));
+    frm.appendTo('body').submit();
+  });
+</script>
 
 {% endblock %}
