@@ -1,4 +1,5 @@
 import os.path
+import logging
 import flask
 import database
 import webpages
@@ -10,6 +11,20 @@ default_config = {
 }
 
 
+def setup_mail_on_error(app):
+    ADMINS = ['yourname@example.com']
+    mail_on_error = app.config.get('MAIL_ON_ERROR', [])
+    if not mail_on_error:
+        return
+    from logging.handlers import SMTPHandler
+    mail_handler = SMTPHandler(app.config.get('MAIL_HOST', '127.0.0.1'),
+                               app.config['MAIL_FROM'],
+                               mail_on_error,
+                               "Error in Agenda Politicieni")
+    mail_handler.setLevel(logging.ERROR)
+    app.logger.addHandler(mail_handler)
+
+
 def create_app():
     app = flask.Flask(__name__, instance_relative_config=True)
     webpages.init_app(app)
@@ -19,13 +34,13 @@ def create_app():
     app.config.from_pyfile('settings.py', silent=True)
     database.db.init_app(app)
     auth.init_app(app)
+    setup_mail_on_error(app)
     return app
 
 
 def main():
     app = create_app()
 
-    import logging
     suggestion_log_path = os.path.join(app.instance_path, 'suggestions.log')
     suggestion_handler = logging.FileHandler(suggestion_log_path)
     database.log.addHandler(suggestion_handler)

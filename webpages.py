@@ -13,6 +13,12 @@ with open(os.path.join(_data_dir, 'prop_defs.json'), 'rb') as f:
 webpages = flask.Blueprint('webpages', __name__)
 
 
+@webpages.route('/test_error')
+@auth.require_admin
+def test_error():
+    raise ValueError("Just checking.")
+
+
 @webpages.route('/')
 def home():
     return flask.render_template('homepage.html',
