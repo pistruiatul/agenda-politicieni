@@ -35,3 +35,8 @@ body {
 .topbar p.logged-in {
     color: #ffffff;
 }
+
+a.email {
+    font-size: 85%;
+    color: #888;
+}
