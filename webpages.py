@@ -1,6 +1,7 @@
 # encoding: utf-8
 import os.path
 import flask
+import auth
 import database
 
 
@@ -62,6 +63,7 @@ def suggest(person_id):
 
 
 @webpages.route('/suggestions')
+@auth.require_admin
 def suggestions():
     return flask.render_template('suggestions.html',
             suggestions=database.Suggestion.query.all())
