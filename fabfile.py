@@ -41,14 +41,14 @@ def install():
 
 
 def start():
-    run("/sbin/start-stop-daemon --start -b "
+    run("/sbin/start-stop-daemon --start --background "
         "--pidfile %(var)s/fcgi.pid --make-pidfile "
         "--exec %(sandbox)s/bin/python %(repo)s/agenda.py fastcgi"
         % paths)
 
 
 def stop():
-    run("/sbin/start-stop-daemon --stop --retry 3 "
+    run("/sbin/start-stop-daemon --stop --retry 3 --oknodo "
         "--pidfile %(var)s/fcgi.pid" % paths)
 
 
