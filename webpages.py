@@ -61,6 +61,12 @@ def suggest(person_id):
             errors=errors)
 
 
+@webpages.route('/suggestions')
+def suggestions():
+    return flask.render_template('suggestions.html',
+            suggestions=database.Suggestion.query.all())
+
+
 def init_app(app):
     app.register_blueprint(webpages)
     app.jinja_env.globals['known_names'] = prop_defs

@@ -1,0 +1,40 @@
+{% extends 'layout.html' %}
+
+{% block h1 -%}
+  Sugestii
+{%- endblock %}
+
+{% block content %}
+
+<div class="row">
+  <div class="span1"></div>
+  <div class="span10">
+    <table>
+
+      <thead>
+        <th>Nume</th>
+        <th>Câmp</th>
+        <th>Valoare</th>
+        <th>Autor</th>
+        <th>Dată</th>
+      </thead>
+
+      <tbody>
+      {% for s in suggestions %}
+        {% set person = s.person %}
+        <tr>
+          {% set url = url_for('webpages.person', person_id=person.id) %}
+          <td><a href="{{ url }}">{{ person['name'] }}</a></td>
+          <td>{{ s.name }}</td>
+          <td>{{ s.value }}</td>
+          <td>{# {{ s.user.name }} #}</td>
+          <td>{{ s.date }}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+
+    </table>
+  </div>
+</div>
+
+{% endblock %}
