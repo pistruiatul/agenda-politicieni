@@ -35,9 +35,11 @@
           </td>
           <td>{{ s.date }}</td>
           <td class="action">
-            {% set url = url_for('webpages.suggestion_accept', id=s.id) %}
+            {% set url = url_for('webpages.decision',
+                                 suggestion_id=s.id, decision='accept') %}
             <a class="btn small success" href="{{ url }}">aprobă</a>
-            {% set url = url_for('webpages.suggestion_reject', id=s.id) %}
+            {% set url = url_for('webpages.decision',
+                                 suggestion_id=s.id, decision='reject') %}
             <a class="btn small danger" href="{{ url }}">șterge</a>
           </td>
         </tr>

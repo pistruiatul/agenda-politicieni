@@ -34,7 +34,7 @@ class Property(db.Model):
 class Suggestion(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
-    user = db.relationship('User',
+    user = db.relationship('User', primaryjoin=(user_id==User.id),
         backref=db.backref('suggestions', lazy='dynamic'))
     person_id = db.Column(db.Integer, db.ForeignKey('person.id'))
     person = db.relationship('Person',
@@ -42,6 +42,10 @@ class Suggestion(db.Model):
     name = db.Column(db.String(30))
     value = db.Column(db.Text())
     date = db.Column(db.DateTime(timezone=True))
+    admin_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    admin = db.relationship('User', primaryjoin=(admin_id==User.id),
+        backref=db.backref('decisions', lazy='dynamic'))
+    decision = db.Column(db.String(10))
 
 
 def get_persons():
@@ -58,8 +62,6 @@ def get_persons():
 
 def save_suggestion(user, person_id, name, value):
     person = Person.query.get_or_404(person_id)
-    log.info('New suggestion from %r: name=%r, value=%r',
-             user, name, value)
     suggestion = Suggestion(user=user,
                             person=person,
                             name=name,
@@ -67,6 +69,34 @@ def save_suggestion(user, person_id, name, value):
                             date=datetime.utcnow())
     db.session.add(suggestion)
     db.session.commit()
+
+    log.info('New suggestion %d from %r: name=%r, value=%r',
+             suggestion.id, user, name, value)
+
+    return suggestion
+
+
+def decision(suggestion_id, admin, decision):
+    suggestion = Suggestion.query.get(suggestion_id)
+
+    if decision == 'accept':
+        person = suggestion.person
+        value = suggestion.value
+        prop = person.properties.filter_by(name=suggestion.name).first()
+        if prop is None:
+            prop = Property(person=person, name=suggestion.name)
+        prop.value = suggestion.value
+        db.session.add(prop)
+
+    suggestion.admin = admin
+    suggestion.decision = decision
+
+    db.session.add(suggestion)
+    db.session.commit()
+
+    log.info('Suggestion %d decision: %s by %r',
+             suggestion_id, decision, admin.openid_url)
+
     return suggestion
 
 

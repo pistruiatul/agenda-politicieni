@@ -29,7 +29,7 @@ def person(person_id):
     person = database.Person.query.get_or_404(person_id)
     prop_map = dict((p.name, p.value) for p in person.properties.all())
     suggestions = [{'name': s.name, 'value': s.value, 'date': s.date}
-                   for s in person.suggestions.all()]
+                   for s in person.suggestions.filter_by(decision=None)]
     return flask.render_template('person.html',
                                  person=person,
                                  prop_map=prop_map,
@@ -66,24 +66,19 @@ def suggest(person_id):
 @auth.require_admin
 def suggestions():
     return flask.render_template('suggestions.html',
-            suggestions=database.Suggestion.query.all())
+            suggestions=database.Suggestion.query.filter_by(decision=None))
 
 
-@webpages.route('/suggestions/<int:id>/accept', methods=['POST'])
-@auth.require_admin
-def suggestion_accept(id):
-    suggestion = database.Suggestion.query.get(id)
-    flask.flash(u'Sugestie aprobată: %s la %s' %
-                (prop_defs[suggestion.name], suggestion.person.name))
-    return flask.redirect(flask.url_for('webpages.suggestions'))
-
-
-@webpages.route('/suggestions/<int:id>/reject', methods=['POST'])
-@auth.require_admin
-def suggestion_reject(id):
-    suggestion = database.Suggestion.query.get(id)
-    flask.flash(u'Sugestie ștearsă: %s la %s' %
-                (prop_defs[suggestion.name], suggestion.person.name))
+@webpages.route('/suggestions/<int:suggestion_id>/accept',
+                methods=['POST'], defaults={'decision': 'accept'})
+@webpages.route('/suggestions/<int:suggestion_id>/reject',
+                methods=['POST'], defaults={'decision': 'reject'})
+def decision(suggestion_id, decision):
+    suggestion = database.decision(suggestion_id, flask.g.user, decision)
+    decision_label = {'accept': u"aprobată", 'reject': u"ștearsă"}[decision]
+    flask.flash(u'Sugestie %s: %s la %s' % (decision_label,
+                                            prop_defs[suggestion.name],
+                                            suggestion.person.name))
     return flask.redirect(flask.url_for('webpages.suggestions'))
 
 
