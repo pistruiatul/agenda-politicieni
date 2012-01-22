@@ -1,9 +1,12 @@
+import os.path
 from fabric.api import env
 from fabric.api import local, run, cd
 from fabric.contrib.files import exists
+from fabric.operations import get
 
 
 REMOTE_REPO = '/var/local/agenda'
+LOCAL_REPO = os.path.dirname(__file__)
 
 
 def get_git_remote():
@@ -60,3 +63,10 @@ def restart():
 def deploy():
     install()
     restart()
+
+
+def backup():
+    from datetime import datetime
+    filename = datetime.now().strftime('%Y-%m-%d-%H-%M') + '.db'
+    local_path = os.path.join(LOCAL_REPO, 'backup', filename)
+    get('%(var)s/agenda.db' % paths, local_path)
