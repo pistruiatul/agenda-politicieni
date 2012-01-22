@@ -32,6 +32,16 @@
       </div>
     </div>
 
+    {% if is_admin(g.user) %}
+    <div class="clearfix">
+      <label for="frm-auto-approve">Aprobare automată</label>
+      <div class="input">
+        <input type="checkbox" name="auto-approve"
+               id="frm-auto-approve" checked>
+      </div>
+    </div>
+    {% endif %}
+
     <div class="clearfix">
       <div class="input">
         <input type="submit" class="btn primary" value="Trimite">
