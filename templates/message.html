@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<div class="row">
+
+  <div class="span10 offset2">
+  {% for message in errors %}
+    <p class="alert-message error">{{ message }}</p>
+  {% endfor %}
+  </div>
+
+</div>
+
+{% endblock %}

@@ -1,5 +1,6 @@
 # encoding: utf-8
 import os.path
+from functools import wraps
 import flask
 from flaskext.openid import OpenID, COMMON_PROVIDERS
 import database
@@ -41,6 +42,25 @@ def logout():
     flask.session.pop('openid_url', None)
     flask.flash(u"Ați fost dezautentificat.")
     return flask.redirect(oid.get_next_url())
+
+
+def is_admin(user):
+    if user is None:
+        return False
+    admins = flask.current_app.config.get('ADMIN_OPENIDS', [])
+    return (user.openid_url in admins)
+
+
+def require_admin(func):
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        if not is_admin(flask.g.user):
+            msg = u"Pagină rezervată administratorilor"
+            return flask.render_template('message.html', errors=[msg])
+
+        return func(*args, **kwargs)
+
+    return wrapper
 
 
 def init_app(app):
