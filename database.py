@@ -70,15 +70,13 @@ def migrate_properties_to_content():
     db.session.commit()
 
 
-def import_senators():
-    data_path = os.path.join(os.path.dirname(__file__), 'data')
-    senators_path = os.path.join(data_path, 'senatori_email.json')
+def import_json(json_path):
     now = datetime.now()
 
-    with open(senators_path, 'rb') as f:
-        senatori = json.load(f)
+    with open(json_path, 'rb') as f:
+        people_data = json.load(f)
 
-    for person_data in senatori:
+    for person_data in people_data:
         found_persons = Person.query.filter_by(name=person_data['name']).all()
         if found_persons:
             assert len(found_persons) == 1
@@ -87,13 +85,16 @@ def import_senators():
         else:
             person = Person(name=person_data['name'])
             db.session.add(person)
+            log.info('New person %r, id=%d', person_data['name'], person.id)
 
         emails = person_data['emails']
         if emails:
             content = {'email': emails}
-            version = ContentVersion(person=person, time=now)
-            version.content = json.dumps(content)
-            db.session.add(version)
+            if content != person.get_content():
+                version = ContentVersion(person=person, time=now)
+                version.content = json.dumps(content)
+                db.session.add(version)
+                log.info('Content update for person id=%d', person.id)
 
     db.session.commit()
 
