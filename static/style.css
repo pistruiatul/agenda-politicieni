@@ -40,3 +40,24 @@ a.email {
     font-size: 85%;
     color: #888;
 }
+
+.flex-value {
+    position: relative;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.del-value img {
+    vertical-align: middle;
+}
+
+.add-value {
+    display: block;
+    position: absolute;
+    bottom: 17px;
+    right: 20px;
+}
+
+.add-value img {
+    display: block;
+}

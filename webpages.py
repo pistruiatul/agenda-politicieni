@@ -38,9 +38,11 @@ def person(person_id):
                                  person_content=person.get_content())
 
 
-@webpages.route('/person/<int:person_id>/suggest', methods=['GET', 'POST'])
-def suggest(person_id):
+@webpages.route('/person/<int:person_id>/edit', methods=['GET', 'POST'])
+def edit(person_id):
     errors = []
+    person = database.Person.query.get_or_404(person_id)
+    content = person.get_content()
 
     user = flask.g.user
     if user is None:
@@ -48,15 +50,27 @@ def suggest(person_id):
 
     if flask.request.method == 'POST':
         form = flask.request.form
-        name = form.get('name')
-        if name not in prop_defs:
-            flask.abort(400)
-        value = form.get('value')
-        # TODO save something
+        new_content = {}
+        for field_name in prop_defs:
+            values = [v.strip() for v in form.getlist(field_name) if v.strip()]
+            if values:
+                new_content[field_name] = values
 
-    return flask.render_template('suggest.html',
-            person=database.Person.query.get_or_404(person_id),
-            errors=errors)
+        if new_content != content:
+            person.save_content_version(new_content, user)
+            flask.flash(u"Conținutul a fost salvat")
+
+        else:
+            flask.flash(u"Conținutul este neschimbat")
+
+        url = flask.url_for('webpages.person', person_id=person.id)
+        return flask.redirect(url)
+
+    person = database.Person.query.get_or_404(person_id)
+    return flask.render_template('edit.html',
+                                 person=person,
+                                 person_content=person.get_content(),
+                                 errors=errors)
 
 
 def init_app(app):

@@ -7,8 +7,7 @@
 {% block content %}
 
 <div class="row">
-  <div class="span1"></div>
-  <div class="span10">
+  <div class="span12">
 
     <dl>
     {%- for name, values in person_content.items()|sort %}
@@ -23,8 +22,11 @@
     {% endfor -%}
     </dl>
 
-    {% set url = url_for('webpages.suggest', person_id=person.id) %}
-    <a class="btn primary" href="{{ url }}">Propune o modificare</a>
+  </div>
+  <div class="span2">
+
+    {% set url = url_for('webpages.edit', person_id=person.id) %}
+    <a class="btn primary" href="{{ url }}">Modificare</a>
 
   </div>
 </div>

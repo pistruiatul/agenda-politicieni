@@ -1,0 +1,71 @@
+{% extends 'layout.html' %}
+
+{% block h1 -%}
+  Editare &mdash; {{ person.name }}
+{%- endblock %}
+
+{% block content %}
+
+<div class="row">
+
+  {% for message in errors %}
+    <p class="alert-message error">{{ message }}</p>
+  {% endfor %}
+
+</div>
+<div class="row">
+  <div class="span8 offset2">
+
+    <form method="post">
+    {% set plus_png_url = url_for('static', filename='plus.png') %}
+    {% set minus_png_url = url_for('static', filename='minus.png') %}
+
+    {% for prop_name, label in known_names.items() %}
+      <div class="clearfix flex-value">
+
+        <a class="add-value" href="#" field-name="{{ prop_name }}">
+          <img src="{{ plus_png_url }}">
+        </a>
+
+        <label>{{ label }}</label>
+
+        {% for value in person_content[prop_name] %}
+          <div class="input">
+            <input name="{{ prop_name }}" value="{{ value }}">
+            <a class="del-value" href="#"><img src="{{ minus_png_url }}"></a>
+          </div>
+        {% endfor %}
+
+      </div>
+    {% endfor %}
+
+      <div class="clearfix">
+        <div class="input">
+          <input type="submit" class="btn primary" value="Trimite">
+          {% set url = url_for('webpages.person', person_id=person.id) %}
+          <a class="btn" href="{{ url }}">Înapoi</a>
+        </div>
+      </div>
+
+    </form>
+
+  </div>
+</div>
+
+<script>
+$(function() {
+    $('.add-value').click(function(evt) {
+        evt.preventDefault();
+        var flex_parent = $(this).parent('.flex-value');
+        var new_div = $('<div class="input">').appendTo(flex_parent);
+        new_div.append($('<input>').attr('name', $(this).attr('field-name')));
+    });
+
+    $('.del-value').click(function(evt) {
+        var box_parent = $(this).parent('div.input');
+        box_parent.remove();
+    });
+});
+</script>
+
+{% endblock %}

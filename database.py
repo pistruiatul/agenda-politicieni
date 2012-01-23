@@ -25,6 +25,13 @@ class Person(db.Model):
         version = self.versions.order_by(ContentVersion.time.desc()).first()
         return {} if version is None else json.loads(version.content)
 
+    def save_content_version(self, new_content, user):
+        now = datetime.now()
+        version = ContentVersion(person=self, user=user, time=now)
+        version.content = json.dumps(new_content)
+        db.session.add(version)
+        db.session.commit()
+
 
 class ContentVersion(db.Model):
     id = db.Column(db.Integer, primary_key=True)
