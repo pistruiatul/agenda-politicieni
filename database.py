@@ -50,7 +50,7 @@ def get_persons():
     results = {}
 
     for person in Person.query.all():
-        results[person.id] = person_data = {'name': person.name}
+        results[person.id] = person.get_content()
 
         for prop in person.properties.all():
             person_data[prop.name] = prop.value
@@ -61,6 +61,7 @@ def get_persons():
 def import_fixture(flush=True):
     data_path = os.path.join(os.path.dirname(__file__), 'data')
     fixture_path = os.path.join(data_path, 'fixture.json')
+    now = datetime.now()
 
     if flush:
         db.drop_all()
@@ -74,9 +75,13 @@ def import_fixture(flush=True):
         person = Person(id=person_data.pop('id'), name=person_data.pop('name'))
         db.session.add(person)
 
+        content = {}
         for key in person_data:
-            prop = Property(person=person, name=key, value=person_data[key])
-            db.session.add(prop)
+            content.setdefault(key, []).append(person_data[key])
+
+        version = ContentVersion(person=person, time=now)
+        version.content = json.dumps(content)
+        db.session.add(version)
 
     db.session.commit()
 
@@ -84,16 +89,21 @@ def import_fixture(flush=True):
 def import_senators():
     data_path = os.path.join(os.path.dirname(__file__), 'data')
     senators_path = os.path.join(data_path, 'senatori_email.json')
+    now = datetime.now()
+
     with open(senators_path, 'rb') as f:
         senatori = json.load(f)
 
     for person_data in senatori:
         person = Person(name=person_data['name'])
         db.session.add(person)
+
         emails = person_data['emails']
         if emails:
-            prop = Property(person=person, name='email', value=emails[0])
-            db.session.add(prop)
+            content = {'email': emails}
+            version = ContentVersion(person=person, time=now)
+            version.content = json.dumps(content)
+            db.session.add(version)
 
     db.session.commit()
 
