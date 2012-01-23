@@ -46,7 +46,8 @@ def edit(person_id):
 
     user = flask.g.user
     if user is None:
-        errors.append(u"Vă rugăm să vă autentificați")
+        msg = u"Vă rugăm să vă autentificați"
+        return flask.render_template('message.html', errors=[msg])
 
     if flask.request.method == 'POST':
         form = flask.request.form
