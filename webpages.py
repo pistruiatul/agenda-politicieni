@@ -33,10 +33,9 @@ def download():
 @webpages.route('/person/<int:person_id>')
 def person(person_id):
     person = database.Person.query.get_or_404(person_id)
-    prop_map = dict((p.name, p.value) for p in person.properties.all())
     return flask.render_template('person.html',
                                  person=person,
-                                 prop_map=prop_map)
+                                 person_content=person.get_content())
 
 
 @webpages.route('/person/<int:person_id>/suggest', methods=['GET', 'POST'])

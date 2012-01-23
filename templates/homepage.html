@@ -23,7 +23,7 @@
         <tr>
           {% set url = url_for('webpages.person', person_id=person_id) %}
           <td><a href="{{ url }}">{{ person['name'] }}</a></td>
-          <td>{{ person['email'] }}</td>
+          <td>{{ person['email'] | join(', ') }}</td>
         </tr>
       {% endfor %}
 

@@ -11,9 +11,15 @@
   <div class="span10">
 
     <dl>
-    {%- for name, value in prop_map.items()|sort %}
+    {%- for name, values in person_content.items()|sort %}
+
       <dt>{{ known_names[name] }}</dt>
-      <dd>{{ value }}</dd>
+      {%- for value in values %}
+
+        <dd>{{ value }}</dd>
+
+      {% endfor -%}
+
     {% endfor -%}
     </dl>
 
