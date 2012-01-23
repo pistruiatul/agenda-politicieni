@@ -19,13 +19,6 @@
     <div class="container">
       {% set url = url_for('webpages.home') %}
       <a class="brand" href="{{ url }}">Agenda de parlamentari</a>
-      <ul class="nav">
-        {% if is_admin(g.user) %}
-          {% set url = url_for('webpages.suggestions') %}
-          {% set count = suggestions_count() %}
-          <li><a href="{{ url }}">Listă de sugestii ({{ count }})</a></li>
-        {% endif %}
-      </ul>
       <div class="pull-right">
       {% if g.user %}
         <p class="logged-in">

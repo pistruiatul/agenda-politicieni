@@ -23,21 +23,4 @@
   </div>
 </div>
 
-{% if suggestions %}
-<div class="row">
-  <div class="span1"></div>
-  <div class="span10">
-
-    <h4>Sugestii</h4>
-
-    <ul>
-    {%- for s in suggestions %}
-      <li>{{ known_names[s.name] }}: {{ s.value }} ({{ s.date|datetime }})</li>
-    {% endfor -%}
-    </ul>
-
-  </div>
-</div>
-{% endif %}
-
 {% endblock %}

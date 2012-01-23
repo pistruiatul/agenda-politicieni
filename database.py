@@ -60,46 +60,6 @@ def get_persons():
     return results
 
 
-def save_suggestion(user, person_id, name, value):
-    person = Person.query.get_or_404(person_id)
-    suggestion = Suggestion(user=user,
-                            person=person,
-                            name=name,
-                            value=value,
-                            date=datetime.utcnow())
-    db.session.add(suggestion)
-    db.session.commit()
-
-    log.info('New suggestion %d from %r: name=%r, value=%r',
-             suggestion.id, user, name, value)
-
-    return suggestion
-
-
-def decision(suggestion_id, admin, decision):
-    suggestion = Suggestion.query.get(suggestion_id)
-
-    if decision == 'accept':
-        person = suggestion.person
-        value = suggestion.value
-        prop = person.properties.filter_by(name=suggestion.name).first()
-        if prop is None:
-            prop = Property(person=person, name=suggestion.name)
-        prop.value = suggestion.value
-        db.session.add(prop)
-
-    suggestion.admin = admin
-    suggestion.decision = decision
-
-    db.session.add(suggestion)
-    db.session.commit()
-
-    log.info('Suggestion %d decision: %s by %r',
-             suggestion_id, decision, admin.openid_url)
-
-    return suggestion
-
-
 def import_fixture(flush=True):
     data_path = os.path.join(os.path.dirname(__file__), 'data')
     fixture_path = os.path.join(data_path, 'fixture.json')
