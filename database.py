@@ -58,6 +58,23 @@ def get_persons():
     return results
 
 
+def migrate_properties_to_content():
+    now = datetime.now()
+
+    for person in Person.query.all():
+        content = {}
+
+        for prop in person.properties.all():
+            content.setdefault(prop.name, []).append(prop.value)
+            db.session.delete(prop)
+
+        version = ContentVersion(person=person, time=now)
+        version.content = json.dumps(content)
+        db.session.add(version)
+
+    db.session.commit()
+
+
 def import_fixture(flush=True):
     data_path = os.path.join(os.path.dirname(__file__), 'data')
     fixture_path = os.path.join(data_path, 'fixture.json')
