@@ -8,14 +8,37 @@ name_pattern = re.compile(r'<td class="cale2".*?&gt; (?P<name>[^;]+?)</td>')
 phone_pattern = re.compile(r'<li>(?P<phone>Telefon[^<]*)')
 
 
+blacklist = ['webmaster@cdep.ro']
+
+
+def filter_mails(mails):
+    out = []
+    for mail in mails:
+        if mail in out:
+            continue
+        if mail in blacklist:
+            continue
+        out.append(mail)
+    return out
+
+
 def extract_emails(html_dir):
     for name in os.listdir(html_dir):
+        if not name.startswith('parlamentar_'):
+            continue
+
         with open(os.path.join(html_dir, name), 'rb') as f:
             html = f.read()
 
-        mail_match = mail_pattern.search(html)
-        assert mail_match is not None
-        email = mail_match.group('email')
+        offset = 0
+        emails = []
+        while True:
+            mail_match = mail_pattern.search(html, offset)
+            if mail_match is None:
+                break
+            email = mail_match.group('email')
+            emails.append(email)
+            offset = mail_match.end()
 
         name_match = name_pattern.search(html)
         assert name_match is not None
@@ -26,7 +49,7 @@ def extract_emails(html_dir):
         #    print phone_match.group('phone')
 
         yield {
-            'email': email,
+            'emails': filter_mails(emails),
             'name': name.decode('latin2'),
         }
 

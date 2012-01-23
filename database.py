@@ -70,34 +70,6 @@ def migrate_properties_to_content():
     db.session.commit()
 
 
-def import_fixture(flush=True):
-    data_path = os.path.join(os.path.dirname(__file__), 'data')
-    fixture_path = os.path.join(data_path, 'fixture.json')
-    now = datetime.now()
-
-    if flush:
-        db.drop_all()
-        db.create_all()
-
-    with open(fixture_path, 'rb') as f:
-        fixture = json.load(f)
-
-    for person_data in fixture:
-
-        person = Person(id=person_data.pop('id'), name=person_data.pop('name'))
-        db.session.add(person)
-
-        content = {}
-        for key in person_data:
-            content.setdefault(key, []).append(person_data[key])
-
-        version = ContentVersion(person=person, time=now)
-        version.content = json.dumps(content)
-        db.session.add(version)
-
-    db.session.commit()
-
-
 def import_senators():
     data_path = os.path.join(os.path.dirname(__file__), 'data')
     senators_path = os.path.join(data_path, 'senatori_email.json')
