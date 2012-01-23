@@ -123,6 +123,23 @@ def import_fixture(flush=True):
     db.session.commit()
 
 
+def import_senators():
+    data_path = os.path.join(os.path.dirname(__file__), 'data')
+    senators_path = os.path.join(data_path, 'senatori_email.json')
+    with open(senators_path, 'rb') as f:
+        senatori = json.load(f)
+
+    for person_data in senatori:
+        person = Person(name=person_data['name'])
+        db.session.add(person)
+        emails = person_data['emails']
+        if emails:
+            prop = Property(person=person, name='email', value=emails[0])
+            db.session.add(prop)
+
+    db.session.commit()
+
+
 def get_user(openid_url):
     return User.query.filter_by(openid_url=openid_url).first()
 
