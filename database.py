@@ -21,6 +21,21 @@ class Person(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.Text())
 
+    def get_content(self):
+        version = self.versions.order_by(ContentVersion.time.desc()).first()
+        return {} if version is None else json.loads(version.content)
+
+
+class ContentVersion(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    person_id = db.Column(db.Integer, db.ForeignKey('person.id'))
+    person = db.relationship('Person',
+        backref=db.backref('versions', lazy='dynamic'))
+    content = db.Column(db.LargeBinary)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    user = db.relationship('User')
+    time = db.Column(db.DateTime)
+
 
 class Property(db.Model):
     id = db.Column(db.Integer, primary_key=True)
