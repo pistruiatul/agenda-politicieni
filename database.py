@@ -37,15 +37,6 @@ class ContentVersion(db.Model):
     time = db.Column(db.DateTime)
 
 
-class Property(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    person_id = db.Column(db.Integer, db.ForeignKey('person.id'))
-    person = db.relationship('Person',
-        backref=db.backref('properties', lazy='dynamic'))
-    name = db.Column(db.String(30))
-    value = db.Column(db.Text())
-
-
 def get_persons():
     results = {}
 
