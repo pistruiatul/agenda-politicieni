@@ -107,8 +107,14 @@ def import_senators():
         senatori = json.load(f)
 
     for person_data in senatori:
-        person = Person(name=person_data['name'])
-        db.session.add(person)
+        found_persons = Person.query.filter_by(name=person_data['name']).all()
+        if found_persons:
+            assert len(found_persons) == 1
+            person = found_persons[0]
+
+        else:
+            person = Person(name=person_data['name'])
+            db.session.add(person)
 
         emails = person_data['emails']
         if emails:
