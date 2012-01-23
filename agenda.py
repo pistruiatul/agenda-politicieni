@@ -43,7 +43,7 @@ def create_app():
 def main():
     app = create_app()
 
-    suggestion_log_path = os.path.join(app.instance_path, 'suggestions.log')
+    suggestion_log_path = os.path.join(app.instance_path, 'database.log')
     suggestion_handler = logging.FileHandler(suggestion_log_path)
     database.log.addHandler(suggestion_handler)
 

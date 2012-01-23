@@ -1,5 +1,6 @@
 import os.path
 from datetime import datetime
+from collections import defaultdict
 from flask import json
 from flaskext.sqlalchemy import SQLAlchemy
 import logging
@@ -31,6 +32,8 @@ class Person(db.Model):
         version.content = json.dumps(new_content)
         db.session.add(version)
         db.session.commit()
+        log.info("Content update for person id=%d version_id=%d",
+                 self.id, version.id)
 
 
 class ContentVersion(db.Model):
@@ -55,6 +58,7 @@ def get_persons():
 
 def import_json(json_path):
     now = datetime.now()
+    count = defaultdict(int)
 
     with open(json_path, 'rb') as f:
         people_data = json.load(f)
@@ -69,6 +73,7 @@ def import_json(json_path):
             person = Person(name=person_data['name'])
             db.session.add(person)
             log.info('New person %r, id=%d', person_data['name'], person.id)
+            count['new-person'] += 1
 
         emails = person_data['emails']
         if emails:
@@ -78,8 +83,11 @@ def import_json(json_path):
                 version.content = json.dumps(content)
                 db.session.add(version)
                 log.info('Content update for person id=%d', person.id)
+                count['new-version'] += 1
 
     db.session.commit()
+    if count:
+        log.info("JSON import from %r completed; %r", json_path, dict(count))
 
 
 def get_user(openid_url):
@@ -90,11 +98,13 @@ def get_update_user(openid_url, name, email):
     user = get_user(openid_url)
     if user is None:
         user = User(openid_url=openid_url)
+        log.info("New user, openid_url=%r", openid_url)
 
     if (name, email) != (user.name, user.email):
         user.name = name
         user.email = email
         db.session.add(user)
         db.session.commit()
+        log.info("User data modified for openid_url=%r", openid_url)
 
     return user
