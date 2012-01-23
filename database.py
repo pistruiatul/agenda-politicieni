@@ -31,23 +31,6 @@ class Property(db.Model):
     value = db.Column(db.Text())
 
 
-class Suggestion(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
-    user = db.relationship('User', primaryjoin=(user_id==User.id),
-        backref=db.backref('suggestions', lazy='dynamic'))
-    person_id = db.Column(db.Integer, db.ForeignKey('person.id'))
-    person = db.relationship('Person',
-        backref=db.backref('suggestions', lazy='dynamic'))
-    name = db.Column(db.String(30))
-    value = db.Column(db.Text())
-    date = db.Column(db.DateTime(timezone=True))
-    admin_id = db.Column(db.Integer, db.ForeignKey('user.id'))
-    admin = db.relationship('User', primaryjoin=(admin_id==User.id),
-        backref=db.backref('decisions', lazy='dynamic'))
-    decision = db.Column(db.String(10))
-
-
 def get_persons():
     results = {}
 
