@@ -28,6 +28,7 @@ def stats():
     edits_today = ContentVersion.query.filter(ContentVersion.time > today_0)
     data = {
         'edits_today': edits_today.count(),
+        'users': database.User.query.count(),
     }
     return flask.render_template('stats.html', data=data)
 
