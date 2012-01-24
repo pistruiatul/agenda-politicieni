@@ -27,8 +27,8 @@ class Person(db.Model):
         return {} if version is None else json.loads(version.content)
 
     def save_content_version(self, new_content, user):
-        now = datetime.now()
-        version = ContentVersion(person=self, user=user, time=now)
+        utcnow = datetime.utcnow()
+        version = ContentVersion(person=self, user=user, time=utcnow)
         version.content = json.dumps(new_content)
         db.session.add(version)
         db.session.commit()
@@ -57,7 +57,7 @@ def get_persons():
 
 
 def import_json(json_path):
-    now = datetime.now()
+    utcnow = datetime.utcnow()
     count = defaultdict(int)
 
     with open(json_path, 'rb') as f:
@@ -79,7 +79,7 @@ def import_json(json_path):
         if emails:
             content = {'email': emails}
             if content != person.get_content():
-                version = ContentVersion(person=person, time=now)
+                version = ContentVersion(person=person, time=utcnow)
                 version.content = json.dumps(content)
                 db.session.add(version)
                 log.info('Content update for person id=%d', person.id)
