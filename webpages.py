@@ -19,6 +19,19 @@ def test_error():
     raise ValueError("Just checking.")
 
 
+@webpages.route('/stats')
+@auth.require_admin
+def stats():
+    from datetime import datetime, time
+    ContentVersion = database.ContentVersion
+    today_0 = datetime.combine(datetime.utcnow(), time())
+    edits_today = ContentVersion.query.filter(ContentVersion.time > today_0)
+    data = {
+        'edits_today': edits_today.count(),
+    }
+    return flask.render_template('stats.html', data=data)
+
+
 @webpages.route('/')
 def home():
     return flask.render_template('homepage.html',
