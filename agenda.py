@@ -43,8 +43,12 @@ def create_app():
 def main():
     app = create_app()
 
+    log_fmt = logging.Formatter("[%(asctime)s] %(module)s "
+                                "%(levelname)s %(message)s")
+
     suggestion_log_path = os.path.join(app.instance_path, 'database.log')
     suggestion_handler = logging.FileHandler(suggestion_log_path)
+    suggestion_handler.setFormatter(log_fmt)
     database.log.addHandler(suggestion_handler)
 
     import sys
@@ -63,6 +67,7 @@ def main():
         from flup.server.fcgi import WSGIServer
         error_log_path = os.path.join(app.instance_path, 'error.log')
         error_handler = logging.FileHandler(error_log_path)
+        error_handler.setFormatter(log_fmt)
         error_handler.setLevel(logging.ERROR)
         logging.getLogger().addHandler(error_handler)
         sock_path = os.path.join(app.instance_path, 'fcgi.sock')
