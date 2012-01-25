@@ -44,6 +44,18 @@ def logout():
     return flask.redirect(oid.get_next_url())
 
 
+def require_login(func):
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        if flask.g.user is None:
+            msg = u"Vă rugăm să vă autentificați"
+            return flask.render_template('message.html', errors=[msg])
+
+        return func(*args, **kwargs)
+
+    return wrapper
+
+
 def is_admin(user):
     if user is None:
         return False

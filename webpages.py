@@ -53,15 +53,11 @@ def person(person_id):
 
 
 @webpages.route('/person/<int:person_id>/edit', methods=['GET', 'POST'])
+@auth.require_login
 def edit(person_id):
-    errors = []
     person = database.Person.query.get_or_404(person_id)
     content = person.get_content()
-
     user = flask.g.user
-    if user is None:
-        msg = u"Vă rugăm să vă autentificați"
-        return flask.render_template('message.html', errors=[msg])
 
     if flask.request.method == 'POST':
         form = flask.request.form
@@ -84,8 +80,7 @@ def edit(person_id):
     person = database.Person.query.get_or_404(person_id)
     return flask.render_template('edit.html',
                                  person=person,
-                                 person_content=person.get_content(),
-                                 errors=errors)
+                                 person_content=person.get_content())
 
 
 def init_app(app):
