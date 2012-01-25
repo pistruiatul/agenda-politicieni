@@ -1,0 +1,56 @@
+{% extends 'layout.html' %}
+
+{% block h1 -%}
+  Comparație a versiunilor &mdash; {{ person.name }}
+{%- endblock %}
+
+{% block content %}
+
+{% set admin_view = is_admin(g.user) %}
+
+<div class="row">
+  <div class="span5 offset1">
+
+    <h3>
+      {{ version_a.time | datetime }}
+      {% if admin_view %}{{ version_a.user.name }}{% endif %}
+    </h3>
+
+    <table>
+    {%- for key, values in version_a.get_content().items() %}
+      {%- for value in values %}
+
+        <tr>
+          <th>{{ key }}</th>
+          <td>{{ value }}</td>
+        </tr>
+
+      {% endfor -%}
+    {% endfor -%}
+    </table>
+
+  </div>
+  <div class="span5 offset1">
+
+    <h3>
+      {{ version_b.time | datetime }}
+      {% if admin_view %}{{ version_b.user.name }}{% endif %}
+    </h3>
+
+    <table>
+    {%- for key, values in version_b.get_content().items() %}
+      {%- for value in values %}
+
+        <tr>
+          <th>{{ key }}</th>
+          <td>{{ value }}</td>
+        </tr>
+
+      {% endfor -%}
+    {% endfor -%}
+    </table>
+
+  </div>
+</div>
+
+{% endblock %}

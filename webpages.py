@@ -117,6 +117,19 @@ def history(person_id):
     }
 
 
+@webpages.route('/person/<int:person_id>/diff/<int:a_id>...<int:b_id>')
+@with_template('diff.html')
+def diff(person_id, a_id, b_id):
+    person = database.Person.query.get_or_404(person_id)
+    a = person.versions.filter_by(id=a_id).first_or_404()
+    b = person.versions.filter_by(id=b_id).first_or_404()
+    return {
+        'person': person,
+        'version_a': a,
+        'version_b': b,
+    }
+
+
 def init_app(app):
     app.register_blueprint(webpages)
     app.jinja_env.globals['known_names'] = prop_defs

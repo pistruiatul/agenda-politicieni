@@ -24,7 +24,7 @@ class Person(db.Model):
 
     def get_content(self):
         version = self.versions.order_by(ContentVersion.time.desc()).first()
-        return {} if version is None else json.loads(version.content)
+        return {} if version is None else version.get_content()
 
     def save_content_version(self, new_content, user):
         utcnow = datetime.utcnow()
@@ -45,6 +45,9 @@ class ContentVersion(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     user = db.relationship('User')
     time = db.Column(db.DateTime)
+
+    def get_content(self):
+        return json.loads(self.content)
 
 
 def get_persons():
