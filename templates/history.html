@@ -15,16 +15,30 @@
       <thead>
 
         <th>Zi, oră</th>
+
         {% if admin_view %}<th>Editor</th>{% endif %}
 
+        <th></th>
+
       </thead>
-      {%- for version in versions %}
+      {%- for n in range(versions | count) %}
+        {% set version = versions[n] %}
+        {% set next_version = versions[n+1] %}
         <tr>
 
           <td>{{ version.time|datetime }}</td>
+
           {% if admin_view %}
             <td>{{ version.user.name }}</td>
           {% endif %}
+
+          <td>
+            {%- if next_version -%}
+              {% set diff_url = url_for('webpages.diff', person_id=person.id,
+                                        a_id=version.id, b_id=next_version.id) -%}
+              <a href="{{ diff_url }}">compară</a>
+            {%- endif -%}
+          </td>
 
         </tr>
       {% endfor -%}
