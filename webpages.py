@@ -1,5 +1,6 @@
 # encoding: utf-8
 import os.path
+from functools import wraps
 import flask
 import auth
 import database
@@ -13,6 +14,21 @@ with open(os.path.join(_data_dir, 'prop_defs.json'), 'rb') as f:
 webpages = flask.Blueprint('webpages', __name__)
 
 
+def with_template(template_name):
+    def decorator(func):
+        @wraps(func)
+        def wrapper(*args, **kwargs):
+            result = func(*args, **kwargs)
+            if result is None:
+                result = {}
+            if isinstance(result, (dict,)):
+                return flask.render_template(template_name, **result)
+            else:
+                return result
+        return wrapper
+    return decorator
+
+
 @webpages.route('/test_error')
 @auth.require_admin
 def test_error():
@@ -21,22 +37,24 @@ def test_error():
 
 @webpages.route('/stats')
 @auth.require_admin
+@with_template('stats.html')
 def stats():
     from datetime import datetime, time
     ContentVersion = database.ContentVersion
     today_0 = datetime.combine(datetime.utcnow(), time())
     edits_today = ContentVersion.query.filter(ContentVersion.time > today_0)
-    data = {
-        'edits_today': edits_today.count(),
-        'users': database.User.query.count(),
+    return {
+        'data': {
+            'edits_today': edits_today.count(),
+            'users': database.User.query.count(),
+        },
     }
-    return flask.render_template('stats.html', data=data)
 
 
 @webpages.route('/')
+@with_template('homepage.html')
 def home():
-    return flask.render_template('homepage.html',
-                                 persons=database.get_persons())
+    return {'persons': database.get_persons()}
 
 
 @webpages.route('/download.json')
@@ -45,15 +63,18 @@ def download():
 
 
 @webpages.route('/person/<int:person_id>')
+@with_template('person.html')
 def person(person_id):
     person = database.Person.query.get_or_404(person_id)
-    return flask.render_template('person.html',
-                                 person=person,
-                                 person_content=person.get_content())
+    return {
+        'person': person,
+        'person_content': person.get_content(),
+    }
 
 
 @webpages.route('/person/<int:person_id>/edit', methods=['GET', 'POST'])
 @auth.require_login
+@with_template('edit.html')
 def edit(person_id):
     person = database.Person.query.get_or_404(person_id)
     content = person.get_content()
@@ -78,9 +99,10 @@ def edit(person_id):
         return flask.redirect(url)
 
     person = database.Person.query.get_or_404(person_id)
-    return flask.render_template('edit.html',
-                                 person=person,
-                                 person_content=person.get_content())
+    return {
+        'person': person,
+        'person_content': person.get_content(),
+    }
 
 
 def init_app(app):
