@@ -41,8 +41,8 @@
     <div class="page-header">
       <h1>{% block h1 %}{% endblock %}</h1>
 
-      {% for message in get_flashed_messages() %}
-        <p class="alert-message">{{ message }}</p>
+      {% for category, message in get_flashed_messages(with_categories=True) %}
+        <p class="alert-message {{ category }}">{{ message }}</p>
       {% endfor %}
 
     </div>
