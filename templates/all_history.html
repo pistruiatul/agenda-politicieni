@@ -1,0 +1,46 @@
+{% extends 'layout.html' %}
+
+{% block h1 -%}
+  Istoria generală a modificărilor
+{%- endblock %}
+
+{% block content %}
+
+{% set admin_view = is_admin(g.user) %}
+
+<div class="row">
+  <div class="span8 offset2">
+
+    <table>
+      <thead>
+
+        <th>Zi, oră</th>
+
+        {% if admin_view %}<th>Editor</th>{% endif %}
+
+        <th>Persoană</th>
+
+      </thead>
+      {%- for version in versions %}
+        <tr>
+
+          <td>{{ version.time|datetime }}</td>
+
+          {% if admin_view %}
+            <td>{{ version.user.name }}</td>
+          {% endif %}
+
+          <td>
+            {% set url = url_for('webpages.history',
+                                 person_id=version.person_id) %}
+            <a href="{{ url }}">{{ version.person.name }}</a>
+          </td>
+
+        </tr>
+      {% endfor -%}
+    </table>
+
+  </div>
+</div>
+
+{% endblock %}

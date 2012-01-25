@@ -106,6 +106,15 @@ def edit(person_id):
     }
 
 
+@webpages.route('/history')
+@with_template('all_history.html')
+def all_history():
+    time_desc = database.ContentVersion.time.desc()
+    return {
+        'versions': database.ContentVersion.query.order_by(time_desc).all(),
+    }
+
+
 @webpages.route('/person/<int:person_id>/history')
 @with_template('history.html')
 def history(person_id):
