@@ -48,8 +48,8 @@ def require_login(func):
     @wraps(func)
     def wrapper(*args, **kwargs):
         if flask.g.user is None:
-            msg = u"Vă rugăm să vă autentificați"
-            return flask.render_template('message.html', errors=[msg])
+            flask.flash(u"Vă rugăm să vă autentificați", 'error')
+            return flask.render_template('layout.html')
 
         return func(*args, **kwargs)
 
@@ -67,8 +67,8 @@ def require_admin(func):
     @wraps(func)
     def wrapper(*args, **kwargs):
         if not is_admin(flask.g.user):
-            msg = u"Pagină rezervată administratorilor"
-            return flask.render_template('message.html', errors=[msg])
+            flask.flash(u"Pagină rezervată administratorilor", 'error')
+            return flask.render_template('layout.html')
 
         return func(*args, **kwargs)
 
