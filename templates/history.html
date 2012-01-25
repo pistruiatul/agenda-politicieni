@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+
+{% block h1 -%}
+  Istoria modificărilor &mdash; {{ person.name }}
+{%- endblock %}
+
+{% block content %}
+
+{% set admin_view = is_admin(g.user) %}
+
+<div class="row">
+  <div class="span8 offset2">
+
+    <table>
+      <thead>
+
+        <th>Zi, oră</th>
+        {% if admin_view %}<th>Editor</th>{% endif %}
+
+      </thead>
+      {%- for version in versions %}
+        <tr>
+
+          <td>{{ version.time|datetime }}</td>
+          {% if admin_view %}
+            <td>{{ version.user.name }}</td>
+          {% endif %}
+
+        </tr>
+      {% endfor -%}
+    </table>
+
+  </div>
+</div>
+
+{% endblock %}

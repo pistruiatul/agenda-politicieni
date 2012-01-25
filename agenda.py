@@ -10,6 +10,7 @@ import auth
 
 default_config = {
     'DEBUG': False,
+    'TIMEZONE': 'Europe/Bucharest',
 }
 
 
@@ -29,11 +30,11 @@ def setup_mail_on_error(app):
 
 def create_app():
     app = flask.Flask(__name__, instance_relative_config=True)
-    webpages.init_app(app)
     app.config['SQLALCHEMY_DATABASE_URI'] = (
         'sqlite:///%s/agenda.db' % app.instance_path)
     app.config.update(default_config)
     app.config.from_pyfile('settings.py', silent=True)
+    webpages.init_app(app)
     database.db.init_app(app)
     auth.init_app(app)
     setup_mail_on_error(app)

@@ -1,6 +1,7 @@
 # encoding: utf-8
 import os.path
 from functools import wraps
+from pytz import timezone
 import flask
 import auth
 import database
@@ -105,7 +106,22 @@ def edit(person_id):
     }
 
 
+@webpages.route('/person/<int:person_id>/history')
+@with_template('history.html')
+def history(person_id):
+    person = database.Person.query.get_or_404(person_id)
+    time_desc = database.ContentVersion.time.desc()
+    return {
+        'person': person,
+        'versions': person.versions.order_by(time_desc).all(),
+    }
+
+
 def init_app(app):
     app.register_blueprint(webpages)
     app.jinja_env.globals['known_names'] = prop_defs
-    app.jinja_env.filters['datetime'] = lambda v: v.strftime('%d %b, %H:%M')
+
+    local_timezone = timezone(app.config['TIMEZONE'])
+    def filter_datetime(utc_value, fmt='%d %b, %H:%M'):
+        return local_timezone.fromutc(utc_value).strftime(fmt)
+    app.jinja_env.filters['datetime'] = filter_datetime
