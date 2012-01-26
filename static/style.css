@@ -61,3 +61,9 @@ a.email {
 .add-value img {
     display: block;
 }
+
+.person-listing {
+    -webkit-column-count: 4;
+    -moz-column-count: 4;
+    column-count: 4;
+}

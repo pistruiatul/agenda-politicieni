@@ -7,29 +7,18 @@
 {% block content %}
 
 <div class="row">
-  <div class="span1"></div>
-  <div class="span10">
+  <div class="span14 person-listing">
 
-    <table>
+    <ul class="unstyled">
+    {%- for person in persons %}
 
-      <thead>
-        <th>Nume</th>
-        <th>Email</th>
-      </thead>
+      <li>
+        {% set url = url_for('webpages.person', person_id=person.id) %}
+        <a href="{{ url }}">{{ person.name }}</a>
+      </li>
 
-      <tbody>
-
-      {% for person_id, person in persons.items() %}
-        <tr>
-          {% set url = url_for('webpages.person', person_id=person_id) %}
-          <td><a href="{{ url }}">{{ person['name'] }}</a></td>
-          <td>{{ person['email'] | join(', ') }}</td>
-        </tr>
-      {% endfor %}
-
-      </tbody>
-
-    </table>
+    {% endfor -%}
+    </ul>
 
   </div>
 </div>

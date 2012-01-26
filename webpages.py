@@ -55,7 +55,7 @@ def stats():
 @webpages.route('/')
 @with_template('homepage.html')
 def home():
-    return {'persons': database.get_persons()}
+    return {'persons': database.Person.query.order_by('name').all()}
 
 
 @webpages.route('/download.json')
