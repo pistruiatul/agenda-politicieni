@@ -94,6 +94,17 @@ def import_json(json_path):
         log.info("JSON import from %r completed; %r", json_path, dict(count))
 
 
+def fix_senator_names(json_path):
+    with open(json_path, 'rb') as f:
+        for s in json.load(f):
+            persons = Person.query.filter_by(name=s['inverse_name']).all()
+            assert len(persons) == 1
+            [person] = persons
+            person.name = s['name']
+            db.session.add(person)
+    db.session.commit()
+
+
 def get_user(openid_url):
     return User.query.filter_by(openid_url=openid_url).first()
 
