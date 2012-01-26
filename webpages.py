@@ -2,6 +2,8 @@
 import os.path
 from functools import wraps
 from pytz import timezone
+import cStringIO
+import csv
 import flask
 import auth
 import database
@@ -65,6 +67,25 @@ def download():
         rows = [dict(person.get_content(), id=person.id, name=person.name)
                 for person in database.Person.query.all()]
         return flask.jsonify({'persons': rows})
+
+    elif fmt == 'csv':
+        utf8 = lambda v: unicode(v).encode('utf-8')
+        fields = ['id', 'name'] + sorted(prop_defs.keys())
+        header = dict((k, utf8(v)) for k, v in prop_defs.iteritems())
+        header.update(id='id', name='Nume')
+
+        csvfile = cStringIO.StringIO()
+        csvwriter = csv.DictWriter(csvfile, fields)
+        csvwriter.writerow(header)
+
+        for person in database.Person.query.all():
+            bytes_row = {'id': str(person.id), 'name': utf8(person.name)}
+            for key, value_list in person.get_content().iteritems():
+                bytes_row[key] = '; '.join(utf8(v) for v in value_list)
+
+            csvwriter.writerow(bytes_row)
+
+        return flask.Response(csvfile.getvalue(), mimetype='text/csv')
 
     else:
         flask.abort(404)
