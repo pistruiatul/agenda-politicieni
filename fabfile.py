@@ -67,6 +67,8 @@ def deploy():
 
 def backup():
     from datetime import datetime
-    filename = datetime.now().strftime('%Y-%m-%d-%H-%M') + '.db'
-    local_path = os.path.join(LOCAL_REPO, 'backup', filename)
-    get('%(var)s/agenda.db' % paths, local_path)
+    for name in ['agenda.db', 'database.log']:
+        filename = datetime.now().strftime('%Y-%m-%d-%H-%M') + '-' + name
+        local_path = os.path.join(LOCAL_REPO, 'backup', filename)
+        get('%(var)s/%(name)s' % dict(paths, name=name), local_path)
+        local("gzip '%s'" % local_path)
