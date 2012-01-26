@@ -1,24 +1,28 @@
 [
   {
-    "name": "Albert \u00c1lmos",
+    "inverse_name": "Albert \u00c1lmos",
+    "name": "\u00c1lmos Albert",
     "emails": [
       "albert_almos@yahoo.fr"
     ]
   },
   {
-    "name": "Andrei Florin-Mircea",
+    "inverse_name": "Andrei Florin-Mircea",
+    "name": "Florin-Mircea Andrei",
     "emails": [
       "mircea.andrei@senat.ro"
     ]
   },
   {
-    "name": "Andronescu D. Ecaterina",
+    "inverse_name": "Andronescu D. Ecaterina",
+    "name": "Ecaterina Andronescu",
     "emails": [
       "ecaterina.andronescu@senat.ro"
     ]
   },
   {
-    "name": "Antonescu Gh. George Crin Lauren\u0163iu",
+    "inverse_name": "Antonescu Gh. George Crin Lauren\u0163iu",
+    "name": "George Crin Lauren\u0163iu Antonescu",
     "emails": [
       "berceanu.alexandra@gmail.com",
       "ldinu2905@yahoo.com",
@@ -26,791 +30,924 @@
     ]
   },
   {
-    "name": "Arca\u015f I. Viorel",
+    "inverse_name": "Arca\u015f I. Viorel",
+    "name": "Viorel Arca\u015f",
     "emails": [
       "biroul_senatorial_medias@yahoo.com"
     ]
   },
   {
-    "name": "Ariton Ion",
+    "inverse_name": "Ariton Ion",
+    "name": "Ion Ariton",
     "emails": [
       "ion.ariton@senat.ro"
     ]
   },
   {
-    "name": "Badea Viorel-Riceard",
+    "inverse_name": "Badea Viorel-Riceard",
+    "name": "Viorel-Riceard Badea",
     "emails": [
       "viorel.badea@senat.ro"
     ]
   },
   {
-    "name": "Banias Mircea-Marius",
+    "inverse_name": "Banias Mircea-Marius",
+    "name": "Mircea-Marius Banias",
     "emails": [
       "mircea.banias@senat.ro"
     ]
   },
   {
-    "name": "Bara Ion",
+    "inverse_name": "Bara Ion",
+    "name": "Ion Bara",
     "emails": [
       "Tulcea.ion.bara1@yahoo.com"
     ]
   },
   {
-    "name": "Ba\u015fa Petru",
+    "inverse_name": "Ba\u015fa Petru",
+    "name": "Petru Ba\u015fa",
     "emails": [
       "50petru.basa@senat.ro"
     ]
   },
   {
-    "name": "Belacurencu Trifon",
+    "inverse_name": "Belacurencu Trifon",
+    "name": "Trifon Belacurencu",
     "emails": [
       "trifon.belacurencu@gmail.com"
     ]
   },
   {
-    "name": "Berca Gabriel",
+    "inverse_name": "Berca Gabriel",
+    "name": "Gabriel Berca",
     "emails": [
       "gabriel.berca@senat.ro"
     ]
   },
   {
-    "name": "Berceanu L. Radu Mircea",
+    "inverse_name": "Berceanu L. Radu Mircea",
+    "name": "Radu Mircea Berceanu",
     "emails": [
       "radu.berceanu@senat.ro"
     ]
   },
   {
-    "name": "Blaga Vasile",
+    "inverse_name": "Blaga Vasile",
+    "name": "Vasile Blaga",
     "emails": [
       "vasile.blaga@senat.ro"
     ]
   },
   {
-    "name": "Boagiu C. Anca-Daniela",
+    "inverse_name": "Boagiu C. Anca-Daniela",
+    "name": "Anca-Daniela Boagiu",
     "emails": [
       "anca.boagiu@gmail.com",
       "anca.boagiu@senat.ro"
     ]
   },
   {
-    "name": "Boitan Minerva",
+    "inverse_name": "Boitan Minerva",
+    "name": "Minerva Boitan",
     "emails": [
       "minervaboitan@yahoo.com",
       "minervaboitan@senat.ro"
     ]
   },
   {
-    "name": "Bokor Tiberiu",
+    "inverse_name": "Bokor Tiberiu",
+    "name": "Tiberiu Bokor",
     "emails": [
       "butykagyula@yahoo.com",
       "bokor.tibor@senat.ro"
     ]
   },
   {
-    "name": "Borza Dorel-Constantin-Vasile",
+    "inverse_name": "Borza Dorel-Constantin-Vasile",
+    "name": "Dorel-Constantin-Vasile Borza",
     "emails": [
       "dorel.borza@senat.ro"
     ]
   },
   {
-    "name": "Bota Marius-Sorin-Ovidiu",
+    "inverse_name": "Bota Marius-Sorin-Ovidiu",
+    "name": "Marius-Sorin-Ovidiu Bota",
     "emails": [
       "sorin.bota@senat.ro"
     ]
   },
   {
-    "name": "B\u00eegiu Marian-Cristinel",
+    "inverse_name": "B\u00eegiu Marian-Cristinel",
+    "name": "Marian-Cristinel B\u00eegiu",
     "emails": [
       "alinatrusca_1988@yahoo.com",
       "cristi.bigiu@yahoo.com"
     ]
   },
   {
-    "name": "B\u00eerlea Gheorghe",
+    "inverse_name": "B\u00eerlea Gheorghe",
+    "name": "Gheorghe B\u00eerlea",
     "emails": [
       "gheorghe.birlea@senat.ro",
       "gmbarleasen@gmail.com"
     ]
   },
   {
-    "name": "B\u0103descu Iulian",
+    "inverse_name": "B\u0103descu Iulian",
+    "name": "Iulian B\u0103descu",
     "emails": [
       "iulian.badescu@senat.ro"
     ]
   },
   {
-    "name": "B\u0103lan Gheorghe-Pavel",
+    "inverse_name": "B\u0103lan Gheorghe-Pavel",
+    "name": "Gheorghe-Pavel B\u0103lan",
     "emails": []
   },
   {
-    "name": "Calcan Valentin-Gigel",
+    "inverse_name": "Calcan Valentin-Gigel",
+    "name": "Valentin-Gigel Calcan",
     "emails": [
       "valentin.calcan@senat.ro"
     ]
   },
   {
-    "name": "Chelaru I. Ioan",
+    "inverse_name": "Chelaru I. Ioan",
+    "name": "Ioan Chelaru",
     "emails": [
       "ic_r2003@yahoo.com"
     ]
   },
   {
-    "name": "Chirv\u0103su\u0163\u0103 Lauren\u0163iu",
+    "inverse_name": "Chirv\u0103su\u0163\u0103 Lauren\u0163iu",
+    "name": "Lauren\u0163iu Chirv\u0103su\u0163\u0103",
     "emails": [
       "laurentiu.chirvasuta@senat.ro"
     ]
   },
   {
-    "name": "Chivu Sorin-Serioja",
+    "inverse_name": "Chivu Sorin-Serioja",
+    "name": "Sorin-Serioja Chivu",
     "emails": [
       "sorin.chivu@senat.ro",
       "sorin.chivu@mecca.ro"
     ]
   },
   {
-    "name": "Cibu Constantin-Sever",
+    "inverse_name": "Cibu Constantin-Sever",
+    "name": "Constantin-Sever Cibu",
     "emails": [
       "sever.cibu@senat.ro",
       "constantin.cibu@gmail.com"
     ]
   },
   {
-    "name": "Cintez\u0103 Mircea",
+    "inverse_name": "Cintez\u0103 Mircea",
+    "name": "Mircea Cintez\u0103",
     "emails": [
       "mircea.cinteza@senat.ro"
     ]
   },
   {
-    "name": "Coca Lauren\u0163iu Florian",
+    "inverse_name": "Coca Lauren\u0163iu Florian",
+    "name": "Lauren\u0163iu Florian Coca",
     "emails": [
       "iliecm@yahoo.com",
       "fane_letu@yahoo.com"
     ]
   },
   {
-    "name": "Constantinescu C. Viorel",
+    "inverse_name": "Constantinescu C. Viorel",
+    "name": "Viorel Constantinescu",
     "emails": [
       "viorel.constantinescu@senat.ro"
     ]
   },
   {
-    "name": "Constantinescu Florin",
+    "inverse_name": "Constantinescu Florin",
+    "name": "Florin Constantinescu",
     "emails": [
       "florin.constantinescu@senat.ro"
     ]
   },
   {
-    "name": "Cordo\u015f Alexandru",
+    "inverse_name": "Cordo\u015f Alexandru",
+    "name": "Alexandru Cordo\u015f",
     "emails": [
       "alexandru.cordos@senat.ro",
       "laviniatrif@gmail.com"
     ]
   },
   {
-    "name": "Corl\u0103\u0163ean Titus",
+    "inverse_name": "Corl\u0103\u0163ean Titus",
+    "name": "Titus Corl\u0103\u0163ean",
     "emails": []
   },
   {
-    "name": "Cr\u0103ciun Avram",
+    "inverse_name": "Cr\u0103ciun Avram",
+    "name": "Avram Cr\u0103ciun",
     "emails": []
   },
   {
-    "name": "Cseke Attila-Zolt\u00e1n",
+    "inverse_name": "Cseke Attila-Zolt\u00e1n",
+    "name": "Attila-Zolt\u00e1n Cseke",
     "emails": [
       "cseke.attila@senat.ro"
     ]
   },
   {
-    "name": "C\u00e2mpanu Liviu",
+    "inverse_name": "C\u00e2mpanu Liviu",
+    "name": "Liviu C\u00e2mpanu",
     "emails": [
       "campanu2003@yahoo.com",
       "nadianovac@yahoo.com"
     ]
   },
   {
-    "name": "Daea Petre",
+    "inverse_name": "Daea Petre",
+    "name": "Petre Daea",
     "emails": []
   },
   {
-    "name": "David Cristian",
+    "inverse_name": "David Cristian",
+    "name": "Cristian David",
     "emails": [
       "cristian.david@senat.ro"
     ]
   },
   {
-    "name": "David Gheorghe",
+    "inverse_name": "David Gheorghe",
+    "name": "Gheorghe David",
     "emails": [
       "gheorghe.david@senat.ro"
     ]
   },
   {
-    "name": "Diaconescu Cristian",
+    "inverse_name": "Diaconescu Cristian",
+    "name": "Cristian Diaconescu",
     "emails": [
       "cristian.diaconescu@psd.ro"
     ]
   },
   {
-    "name": "Diaconu Mircea",
+    "inverse_name": "Diaconu Mircea",
+    "name": "Mircea Diaconu",
     "emails": [
       "corneliabarbu_pnl@yahoo.com",
       "mircea.diaconu@senat.ro"
     ]
   },
   {
-    "name": "Dobra Nicolae",
+    "inverse_name": "Dobra Nicolae",
+    "name": "Nicolae Dobra",
     "emails": [
       "nicolae.dobra@senat.ro"
     ]
   },
   {
-    "name": "Dumitru Constantin",
+    "inverse_name": "Dumitru Constantin",
+    "name": "Constantin Dumitru",
     "emails": [
       "constantin.dumitru@senat.ro"
     ]
   },
   {
-    "name": "Fekete-Szab\u00f3 Andr\u00e1s-Levente",
+    "inverse_name": "Fekete-Szab\u00f3 Andr\u00e1s-Levente",
+    "name": "Andr\u00e1s-Levente Fekete-Szab\u00f3",
     "emails": [
       "senator_fekete@yahoo.com"
     ]
   },
   {
-    "name": "Feldman Radu-Alexandru",
+    "inverse_name": "Feldman Radu-Alexandru",
+    "name": "Radu-Alexandru Feldman",
     "emails": [
       "radu.f.alexandru@senat.ro"
     ]
   },
   {
-    "name": "Filip Petru",
+    "inverse_name": "Filip Petru",
+    "name": "Petru Filip",
     "emails": [
       "petru.filip@senat.ro"
     ]
   },
   {
-    "name": "Fodoreanu Sorin",
+    "inverse_name": "Fodoreanu Sorin",
+    "name": "Sorin Fodoreanu",
     "emails": [
       "sorin.fodoreanu@senat.ro"
     ]
   },
   {
-    "name": "Frunda Gy\u00f6rgy",
+    "inverse_name": "Frunda Gy\u00f6rgy",
+    "name": "Gy\u00f6rgy Frunda",
     "emails": []
   },
   {
-    "name": "Fr\u00e2ncu Emilian-Valentin",
+    "inverse_name": "Fr\u00e2ncu Emilian-Valentin",
+    "name": "Emilian-Valentin Fr\u00e2ncu",
     "emails": [
       "emilian.francu@senat.ro"
     ]
   },
   {
-    "name": "Geoan\u0103 Mircea-Dan",
+    "inverse_name": "Geoan\u0103 Mircea-Dan",
+    "name": "Mircea-Dan Geoan\u0103",
     "emails": [
       "raducans@gmail.com",
       "geoana.mircea@senat.ro"
     ]
   },
   {
-    "name": "Ghi\u015fe Ioan",
+    "inverse_name": "Ghi\u015fe Ioan",
+    "name": "Ioan Ghi\u015fe",
     "emails": [
       "ghise.ioan@cdep.ro"
     ]
   },
   {
-    "name": "Grebl\u0103 Toni",
+    "inverse_name": "Grebl\u0103 Toni",
+    "name": "Toni Grebl\u0103",
     "emails": [
       "toni.grebla@senat.ro",
       "tonigrebla@yahoo.com"
     ]
   },
   {
-    "name": "Grosu Corneliu",
+    "inverse_name": "Grosu Corneliu",
+    "name": "Corneliu Grosu",
     "emails": [
       "GROSU.CORNELIU@yahoo.com",
       "saucorneliu.grosu@senat.ro"
     ]
   },
   {
-    "name": "Gyerk\u00f3 L\u00e1szl\u00f3",
+    "inverse_name": "Gyerk\u00f3 L\u00e1szl\u00f3",
+    "name": "L\u00e1szl\u00f3 Gyerk\u00f3",
     "emails": [
       "gyerko.laszlo@senat.ro"
     ]
   },
   {
-    "name": "G\u00fcnthner Tiberiu",
+    "inverse_name": "G\u00fcnthner Tiberiu",
+    "name": "Tiberiu G\u00fcnthner",
     "emails": [
       "gunthner.tibor@senat.ro"
     ]
   },
   {
-    "name": "G\u0103in\u0103 Mih\u0103i\u0163\u0103",
+    "inverse_name": "G\u0103in\u0103 Mih\u0103i\u0163\u0103",
+    "name": "Mih\u0103i\u0163\u0103 G\u0103in\u0103",
     "emails": [
       "imariana@rocketmail.com"
     ]
   },
   {
-    "name": "Ha\u015fotti S. Puiu",
+    "inverse_name": "Ha\u015fotti S. Puiu",
+    "name": "Puiu Ha\u015fotti",
     "emails": [
       "constanta.pnl@gmail.com",
       "puiu.hasotti@senat.ro"
     ]
   },
   {
-    "name": "Humelnicu Augustin-Daniel",
+    "inverse_name": "Humelnicu Augustin-Daniel",
+    "name": "Augustin-Daniel Humelnicu",
     "emails": [
       "augustin.humelnicu@senat.ro"
     ]
   },
   {
-    "name": "H\u0103rd\u0103u Mihail",
+    "inverse_name": "H\u0103rd\u0103u Mihail",
+    "name": "Mihail H\u0103rd\u0103u",
     "emails": [
       "mihail.hardau@senat.ro"
     ]
   },
   {
-    "name": "Ichim Paul",
+    "inverse_name": "Ichim Paul",
+    "name": "Paul Ichim",
     "emails": [
       "paulichim@yahoo.com",
       "paul.ichim@senat.ro"
     ]
   },
   {
-    "name": "Iga\u015f Constantin-Traian",
+    "inverse_name": "Iga\u015f Constantin-Traian",
+    "name": "Constantin-Traian Iga\u015f",
     "emails": [
       "traian.igas@senat.ro"
     ]
   },
   {
-    "name": "Ion Vasile",
+    "inverse_name": "Ion Vasile",
+    "name": "Vasile Ion",
     "emails": []
   },
   {
-    "name": "Iord\u0103nescu Anghel",
+    "inverse_name": "Iord\u0103nescu Anghel",
+    "name": "Anghel Iord\u0103nescu",
     "emails": [
       "anghel.iordanescu@senat.ro"
     ]
   },
   {
-    "name": "Jurcan Dorel",
+    "inverse_name": "Jurcan Dorel",
+    "name": "Dorel Jurcan",
     "emails": [
       "jurcan.dorel@senat.ro"
     ]
   },
   {
-    "name": "Laz\u0103r Sorin-Constantin",
+    "inverse_name": "Laz\u0103r Sorin-Constantin",
+    "name": "Sorin-Constantin Laz\u0103r",
     "emails": []
   },
   {
-    "name": "Luca Raymond",
+    "inverse_name": "Luca Raymond",
+    "name": "Raymond Luca",
     "emails": [
       "raymond.luca@senat.ro"
     ]
   },
   {
-    "name": "Mang Ioan",
+    "inverse_name": "Mang Ioan",
+    "name": "Ioan Mang",
     "emails": [
       "ioan.mang@senat.ro"
     ]
   },
   {
-    "name": "Marcu Gheorghe",
+    "inverse_name": "Marcu Gheorghe",
+    "name": "Gheorghe Marcu",
     "emails": [
       "marcuglg@yahoo.com"
     ]
   },
   {
-    "name": "Mardare Radu-C\u0103t\u0103lin",
+    "inverse_name": "Mardare Radu-C\u0103t\u0103lin",
+    "name": "Radu-C\u0103t\u0103lin Mardare",
     "emails": [
       "mardarecatalin@yahoo.com"
     ]
   },
   {
-    "name": "Marian Ovidiu",
+    "inverse_name": "Marian Ovidiu",
+    "name": "Ovidiu Marian",
     "emails": [
       "Arad.ovidiu.marian@senat.ro"
     ]
   },
   {
-    "name": "Marian Valer",
+    "inverse_name": "Marian Valer",
+    "name": "Valer Marian",
     "emails": [
       "biroulsenatorial2sm@yahoo.com",
       "valsm60@yahoo.com"
     ]
   },
   {
-    "name": "Mark\u00f3 B\u00e9la",
+    "inverse_name": "Mark\u00f3 B\u00e9la",
+    "name": "B\u00e9la Mark\u00f3",
     "emails": []
   },
   {
-    "name": "Maz\u0103re Alexandru",
+    "inverse_name": "Maz\u0103re Alexandru",
+    "name": "Alexandru Maz\u0103re",
     "emails": [
       "www.alexandrumazare@yahoo.com"
     ]
   },
   {
-    "name": "Mele\u015fcanu Teodor-Viorel",
+    "inverse_name": "Mele\u015fcanu Teodor-Viorel",
+    "name": "Teodor-Viorel Mele\u015fcanu",
     "emails": [
       "teodor.melescanu@senat.ro"
     ]
   },
   {
-    "name": "Mih\u0103ilescu Petru-\u015eerban",
+    "inverse_name": "Mih\u0103ilescu Petru-\u015eerban",
+    "name": "Petru-\u015eerban Mih\u0103ilescu",
     "emails": [
       "psm@email.com"
     ]
   },
   {
-    "name": "Mitrea Elena",
+    "inverse_name": "Mitrea Elena",
+    "name": "Elena Mitrea",
     "emails": []
   },
   {
-    "name": "Mitrea Miron-Tudor",
+    "inverse_name": "Mitrea Miron-Tudor",
+    "name": "Miron-Tudor Mitrea",
     "emails": [
       "mironmitrea@mac.com"
     ]
   },
   {
-    "name": "Mocanu E. Alexandru",
+    "inverse_name": "Mocanu E. Alexandru",
+    "name": "Alexandru Mocanu",
     "emails": [
       "mocanu.alexandru@gmail.com",
       "alexandru.mocanu@senat.ro"
     ]
   },
   {
-    "name": "Mocanu Toader",
+    "inverse_name": "Mocanu Toader",
+    "name": "Toader Mocanu",
     "emails": [
       "toader.mocanu@senat.ro"
     ]
   },
   {
-    "name": "Moga Nicolae",
+    "inverse_name": "Moga Nicolae",
+    "name": "Nicolae Moga",
     "emails": [
       "senat.s2_cta@yahoo.com"
     ]
   },
   {
-    "name": "Must\u0103\u0163ea Vasile",
+    "inverse_name": "Must\u0103\u0163ea Vasile",
+    "name": "Vasile Must\u0103\u0163ea",
     "emails": []
   },
   {
-    "name": "Mutu Gabriel",
+    "inverse_name": "Mutu Gabriel",
+    "name": "Gabriel Mutu",
     "emails": [
       "gabriel.mutu@senat.ro"
     ]
   },
   {
-    "name": "M\u00eerza Gavril",
+    "inverse_name": "M\u00eerza Gavril",
+    "name": "Gavril M\u00eerza",
     "emails": []
   },
   {
-    "name": "M\u0103gureanu Cezar-Mircea",
+    "inverse_name": "M\u0103gureanu Cezar-Mircea",
+    "name": "Cezar-Mircea M\u0103gureanu",
     "emails": [
       "cmagureanu@yahoo.com"
     ]
   },
   {
-    "name": "M\u0103rcu\u0163ianu Ovidius",
+    "inverse_name": "M\u0103rcu\u0163ianu Ovidius",
+    "name": "Ovidius M\u0103rcu\u0163ianu",
     "emails": []
   },
   {
-    "name": "Necula Marius-Gerard",
+    "inverse_name": "Necula Marius-Gerard",
+    "name": "Marius-Gerard Necula",
     "emails": [
       "marius.necula@senat.ro"
     ]
   },
   {
-    "name": "Nedelcu Vasile",
+    "inverse_name": "Nedelcu Vasile",
+    "name": "Vasile Nedelcu",
     "emails": []
   },
   {
-    "name": "Nicoar\u0103 Marius-Petre",
+    "inverse_name": "Nicoar\u0103 Marius-Petre",
+    "name": "Marius-Petre Nicoar\u0103",
     "emails": [
       "mircea.abrudan@gmail.com",
       "marius.nicoara@senat.ro"
     ]
   },
   {
-    "name": "Nicoar\u0103 Romeo-Florin",
+    "inverse_name": "Nicoar\u0103 Romeo-Florin",
+    "name": "Romeo-Florin Nicoar\u0103",
     "emails": [
       "romeo.nicoara@senat.ro"
     ]
   },
   {
-    "name": "Nicolaescu Sergiu-Florin",
+    "inverse_name": "Nicolaescu Sergiu-Florin",
+    "name": "Sergiu-Florin Nicolaescu",
     "emails": [
       "snicolaescu@gmail.com"
     ]
   },
   {
-    "name": "Nicula Vasile-Cosmin",
+    "inverse_name": "Nicula Vasile-Cosmin",
+    "name": "Vasile-Cosmin Nicula",
     "emails": [
       "cosminnicula@psd.ro"
     ]
   },
   {
-    "name": "Nistor G. Vasile",
+    "inverse_name": "Nistor G. Vasile",
+    "name": "Vasile Nistor",
     "emails": [
       "vasile.nistor@senat.ro"
     ]
   },
   {
-    "name": "Ni\u0163\u0103 Mihai",
+    "inverse_name": "Ni\u0163\u0103 Mihai",
+    "name": "Mihai Ni\u0163\u0103",
     "emails": [
       "mihai.nita@senat.ro"
     ]
   },
   {
-    "name": "Onofrei Orest",
+    "inverse_name": "Onofrei Orest",
+    "name": "Orest Onofrei",
     "emails": [
       "orest.onofrei@senat.ro"
     ]
   },
   {
-    "name": "Oprea Dumitru",
+    "inverse_name": "Oprea Dumitru",
+    "name": "Dumitru Oprea",
     "emails": [
       "dumitru.oprea@senat.ro"
     ]
   },
   {
-    "name": "Oprea Mario-Ovidiu",
+    "inverse_name": "Oprea Mario-Ovidiu",
+    "name": "Mario-Ovidiu Oprea",
     "emails": [
       "mario.oprea@senat.ro"
     ]
   },
   {
-    "name": "Pan\u0163uru Tudor",
+    "inverse_name": "Pan\u0163uru Tudor",
+    "name": "Tudor Pan\u0163uru",
     "emails": [
       "a.tudor.panturu@senat.ro"
     ]
   },
   {
-    "name": "Pa\u015fca Liviu-Titus",
+    "inverse_name": "Pa\u015fca Liviu-Titus",
+    "name": "Liviu-Titus Pa\u015fca",
     "emails": [
       "popgabriela_mm@yahoo.com",
       "cabinetliviutituspasca@senat.ro"
     ]
   },
   {
-    "name": "Pere\u015f A. Alexandru",
+    "inverse_name": "Pere\u015f A. Alexandru",
+    "name": "Alexandru Pere\u015f",
     "emails": [
       "al.peres@senat.ro"
     ]
   },
   {
-    "name": "Pintilie Vasile",
+    "inverse_name": "Pintilie Vasile",
+    "name": "Vasile Pintilie",
     "emails": [
       "vasile.pintilie@senat.ro"
     ]
   },
   {
-    "name": "Pl\u0103cint\u0103 Sorina-Lumini\u0163a",
+    "inverse_name": "Pl\u0103cint\u0103 Sorina-Lumini\u0163a",
+    "name": "Sorina-Lumini\u0163a Pl\u0103cint\u0103",
     "emails": [
       "sorina.placinta@senat.ro"
     ]
   },
   {
-    "name": "Pop Gheorghe",
+    "inverse_name": "Pop Gheorghe",
+    "name": "Gheorghe Pop",
     "emails": [
       "popgheorghe15@yahoo.com"
     ]
   },
   {
-    "name": "Popa G. Cornel",
+    "inverse_name": "Popa G. Cornel",
+    "name": "Cornel Popa",
     "emails": [
       "cornel.popa@pnl.ro"
     ]
   },
   {
-    "name": "Popa Mihaela",
+    "inverse_name": "Popa Mihaela",
+    "name": "Mihaela Popa",
     "emails": [
       "mihaela.popa@senat.ro"
     ]
   },
   {
-    "name": "Prodan Tiberiu-Aurelian",
+    "inverse_name": "Prodan Tiberiu-Aurelian",
+    "name": "Tiberiu-Aurelian Prodan",
     "emails": [
       "aureliantiberiu@gamail.com",
       "tiberiu.prodan@senat.ro"
     ]
   },
   {
-    "name": "Prunea Nicolae-D\u0103nu\u0163",
+    "inverse_name": "Prunea Nicolae-D\u0103nu\u0163",
+    "name": "Nicolae-D\u0103nu\u0163 Prunea",
     "emails": [
       "pruneadan@yahoo.com",
       "nicolae.prunea@senat.ro"
     ]
   },
   {
-    "name": "P\u0103ran Dorin",
+    "inverse_name": "P\u0103ran Dorin",
+    "name": "Dorin P\u0103ran",
     "emails": [
       "dorin.paran@senat.ro"
     ]
   },
   {
-    "name": "Rasaliu Marian-Iulian",
+    "inverse_name": "Rasaliu Marian-Iulian",
+    "name": "Marian-Iulian Rasaliu",
     "emails": [
       "marian.rasaliu@senat.ro"
     ]
   },
   {
-    "name": "Robu Nicolae",
+    "inverse_name": "Robu Nicolae",
+    "name": "Nicolae Robu",
     "emails": [
       "nicolaerobu@yahoo.com",
       "nicolae.robu@senat.ro"
     ]
   },
   {
-    "name": "Rotaru Ion",
+    "inverse_name": "Rotaru Ion",
+    "name": "Ion Rotaru",
     "emails": [
       "ion.rotaru@senat.ro"
     ]
   },
   {
-    "name": "Ru\u015fanu Dan-Radu",
+    "inverse_name": "Ru\u015fanu Dan-Radu",
+    "name": "Dan-Radu Ru\u015fanu",
     "emails": [
       "dan.rusanu@senat.ro"
     ]
   },
   {
-    "name": "Ru\u015fe\u0163 Ion",
+    "inverse_name": "Ru\u015fe\u0163 Ion",
+    "name": "Ion Ru\u015fe\u0163",
     "emails": [
       "ion_ruset@yahoo.com"
     ]
   },
   {
-    "name": "R\u0103dulescu Cristian",
+    "inverse_name": "R\u0103dulescu Cristian",
+    "name": "Cristian R\u0103dulescu",
     "emails": [
       "cradulescu@senat.ro"
     ]
   },
   {
-    "name": "R\u0103dulescu \u015eerban",
+    "inverse_name": "R\u0103dulescu \u015eerban",
+    "name": "\u015eerban R\u0103dulescu",
     "emails": [
       "serban.radulescu@senat.ro"
     ]
   },
   {
-    "name": "Saghian Gheorghe",
+    "inverse_name": "Saghian Gheorghe",
+    "name": "Gheorghe Saghian",
     "emails": [
       "saghian_gheorghe@yahoo.com"
     ]
   },
   {
-    "name": "Savu Daniel",
+    "inverse_name": "Savu Daniel",
+    "name": "Daniel Savu",
     "emails": [
       "argentinacostache@yahoo.com",
       "daniels2002ro@yahoo.com"
     ]
   },
   {
-    "name": "Sb\u00eerciu Ioan",
+    "inverse_name": "Sb\u00eerciu Ioan",
+    "name": "Ioan Sb\u00eerciu",
     "emails": [
       "ioan.sbirciu@senat.ro"
     ]
   },
   {
-    "name": "Sec\u0103\u015fan Iosif",
+    "inverse_name": "Sec\u0103\u015fan Iosif",
+    "name": "Iosif Sec\u0103\u015fan",
     "emails": [
       "iosifsecasan@yahoo.com",
       "cs2senat@yahoo.com"
     ]
   },
   {
-    "name": "Severin Georgic\u0103",
+    "inverse_name": "Severin Georgic\u0103",
+    "name": "Georgic\u0103 Severin",
     "emails": []
   },
   {
-    "name": "Silistru Doina",
+    "inverse_name": "Silistru Doina",
+    "name": "Doina Silistru",
     "emails": [
       "marianaplacinta@yahoo.com",
       "doina_silistru@yahoo.com"
     ]
   },
   {
-    "name": "Staicu Dumitru-Florian",
+    "inverse_name": "Staicu Dumitru-Florian",
+    "name": "Dumitru-Florian Staicu",
     "emails": [
       "florin.staicu@senat.ro"
     ]
   },
   {
-    "name": "St\u0103ni\u015foar\u0103 Gr. Mihai",
+    "inverse_name": "St\u0103ni\u015foar\u0103 Gr. Mihai",
+    "name": "Mihai St\u0103ni\u015foar\u0103",
     "emails": [
       "mihai.stanisoara@senat.ro"
     ]
   },
   {
-    "name": "S\u00e2rbu Ilie",
+    "inverse_name": "S\u00e2rbu Ilie",
+    "name": "Ilie S\u00e2rbu",
     "emails": [
       "Nicupsd.timis@yahoo.com",
       "office@iliesarbu.ro"
     ]
   },
   {
-    "name": "Toma Ion",
+    "inverse_name": "Toma Ion",
+    "name": "Ion Toma",
     "emails": [
       "cabinetiontoma@gmail.ro"
     ]
   },
   {
-    "name": "T\u0103mag\u0103 Constantin",
+    "inverse_name": "T\u0103mag\u0103 Constantin",
+    "name": "Constantin T\u0103mag\u0103",
     "emails": []
   },
   {
-    "name": "Udri\u015ftoiu Tudor",
+    "inverse_name": "Udri\u015ftoiu Tudor",
+    "name": "Tudor Udri\u015ftoiu",
     "emails": [
       "tudor.udristoiu@senat.ro"
     ]
   },
   {
-    "name": "Urban Iulian",
+    "inverse_name": "Urban Iulian",
+    "name": "Iulian Urban",
     "emails": [
       "iulian.urban@gmail.com"
     ]
   },
   {
-    "name": "Valeca \u015eerban Constantin",
+    "inverse_name": "Valeca \u015eerban Constantin",
+    "name": "\u015eerban Constantin Valeca",
     "emails": [
       "serban.valeca@senat.ro"
     ]
   },
   {
-    "name": "Vasilescu Lia-Olgu\u0163a",
+    "inverse_name": "Vasilescu Lia-Olgu\u0163a",
+    "name": "Lia-Olgu\u0163a Vasilescu",
     "emails": [
       "olguta.vasilescu@senat.ro"
     ]
   },
   {
-    "name": "Verest\u00f3y Attila",
+    "inverse_name": "Verest\u00f3y Attila",
+    "name": "Attila Verest\u00f3y",
     "emails": []
   },
   {
-    "name": "Voicu D. C\u0103t\u0103lin",
+    "inverse_name": "Voicu D. C\u0103t\u0103lin",
+    "name": "C\u0103t\u0103lin Voicu",
     "emails": []
   },
   {
-    "name": "Voiculescu Dan",
+    "inverse_name": "Voiculescu Dan",
+    "name": "Dan Voiculescu",
     "emails": []
   },
   {
-    "name": "Vosganian Varujan",
+    "inverse_name": "Vosganian Varujan",
+    "name": "Varujan Vosganian",
     "emails": [
       "birousen5@yahoo.com",
       "varujan.vosganian@senat.ro"
     ]
   },
   {
-    "name": "\u015eova Dan-Coman",
+    "inverse_name": "\u015eova Dan-Coman",
+    "name": "Dan-Coman \u015eova",
     "emails": [
       "dan.sova@senat.ro"
     ]
   },
   {
-    "name": "\u0162opescu Cristian-George",
+    "inverse_name": "\u0162opescu Cristian-George",
+    "name": "Cristian-George \u0162opescu",
     "emails": [
       "adriana_chivu2005@yahoo.com"
     ]
   },
   {
-    "name": "\u0162u\u0163uianu Adrian",
+    "inverse_name": "\u0162u\u0163uianu Adrian",
+    "name": "Adrian \u0162u\u0163uianu",
     "emails": [
       "adrian.tutuianu@senat.ro"
     ]
