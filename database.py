@@ -16,6 +16,7 @@ class User(db.Model):
     openid_url = db.Column(db.Text())
     name = db.Column(db.Text())
     email = db.Column(db.Text())
+    time_create = db.Column(db.DateTime)
 
 
 class Person(db.Model):
@@ -100,7 +101,8 @@ def get_user(openid_url):
 def get_update_user(openid_url, name, email):
     user = get_user(openid_url)
     if user is None:
-        user = User(openid_url=openid_url)
+        utcnow = datetime.utcnow()
+        user = User(openid_url=openid_url, time_create=utcnow)
         log.info("New user, openid_url=%r", openid_url)
 
     if (name, email) != (user.name, user.email):
@@ -108,6 +110,7 @@ def get_update_user(openid_url, name, email):
         user.email = email
         db.session.add(user)
         db.session.commit()
-        log.info("User data modified for openid_url=%r", openid_url)
+        log.info("User data modified for openid_url=%r: name=%r, email=%r",
+                 openid_url, name, email)
 
     return user
