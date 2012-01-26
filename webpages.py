@@ -62,7 +62,10 @@ def home():
 def download():
     fmt = flask.request.args.get('format')
     if fmt == 'json':
-        return flask.jsonify(database.get_persons())
+        rows = [dict(person.get_content(), id=person.id, name=person.name)
+                for person in database.Person.query.all()]
+        return flask.jsonify({'persons': rows})
+
     else:
         flask.abort(404)
 

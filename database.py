@@ -51,15 +51,6 @@ class ContentVersion(db.Model):
         return json.loads(self.content)
 
 
-def get_persons():
-    results = {}
-
-    for person in Person.query.all():
-        results[person.id] = dict(person.get_content(), name=person.name)
-
-    return results
-
-
 def import_json(json_path):
     utcnow = datetime.utcnow()
     count = defaultdict(int)
