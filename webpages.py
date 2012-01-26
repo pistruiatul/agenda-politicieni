@@ -58,9 +58,13 @@ def home():
     return {'persons': database.Person.query.order_by('name').all()}
 
 
-@webpages.route('/download.json')
+@webpages.route('/download')
 def download():
-    return flask.jsonify(database.get_persons())
+    fmt = flask.request.args.get('format')
+    if fmt == 'json':
+        return flask.jsonify(database.get_persons())
+    else:
+        flask.abort(404)
 
 
 @webpages.route('/person/<int:person_id>')
