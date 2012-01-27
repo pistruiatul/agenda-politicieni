@@ -58,8 +58,8 @@ def stats():
 
 
 @webpages.route('/')
-@with_template('homepage.html')
-def home():
+@with_template('search.html')
+def search():
     return {'persons': database.Person.query.order_by('name').all()}
 
 
