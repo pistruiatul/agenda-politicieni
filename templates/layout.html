@@ -39,7 +39,9 @@
 <div class="container">
   <div class="content">
     <div class="page-header">
+      {% block header %}
       <h1>{% block h1 %}{% endblock %}</h1>
+      {% endblock %}
 
       {% for category, message in get_flashed_messages(with_categories=True) %}
         <p class="alert-message {{ category }}">{{ message }}</p>

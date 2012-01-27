@@ -1,8 +1,30 @@
 {% extends 'layout.html' %}
 
-{% block h1 -%}
-  Persoane
-{%- endblock %}
+{% block header %}
+  <div class="row">
+    <h1 class="span4">Persoane</h1>
+    <form class="span8 offset1 form-stacked person-filter">
+      <div class="row">
+        <div class="span2">
+          <label for="filter-office">Funcție</label>
+          <select name="office" class="span2" id="filter-office">
+            <option value=""></option>
+            <option value="senator">Senator</option>
+            <option value="deputy">Deputat</option>
+          </select>
+        </div>
+        <div class="span2">
+          <label for="filter-college">Circumscripție</label>
+          <select name="college" class="span2" id="filter-college">
+            <option value=""></option>
+            <option value="">1</option>
+            <option value="">2</option>
+          </select>
+        </div>
+      </div>
+    </form>
+  </div>
+{% endblock %}
 
 {% block content %}
 
@@ -22,5 +44,13 @@
 
   </div>
 </div>
+
+<script>
+$(function() {
+    $('.person-filter select').change(function() {
+        $(this).parents('form').submit();
+    });
+});
+</script>
 
 {% endblock %}
