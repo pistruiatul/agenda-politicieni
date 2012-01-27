@@ -6,13 +6,19 @@
     <form class="span8 offset1 form-stacked person-filter">
       <div class="row">
         <div class="span2">
-          <label for="filter-office">Funcție</label>
-          <select name="office" class="span2" id="filter-office">
-            <option value=""></option>
-            <option value="senator">Senator</option>
-            <option value="deputy">Deputat</option>
-          </select>
+          {% set field = search_schema['office'] %}
+          {{ form_gen.label(field, contents=field.properties['label']) }}
+          {{ form_gen.select.open(field, class='span2') }}
+            {{ form_gen.option(field, contents='') }}
+            {% for value in field.valid_values %}
+              {% set value_label = (field.properties.value_labels[value]
+                                    if field.properties.value_labels else
+                                    value) %}
+              {{ form_gen.option(field, value=value, contents=value_label) }}
+            {% endfor %}
+          {{ form_gen.select.close() }}
         </div>
+        {#
         <div class="span2">
           <label for="filter-college">Circumscripție</label>
           <select name="college" class="span2" id="filter-college">
@@ -21,6 +27,7 @@
             <option value="">2</option>
           </select>
         </div>
+        #}
       </div>
     </form>
   </div>

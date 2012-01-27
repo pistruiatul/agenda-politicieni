@@ -5,6 +5,7 @@ from pytz import timezone
 import cStringIO
 import csv
 import flask
+import flatland, flatland.out.markup
 import auth
 import database
 
@@ -15,6 +16,11 @@ with open(os.path.join(_data_dir, 'prop_defs.json'), 'rb') as f:
 with open(os.path.join(_data_dir, 'hartapoliticii.json'), 'rb') as f:
     hartapoliticii_data = dict((int(k), v) for k, v in
                                flask.json.load(f).iteritems())
+
+office_defs = {
+    'deputy': u"deputat",
+    'senator': u"senator",
+}
 
 
 webpages = flask.Blueprint('webpages', __name__)
@@ -57,10 +63,25 @@ def stats():
     }
 
 
+SearchSchema = flatland.Dict.of(
+    flatland.Enum.named('office') \
+                 .valued(*sorted(office_defs.keys())) \
+                 .using(optional=True) \
+                 .with_properties(label=u"Funcție", value_labels=office_defs),
+)
+
+
 @webpages.route('/')
 @with_template('search.html')
 def search():
-    return {'persons': database.Person.query.order_by('name').all()}
+    search_schema = SearchSchema.from_flat(flask.request.args.to_dict())
+    form_gen = flatland.out.markup.Generator()
+    form_gen.begin(auto_domid=True, auto_for=True)
+    return {
+        'persons': database.Person.query.order_by('name').all(),
+        'search_schema': search_schema,
+        'form_gen': form_gen,
+    }
 
 
 @webpages.route('/download')
@@ -173,10 +194,7 @@ def diff(person_id, a_id, b_id):
 def init_app(app):
     app.register_blueprint(webpages)
     app.jinja_env.globals['known_names'] = prop_defs
-    app.jinja_env.globals['office_label'] = {
-        'deputy': u"deputat",
-        'senator': u"senator",
-    }
+    app.jinja_env.globals['office_label'] = office_defs
 
     local_timezone = timezone(app.config['TIMEZONE'])
     def filter_datetime(utc_value, fmt='%d %b, %H:%M'):
