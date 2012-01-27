@@ -19,8 +19,20 @@ def search():
     search_schema = SearchSchema.from_flat(flask.request.args.to_dict())
     form_gen = flatland.out.markup.Generator()
     form_gen.begin(auto_domid=True, auto_for=True)
+    persons = database.Person.query
+    office_value = search_schema['office'].value
+    if office_value:
+        persons = persons.filter(
+            database.Person.meta.any(
+                database.PersonMeta.key == 'office'
+            )
+        ).filter(
+            database.Person.meta.any(
+                database.PersonMeta.value == office_value
+            )
+        )
     return {
-        'persons': database.Person.query.order_by('name').all(),
+        'persons': persons.order_by('name').all(),
         'search_schema': search_schema,
         'form_gen': form_gen,
     }
