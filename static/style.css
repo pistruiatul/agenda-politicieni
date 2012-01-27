@@ -67,3 +67,8 @@ a.email {
     -moz-column-count: 4;
     column-count: 4;
 }
+
+dl.person-info * {
+    font-size: 120%;
+    line-height: 24px;
+}
