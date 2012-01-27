@@ -51,6 +51,15 @@ class ContentVersion(db.Model):
         return json.loads(self.content)
 
 
+class PersonMeta(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    person_id = db.Column(db.Integer, db.ForeignKey('person.id'))
+    person = db.relationship('Person',
+        backref=db.backref('meta', lazy='dynamic'))
+    key = db.Column(db.Text)
+    value = db.Column(db.Text)
+
+
 def import_json(json_path):
     utcnow = datetime.utcnow()
     count = defaultdict(int)
