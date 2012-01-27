@@ -36,6 +36,10 @@ class Person(db.Model):
         log.info("Content update for person id=%d version_id=%d",
                  self.id, version.id)
 
+    def get_meta(self, key):
+        meta = self.meta.filter_by(key=key).first()
+        return None if meta is None else meta.value
+
 
 class ContentVersion(db.Model):
     id = db.Column(db.Integer, primary_key=True)

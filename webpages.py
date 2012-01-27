@@ -173,7 +173,10 @@ def diff(person_id, a_id, b_id):
 def init_app(app):
     app.register_blueprint(webpages)
     app.jinja_env.globals['known_names'] = prop_defs
-    app.jinja_env.globals['hartapoliticii_data'] = hartapoliticii_data
+    app.jinja_env.globals['office_label'] = {
+        'deputy': u"deputat",
+        'senator': u"senator",
+    }
 
     local_timezone = timezone(app.config['TIMEZONE'])
     def filter_datetime(utc_value, fmt='%d %b, %H:%M'):

@@ -1,7 +1,11 @@
 {% extends 'layout.html' %}
 
 {% block h1 -%}
-  {{ person.name }}
+  {%- set college = person.get_meta('college') -%}
+  {{ person.name }} &ndash; {{ office_label[person.get_meta('office')] }}
+  {%- if college %}
+    ({{ college }})
+  {%- endif -%}
 {%- endblock %}
 
 {% block content %}
@@ -24,12 +28,6 @@
         {% endif %}
 
       {% endfor -%}
-
-      {% set college_name = hartapoliticii_data[person.id]['college_name'] %}
-      {% if college_name %}
-        <dt>Colegiu</dt>
-        <dd>{{ college_name }}</dd>
-      {% endif %}
 
     {% endfor -%}
     </dl>
