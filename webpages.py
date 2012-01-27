@@ -12,6 +12,9 @@ import database
 _data_dir = os.path.join(os.path.dirname(__file__), 'data')
 with open(os.path.join(_data_dir, 'prop_defs.json'), 'rb') as f:
     prop_defs = flask.json.load(f)
+with open(os.path.join(_data_dir, 'hartapoliticii.json'), 'rb') as f:
+    hartapoliticii_data = dict((int(k), v) for k, v in
+                               flask.json.load(f).iteritems())
 
 
 webpages = flask.Blueprint('webpages', __name__)
@@ -170,6 +173,7 @@ def diff(person_id, a_id, b_id):
 def init_app(app):
     app.register_blueprint(webpages)
     app.jinja_env.globals['known_names'] = prop_defs
+    app.jinja_env.globals['hartapoliticii_data'] = hartapoliticii_data
 
     local_timezone = timezone(app.config['TIMEZONE'])
     def filter_datetime(utc_value, fmt='%d %b, %H:%M'):

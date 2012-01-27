@@ -25,6 +25,12 @@
 
       {% endfor -%}
 
+      {% set college_name = hartapoliticii_data[person.id]['college_name'] %}
+      {% if college_name %}
+        <dt>Colegiu</dt>
+        <dd>{{ college_name }}</dd>
+      {% endif %}
+
     {% endfor -%}
     </dl>
 
