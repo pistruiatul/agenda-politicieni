@@ -33,7 +33,8 @@ def create_or_login(resp):
         openid_url=resp.identity_url,
         name=resp.fullname or resp.nickname,
         email=resp.email)
-    flask.flash(u"Autentificare cu succes - " + flask.g.user.name, 'success')
+    name = flask.g.user.name or u""
+    flask.flash(u"Autentificare cu succes - %s" % name, 'success')
     return flask.redirect(oid.get_next_url())
 
 
