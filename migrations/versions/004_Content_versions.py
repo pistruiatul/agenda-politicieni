@@ -40,9 +40,9 @@ def upgrade(migrate_engine):
     meta.bind = migrate_engine
     content_version.create()
 
-    import agenda, database
-    with agenda.create_app().test_request_context():
-        database.migrate_properties_to_content()
+#    import agenda, database
+#    with agenda.create_app().test_request_context():
+#        database.migrate_properties_to_content()
 
     property.drop()
 
