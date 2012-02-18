@@ -89,18 +89,21 @@ def import_json(json_path):
         else:
             person = Person(name=person_data['name'])
             db.session.add(person)
-            log.info('New person %r, id=%d', person_data['name'], person.id)
+            log.info('New person %r', person_data['name'])
             count['new-person'] += 1
 
-        emails = person_data.get('emails', [])
-        if emails:
-            content = {'email': emails}
-            if content != person.get_content():
-                version = ContentVersion(person=person, time=utcnow)
-                version.content = json.dumps(content)
-                db.session.add(version)
-                log.info('Content update for person id=%d', person.id)
-                count['new-version'] += 1
+        content = {}
+        for key in prop_defs:
+            values = person_data.get(key, [])
+            if values:
+                content['key'] = values
+
+        if content != person.get_content():
+            version = ContentVersion(person=person, time=utcnow)
+            version.content = json.dumps(content)
+            db.session.add(version)
+            log.info('Content update for person id=%d', person.id)
+            count['new-version'] += 1
 
     db.session.commit()
     if count:
