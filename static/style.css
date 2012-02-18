@@ -81,7 +81,13 @@ dl.person-info * {
     opacity:0;
     -webkit-animation:.5s hide-person;
     -moz-animation:.5s hide-person;
+    -ms-animation:.5s hide-person;
     animation:.5s hide-person;
+}
+
+@-ms-keyframes hide-person {
+    0%   { opacity: 1; }
+    100% { opacity: 0;}
 }
 
 @-webkit-keyframes hide-person {
