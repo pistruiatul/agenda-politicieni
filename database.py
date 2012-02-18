@@ -15,6 +15,7 @@ with open(os.path.join(_data_dir, 'prop_defs.json'), 'rb') as f:
 with open(os.path.join(_data_dir, 'hartapoliticii.json'), 'rb') as f:
     hartapoliticii_data = dict((int(k), v) for k, v in
                                json.load(f).iteritems())
+meta_defs = ['office', 'college']
 
 
 db = SQLAlchemy()
@@ -104,6 +105,17 @@ def import_json(json_path):
             db.session.add(version)
             log.info('Content update for person id=%d', person.id)
             count['new-version'] += 1
+
+        for key in meta_defs:
+            value = person_data.get('_meta', {}).get(key, None)
+            if value is None:
+                continue
+            meta = person.meta.filter_by(key=key).first()
+            if meta is None:
+                meta = PersonMeta(person=person, key=key, value=value)
+            else:
+                meta.value = value
+            db.session.add(meta)
 
     db.session.commit()
     if count:
