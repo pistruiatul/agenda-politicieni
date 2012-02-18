@@ -58,8 +58,18 @@ def stats():
 @webpages.route('/download')
 def download():
     fmt = flask.request.args.get('format')
+    def get_meta(person):
+        meta = {}
+        for key in ['office', 'college']:
+            value = person.get_meta(key)
+            if value:
+                meta[key] = value
+        return meta
     if fmt == 'json':
-        rows = [dict(person.get_content(), id=person.id, name=person.name)
+        rows = [dict(person.get_content(),
+                     id=person.id,
+                     name=person.name,
+                     _meta=get_meta(person))
                 for person in database.Person.query.all()]
         return flask.jsonify({'persons': rows})
 
