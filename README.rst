@@ -33,6 +33,14 @@ Installation
     python migrations/manage.py version_control sqlite:///instance/agenda.db migrations
     python migrations/manage.py upgrade sqlite:///instance/agenda.db migrations
 
-5. Run the development server::
+6. Import some data::
+
+    curl 'http://agenda.grep.ro/download?format=json' > instance/datadump.json
+    python agenda.py shell
+
+    >>> import database
+    >>> database.import_json('instance/datadump.json')
+
+7. Run the development server::
 
     python agenda.py runserver
