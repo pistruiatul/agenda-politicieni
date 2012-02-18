@@ -60,7 +60,7 @@ def download():
     fmt = flask.request.args.get('format')
     def get_meta(person):
         meta = {}
-        for key in ['office', 'college']:
+        for key in database.meta_defs:
             value = person.get_meta(key)
             if value:
                 meta[key] = value
