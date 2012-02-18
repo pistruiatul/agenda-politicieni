@@ -103,7 +103,7 @@ def import_json(json_path):
             version = ContentVersion(person=person, time=utcnow)
             version.content = json.dumps(content)
             db.session.add(version)
-            log.info('Content update for person id=%d', person.id)
+            log.info('Content update for person id=%r', person.id)
             count['new-version'] += 1
 
         for key in meta_defs:
