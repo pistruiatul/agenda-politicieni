@@ -97,7 +97,7 @@ def import_json(json_path):
         for key in prop_defs:
             values = person_data.get(key, [])
             if values:
-                content['key'] = values
+                content[key] = values
 
         if content != person.get_content():
             version = ContentVersion(person=person, time=utcnow)
