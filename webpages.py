@@ -9,13 +9,6 @@ import auth
 import database
 
 
-_data_dir = os.path.join(os.path.dirname(__file__), 'data')
-with open(os.path.join(_data_dir, 'prop_defs.json'), 'rb') as f:
-    prop_defs = flask.json.load(f)
-with open(os.path.join(_data_dir, 'hartapoliticii.json'), 'rb') as f:
-    hartapoliticii_data = dict((int(k), v) for k, v in
-                               flask.json.load(f).iteritems())
-
 office_defs = {
     'deputy': u"deputat",
     'senator': u"senator",
@@ -72,8 +65,8 @@ def download():
 
     elif fmt == 'csv':
         utf8 = lambda v: unicode(v).encode('utf-8')
-        fields = ['id', 'name'] + sorted(prop_defs.keys())
-        header = dict((k, utf8(v)) for k, v in prop_defs.iteritems())
+        fields = ['id', 'name'] + sorted(database.prop_defs.keys())
+        header = dict((k, utf8(v)) for k, v in database.prop_defs.iteritems())
         header.update(id='id', name='Nume')
 
         csvfile = cStringIO.StringIO()
@@ -114,7 +107,7 @@ def edit(person_id):
     if flask.request.method == 'POST':
         form = flask.request.form
         new_content = {}
-        for field_name in prop_defs:
+        for field_name in database.prop_defs:
             values = [v.strip() for v in form.getlist(field_name) if v.strip()]
             if values:
                 new_content[field_name] = values
@@ -173,7 +166,7 @@ import search
 
 def init_app(app):
     app.register_blueprint(webpages)
-    app.jinja_env.globals['known_names'] = prop_defs
+    app.jinja_env.globals['known_names'] = database.prop_defs
     app.jinja_env.globals['office_label'] = office_defs
 
     local_timezone = timezone(app.config['TIMEZONE'])
