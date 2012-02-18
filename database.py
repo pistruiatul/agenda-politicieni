@@ -71,7 +71,7 @@ def import_json(json_path):
     with open(json_path, 'rb') as f:
         people_data = json.load(f)
 
-    for person_data in people_data:
+    for person_data in people_data['persons']:
         found_persons = Person.query.filter_by(name=person_data['name']).all()
         if found_persons:
             assert len(found_persons) == 1
@@ -83,7 +83,7 @@ def import_json(json_path):
             log.info('New person %r, id=%d', person_data['name'], person.id)
             count['new-person'] += 1
 
-        emails = person_data['emails']
+        emails = person_data.get('emails', [])
         if emails:
             content = {'email': emails}
             if content != person.get_content():
