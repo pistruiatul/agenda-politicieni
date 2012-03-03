@@ -6,7 +6,9 @@
     <script src="{{ url_for('static', filename='html5.js') }}"></script>
   <![endif]-->
   <!-- http://twitter.github.com/bootstrap/ -->
-  <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='lib/bootstrap/css/bootstrap.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='lib/bootstrap/css/bootstrap-responsive.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
   <title>Agenda de parlamentari</title>
 </head>
@@ -15,23 +17,22 @@
 <script src="{{ url_for('static', filename='modernizr-2.0.6.min.js') }}"></script>
 <script src="{{ url_for('static', filename='jquery-1.7.1.min.js') }}"></script>
 
-<div class="topbar">
-  <div class="fill">
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
     <div class="container">
       {% set url = url_for('webpages.search') %}
       <a class="brand" href="{{ url }}">Agenda de parlamentari</a>
-      <div class="pull-right">
-      {% if g.user %}
-        <p class="logged-in">
-          {{ g.user.name }}
-          <a href="{{ url_for('auth.logout') }}">logout</a>
-        </p>
-      {% else %}
-        <form action="{{ url_for('auth.login') }}" method="post">
-          <button class="btn" type="submit">Login cu contul Google</button>
-        </form>
-      {% endif %}
-      </div>
+        <div class="pull-right">
+        {% if g.user %}
+          <li>
+            <a href="{{ url_for('auth.logout') }}">{{ g.user.name }} (logout)</a>
+          </li>
+        {% else %}
+          <li>
+            <a href="{{ url_for('auth.login') }}">Login cu contul Google</a>
+          </li>
+        {% endif %}
+        </div>
     </div>
   </div>
 </div>

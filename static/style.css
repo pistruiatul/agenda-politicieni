@@ -2,16 +2,8 @@ html, body {
     background-color: #eee;
 }
 
-body {
-    padding-top: 40px;
-}
-
 .container > footer p {
     text-align: center;
-}
-
-.container {
-    width: 820px;
 }
 
 .content {
@@ -32,10 +24,12 @@ body {
     margin: -20px -20px 20px;
 }
 
-.topbar p.logged-in {
+.navbar p.logged-in {
     color: #ffffff;
 }
-
+.navbar div.nav-collapse.pull-right {
+    height: 34px;
+}
 a.email {
     font-size: 85%;
     color: #888;
@@ -62,12 +56,6 @@ a.email {
     display: block;
 }
 
-.person-listing {
-    -webkit-column-count: 4;
-    -moz-column-count: 4;
-    column-count: 4;
-}
-
 dl.person-info * {
     font-size: 120%;
     line-height: 24px;
@@ -75,4 +63,48 @@ dl.person-info * {
 
 .person-filter {
     margin-bottom: 5px;
+}
+
+@media (min-width: 481px) {
+
+    .person-listing {
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        column-count: 2;
+    }
+
+}
+
+@media (min-width: 768px) {
+
+    .person-listing {
+        -webkit-column-count: 3;
+        -moz-column-count: 3;
+        column-count: 3;
+    }
+
+}
+
+@media (min-width: 980px) {
+
+    body {
+        padding-top: 40px;
+    }
+
+    .person-listing {
+        -webkit-column-count: 4;
+        -moz-column-count: 4;
+        column-count: 4;
+    }
+
+}
+
+@media (min-width: 1200px) {
+
+    .person-listing {
+        -webkit-column-count: 5;
+        -moz-column-count: 5;
+        column-count: 5;
+    }
+
 }

@@ -1,10 +1,10 @@
 {% extends 'layout.html' %}
 
 {% block header %}
-  <div class="row">
+  <div class="row-fluid">
     <h1 class="span4">Persoane</h1>
     <form class="span8 offset1 form-stacked person-filter">
-      <div class="row">
+      <div class="row-fluid">
         <div class="span2">
           {% set field = search_schema['office'] %}
           {{ form_gen.label(field, contents=field.properties['label']) }}
@@ -34,22 +34,23 @@
 {% endblock %}
 
 {% block content %}
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span11 person-listing">
 
-<div class="row">
-  <div class="span14 person-listing">
+      <ul class="unstyled">
+      {%- for person in persons %}
 
-    <ul class="unstyled">
-    {%- for person in persons %}
+        {% set office = person.get_meta('office') %}
+        <li class="{{ 'office-%s' % office if office else '' }}">
+          {% set url = url_for('webpages.person', person_id=person.id) %}
+          <a href="{{ url }}">{{ person.name }}</a>
+        </li>
 
-      {% set office = person.get_meta('office') %}
-      <li class="{{ 'office-%s' % office if office else '' }}">
-        {% set url = url_for('webpages.person', person_id=person.id) %}
-        <a href="{{ url }}">{{ person.name }}</a>
-      </li>
+      {% endfor -%}
+      </ul>
 
-    {% endfor -%}
-    </ul>
-
+    </div>
   </div>
 </div>
 
