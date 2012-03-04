@@ -65,6 +65,38 @@ dl.person-info * {
     margin-bottom: 5px;
 }
 
+.hide-person {
+    opacity:0;
+    -webkit-animation:.5s hide-person;
+    -moz-animation:.5s hide-person;
+    -ms-animation:.5s hide-person;
+    animation:.5s hide-person;
+}
+
+@-ms-keyframes hide-person {
+    0%   { opacity: 1; }
+    100% { opacity: 0;}
+}
+
+@-webkit-keyframes hide-person {
+    0%   { opacity: 1; }
+    100% { opacity: 0;}
+}
+
+@-moz-keyframes hide-person {
+    0%   { opacity: 1; }
+    100% { opacity: 0;}
+}
+
+@keyframes hide-person {
+    0%   { opacity: 1; }
+    100% { opacity: 0;}
+}
+
+.hidden-person {
+    display:none;
+}
+
 @media (min-width: 481px) {
 
     .person-listing {
