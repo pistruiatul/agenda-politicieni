@@ -50,6 +50,17 @@ class Person(db.Model):
         meta = self.meta.filter_by(key=key).first()
         return None if meta is None else meta.value
 
+    @classmethod
+    def objects_current(cls):
+        return cls.query.filter(
+            db.not_(
+                cls.meta.any(
+                    PersonMeta.key == 'removed' and
+                    PersonMeta.value == 'true'
+                )
+            )
+        )
+
 
 class ContentVersion(db.Model):
     id = db.Column(db.Integer, primary_key=True)
