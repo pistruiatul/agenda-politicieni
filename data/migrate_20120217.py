@@ -68,3 +68,49 @@ def fix_addresses():
         person.save_content_version(content, None)
         database.db.session.add(person)
     database.db.session.commit()
+
+def fix_emails():
+    import database
+    hardbounce_emails = set([
+        'minervaboitan@senat.ro',
+        'jurcan.dorel@senat.ro',
+        'saucorneliu.grosu@senat.ro',
+        'birou@ovidiumarian.ro',
+        'ec_andronesc@yahoo.com',
+        'horia@horia-cristian.ro',
+        'ioncalin@yahoo.com',
+        'boiangiuvictor@yahoo.com',
+        'deputat_vladoiu@yahoo.com',
+        'toader.mircea@ymail.com',
+        'bercivasile@ymail.com',
+        'sorin.stragea@yahoo.com',
+        'popescu.adi@xnet.ro',
+        'rmustea@rau.ro',
+        'kerekes@email.ro',
+        'mirciagiurgiu@yahoo.com',
+        'Nicupsd.timis@yahoo.com',
+        'cmagureanu@yahoo.com',
+        'biroulsenatorial2sm@yahoo.com',
+        'contact@andreidolineaschi.ro',
+        'jipaflorinaruxandra@cdep.ro',
+        'alexandrumazare@yahoo.com',
+        'titus.corlatean@cdep.ro',
+        'ion.bara1@yahoo.com',
+    ])
+
+    for person in database.Person.query.all():
+        content = person.get_content()
+        to_remove = []
+        for email in content.get('email', []):
+            if email in hardbounce_emails:
+                to_remove.append(email)
+                hardbounce_emails.remove(email)
+        if to_remove:
+            for email in to_remove:
+                content['email'].remove(email)
+            if not content['email']:
+                del content['email']
+            person.save_content_version(content, None)
+
+    if hardbounce_emails:
+        print 'left-over hardbounce_emails: %r' % array(hardbounce_emails)
