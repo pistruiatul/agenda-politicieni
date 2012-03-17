@@ -66,7 +66,6 @@ def fix_addresses():
         content = person.get_content()
         content['address'] = [new_address]
         person.save_content_version(content, None)
-        database.db.session.add(person)
     database.db.session.commit()
 
 def fix_emails():
@@ -111,6 +110,7 @@ def fix_emails():
             if not content['email']:
                 del content['email']
             person.save_content_version(content, None)
+    database.db.session.commit()
 
     if hardbounce_emails:
         print 'left-over hardbounce_emails: %r' % array(hardbounce_emails)

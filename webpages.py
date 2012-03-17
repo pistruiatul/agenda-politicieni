@@ -124,6 +124,7 @@ def edit(person_id):
 
         if new_content != content:
             person.save_content_version(new_content, user)
+            database.db.session.commit()
             flask.flash(u"Conținutul a fost salvat", 'success')
 
         else:

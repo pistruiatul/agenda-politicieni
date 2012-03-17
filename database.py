@@ -42,7 +42,6 @@ class Person(db.Model):
         version = ContentVersion(person=self, user=user, time=utcnow)
         version.content = json.dumps(new_content)
         db.session.add(version)
-        db.session.commit()
         log.info("Content update for person id=%d version_id=%d",
                  self.id, version.id)
 
