@@ -42,7 +42,7 @@ class Person(db.Model):
         version = ContentVersion(person=self, user=user, time=utcnow)
         version.content = json.dumps(new_content)
         db.session.add(version)
-        log.info("Content update for person id=%d version_id=%d",
+        log.info("Content update for person id=%r version_id=%r",
                  self.id, version.id)
 
     def get_meta(self, key):
