@@ -2,8 +2,8 @@
 
 {% block header %}
   <div class="row-fluid">
-    <h1 class="span4">Persoane</h1>
-    <form class="span8 offset1 form-stacked person-filter">
+    <h1 class="span3">Persoane</h1>
+    <form class="span6 form-stacked person-filter">
       <div class="row-fluid">
         <div class="span2">
           {% set field = search_schema['office'] %}
@@ -30,6 +30,10 @@
         #}
       </div>
     </form>
+    <div class="span3">
+      <a href="http://apti.ro/"><img src="{{-
+        url_for('static', filename='apti.png') }}"></a>
+    </div>
   </div>
 {% endblock %}
 
