@@ -47,7 +47,7 @@ def start():
     run("/sbin/start-stop-daemon --start --background "
         "--pidfile %(var)s/fcgi.pid --make-pidfile "
         "--exec %(sandbox)s/bin/python %(repo)s/agenda.py fastcgi"
-        % paths)
+        % paths, pty=False)
 
 
 def stop():
