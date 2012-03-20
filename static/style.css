@@ -73,6 +73,14 @@ dl.person-info * {
     animation:.5s hide-person;
 }
 
+.logo-box {
+    margin: -15px 0;
+}
+
+.logo-box img {
+    max-height: 50px;
+}
+
 @-ms-keyframes hide-person {
     0%   { opacity: 1; }
     100% { opacity: 0;}
@@ -113,6 +121,10 @@ dl.person-info * {
         -webkit-column-count: 3;
         -moz-column-count: 3;
         column-count: 3;
+    }
+
+    .logo-box img {
+        max-height: 100px;
     }
 
 }
