@@ -81,6 +81,16 @@ dl.person-info * {
     max-height: 50px;
 }
 
+.diff-add {
+    color: #468847;
+    font-style: italic;
+}
+
+.diff-remove {
+    color: #B94A48;
+    text-decoration: line-through;
+}
+
 @-ms-keyframes hide-person {
     0%   { opacity: 1; }
     100% { opacity: 0;}

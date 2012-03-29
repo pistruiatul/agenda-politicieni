@@ -17,15 +17,14 @@
     </h3>
 
     <table>
-    {%- for key, values in version_a.get_content().items() %}
-      {%- for value in values %}
+    {% for key, value in version_a_items %}
 
-        <tr>
-          <th>{{ key }}</th>
-          <td>{{ value }}</td>
-        </tr>
+      {% set cls = "" if (key,value) in version_b_items else "diff-remove" %}
+      <tr class="{{ cls }}">
+        <th>{{ key }}</th>
+        <td>{{ value }}</td>
+      </tr>
 
-      {% endfor -%}
     {% endfor -%}
     </table>
 
@@ -38,15 +37,14 @@
     </h3>
 
     <table>
-    {%- for key, values in version_b.get_content().items() %}
-      {%- for value in values %}
+    {% for key, value in version_a_items %}
 
-        <tr>
-          <th>{{ key }}</th>
-          <td>{{ value }}</td>
-        </tr>
+      {% set cls = "" if (key,value) in version_b_items else "diff-add" %}
+      <tr class="{{ cls }}">
+        <th>{{ key }}</th>
+        <td>{{ value }}</td>
+      </tr>
 
-      {% endfor -%}
     {% endfor -%}
     </table>
 
