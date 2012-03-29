@@ -21,7 +21,7 @@
 
         {% if name == 'email' %}
           <dd><a href="mailto:{{ value }}">{{ value }}</a></dd>
-        {% elif name == 'website' %}
+        {% elif name in ['website', 'twitter', 'facebook'] %}
           <dd><a href="{{ value }}">{{ value }}</a></dd>
         {% else %}
           <dd>{{ value }}</dd>
