@@ -37,9 +37,9 @@
     </h3>
 
     <table>
-    {% for key, value in version_a_items %}
+    {% for key, value in version_b_items %}
 
-      {% set cls = "" if (key,value) in version_b_items else "diff-add" %}
+      {% set cls = "" if (key,value) in version_a_items else "diff-add" %}
       <tr class="{{ cls }}">
         <th>{{ key }}</th>
         <td>{{ value }}</td>
