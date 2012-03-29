@@ -33,10 +33,12 @@
     </dl>
 
   </div>
-  <div class="span2">
+  <div class="span4">
 
     {% set url = url_for('webpages.edit', person_id=person.id) %}
-    <a class="btn primary" href="{{ url }}">Modifică</a>
+    {% set history_url = url_for('webpages.history', person_id=person.id) %}
+    <a class="btn btn-primary" href="{{ url }}">Modifică</a>
+    <a class="btn" href="{{ history_url }}">istorie</a>
 
   </div>
 </div>

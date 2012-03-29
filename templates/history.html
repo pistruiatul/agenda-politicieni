@@ -1,7 +1,9 @@
 {% extends 'layout.html' %}
 
 {% block h1 -%}
-  Istoria modificărilor &mdash; {{ person.name }}
+  Istoria modificărilor &mdash;
+  <a href="{{ url_for('webpages.person', person_id=person.id)
+    -}}">{{ person.name }}</a>
 {%- endblock %}
 
 {% block content %}
