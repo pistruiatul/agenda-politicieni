@@ -7,24 +7,24 @@
 {% block content %}
 
 <div class="row">
-  <div class="span8 offset2">
+  <div class="span7 offset2">
 
-    <form method="post">
+    <form method="post" class="form-horizontal">
     {% set plus_png_url = url_for('static', filename='plus.png') %}
     {% set minus_png_url = url_for('static', filename='minus.png') %}
 
     {% for prop_name, label in known_names.items() %}
-      <div class="clearfix flex-value">
+      <div class="control-group flex-value">
 
         <a class="add-value" href="#" field-name="{{ prop_name }}">
           <img src="{{ plus_png_url }}">
         </a>
 
-        <label>{{ label }}</label>
+        <label class="control-label">{{ label }}</label>
 
         {% for value in person_content[prop_name] %}
-          <div class="input">
-            <input name="{{ prop_name }}" value="{{ value }}">
+          <div class="controls">
+            <input name="{{ prop_name }}" value="{{ value }}" class="span4">
             <a class="del-value" href="#"><img src="{{ minus_png_url }}"></a>
           </div>
         {% endfor %}
@@ -39,7 +39,7 @@
             >Atribuire 3.0 România Creative Commons</a>.
         </p>
         <div class="input">
-          <input type="submit" class="btn primary" value="Salvează">
+          <input type="submit" class="btn btn-primary" value="Salvează">
           {% set url = url_for('webpages.person', person_id=person.id) %}
           <a class="btn" href="{{ url }}">Înapoi</a>
         </div>
