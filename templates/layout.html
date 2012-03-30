@@ -75,6 +75,8 @@
 <script src="{{ url_for('static', filename='jquery-1.7.1.min.js') }}"></script>
 <script src="{{ url_for('static', filename='script.js') }}"></script>
 
+{% block scripts %}{% endblock %}
+
 {% if config.GOOGLE_ANALYTICS_CODE %}
 <script>
   window._gaq = [['_setAccount','{{ config.GOOGLE_ANALYTICS_CODE }}'],['_trackPageview'],['_trackPageLoadTime']];
