@@ -41,15 +41,29 @@ a.email {
     border-bottom: 1px solid #ddd;
 }
 
+form.edit-person .controls {
+    position: relative;
+}
+
+form.edit-person label {
+}
+
 .del-value img {
     vertical-align: middle;
+}
+
+.del-value {
+    display: block;
+    position: absolute;
+    top: 0px;
+    right: 0px;
 }
 
 .add-value {
     display: block;
     position: absolute;
-    bottom: 17px;
-    right: 80px;
+    top: 0px;
+    right: -30px;
 }
 
 .add-value img {

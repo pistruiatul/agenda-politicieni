@@ -7,27 +7,26 @@
 {% block content %}
 
 <div class="row">
-  <div class="span7 offset2">
+  <div class="span8 offset1">
 
-    <form method="post" class="form-horizontal">
+    <form method="post" class="edit-person form-horizontal">
     {% set plus_png_url = url_for('static', filename='plus.png') %}
     {% set minus_png_url = url_for('static', filename='minus.png') %}
 
     {% for prop_name, label in known_names.items() %}
       <div class="control-group flex-value">
 
-        <a class="add-value" href="#" field-name="{{ prop_name }}">
-          <img src="{{ plus_png_url }}">
-        </a>
-
         <label class="control-label">{{ label }}</label>
 
         {% for value in person_content[prop_name] %}
           <div class="controls">
-            <input name="{{ prop_name }}" value="{{ value }}" class="span4">
             <a class="del-value" href="#"><img src="{{ minus_png_url }}"></a>
+            <input name="{{ prop_name }}" value="{{ value }}" class="span5">
           </div>
         {% endfor %}
+
+        <a class="add-value" data-field-name="{{ prop_name }}"
+            href="#"><img src="{{ plus_png_url }}"></a>
 
       </div>
     {% endfor %}
@@ -59,7 +58,7 @@ $(function() {
         evt.preventDefault();
         var flex_parent = $(this).parent('.flex-value');
         var new_div = $('<div class="controls">').appendTo(flex_parent);
-        new_div.append($('<input class="span4">').attr('name', $(this).attr('field-name')));
+        new_div.append($('<input class="span5">').attr('name', $(this).attr('data-field-name')));
     });
 
     $('.del-value').click(function(evt) {
