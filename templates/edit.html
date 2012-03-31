@@ -33,12 +33,12 @@
     {% endfor %}
 
       <div class="clearfix">
-        <p>
+        <p class="controls">
           Sunt de acord ca contribuția mea să fie publicată sub licența
           <a rel="license" href="http://creativecommons.org/licenses/by/3.0/ro/"
             >Atribuire 3.0 România Creative Commons</a>.
         </p>
-        <div class="input">
+        <div class="controls">
           <input type="submit" class="btn btn-primary" value="Salvează">
           {% set url = url_for('webpages.person', person_id=person.id) %}
           <a class="btn" href="{{ url }}">Înapoi</a>
@@ -58,12 +58,12 @@ $(function() {
     $('.add-value').click(function(evt) {
         evt.preventDefault();
         var flex_parent = $(this).parent('.flex-value');
-        var new_div = $('<div class="input">').appendTo(flex_parent);
-        new_div.append($('<input>').attr('name', $(this).attr('field-name')));
+        var new_div = $('<div class="controls">').appendTo(flex_parent);
+        new_div.append($('<input class="span4">').attr('name', $(this).attr('field-name')));
     });
 
     $('.del-value').click(function(evt) {
-        var box_parent = $(this).parent('div.input');
+        var box_parent = $(this).parent('div.controls');
         box_parent.remove();
     });
 });
