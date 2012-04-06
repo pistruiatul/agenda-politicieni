@@ -21,7 +21,7 @@
     <div class="container">
       {% set url = url_for('webpages.search') %}
       <a class="brand" href="{{ url }}">Agenda de parlamentari</a>
-        <div class="pull-right">
+        <ul class="nav pull-right">
         {% if g.user %}
           <li>
             <a href="{{ url_for('auth.logout') }}">{{ g.user.name }} (logout)</a>
@@ -31,7 +31,7 @@
             <a href="{{ url_for('auth.login') }}">Login cu contul Google</a>
           </li>
         {% endif %}
-        </div>
+        </ul>
     </div>
   </div>
 </div>
