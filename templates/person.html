@@ -30,6 +30,14 @@
       {% endfor -%}
 
     {% endfor -%}
+    <dt>Harta Politicii</dt>
+      <dd><a href="http://hartapoliticii.ro/?name=
+      {%- for value in person.name.split(' ') %}
+        {%- for nume in value.split('-') %}
+          {{- nume+'+' -}}
+        {% endfor -%}
+      {% endfor -%}
+      " target="_blank">{{ person.name }}</a>
     </dl>
 
   </div>
