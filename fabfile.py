@@ -1,8 +1,8 @@
 import os.path
-from fabric.api import env
-from fabric.api import local, run, cd
+from fabric.api import *
 from fabric.contrib.files import exists
 from fabric.operations import get
+from fabric import colors
 
 
 REMOTE_REPO = '/var/local/agenda'
@@ -72,3 +72,4 @@ def backup():
         local_path = os.path.join(LOCAL_REPO, 'backup', filename)
         get('%(var)s/%(name)s' % dict(paths, name=name), local_path)
         local("gzip '%s'" % local_path)
+    print colors.green('Backup successful')
