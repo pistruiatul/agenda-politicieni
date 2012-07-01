@@ -15,7 +15,7 @@ with open(os.path.join(_data_dir, 'prop_defs.json'), 'rb') as f:
 with open(os.path.join(_data_dir, 'hartapoliticii.json'), 'rb') as f:
     hartapoliticii_data = dict((int(k), v) for k, v in
                                json.load(f).iteritems())
-meta_defs = ['office', 'college']
+meta_defs = ['office', 'college', 'hpol_id']
 
 
 db = SQLAlchemy()
