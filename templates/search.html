@@ -3,33 +3,6 @@
 {% block header %}
   <div class="row-fluid">
     <h1 class="span3">Persoane</h1>
-    <form class="span6 form-stacked person-filter">
-      <div class="row-fluid">
-        <div class="span2">
-          {% set field = search_schema['office'] %}
-          {{ form_gen.label(field, contents=field.properties['label']) }}
-          {{ form_gen.select.open(field, class='span2') }}
-            {{ form_gen.option(field, contents='') }}
-            {% for value in field.valid_values %}
-              {% set value_label = (field.properties.value_labels[value]
-                                    if field.properties.value_labels else
-                                    value) %}
-              {{ form_gen.option(field, value=value, contents=value_label) }}
-            {% endfor %}
-          {{ form_gen.select.close() }}
-        </div>
-        {#
-        <div class="span2">
-          <label for="filter-college">Circumscripție</label>
-          <select name="college" class="span2" id="filter-college">
-            <option value=""></option>
-            <option value="">1</option>
-            <option value="">2</option>
-          </select>
-        </div>
-        #}
-      </div>
-    </form>
     <div class="span3 logo-box">
       <a href="http://apti.ro/"><img src="{{-
         url_for('static', filename='logo_apti_transparent.png') }}"></a>
@@ -45,8 +18,7 @@
       <ul class="unstyled">
       {%- for person in persons %}
 
-        {% set office = person.get_meta('office') %}
-        <li class="{{ 'office-%s' % office if office else '' }}">
+        <li>
           {% set url = url_for('webpages.person', person_id=person.id) %}
           <a href="{{ url }}">{{ person.name }}</a>
         </li>
