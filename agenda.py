@@ -74,6 +74,10 @@ def main():
         sock_path = os.path.join(app.instance_path, 'fcgi.sock')
         server = WSGIServer(app, bindAddress=sock_path, umask=0)
         server.run()
+    elif cmd == 'update_identities':
+        import sync
+        with app.test_request_context():
+            sync.update_identities()
 
 
 if __name__ == '__main__':
