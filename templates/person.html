@@ -31,13 +31,10 @@
 
     {% endfor -%}
     <dt>Harta Politicii</dt>
-      <dd><a href="http://hartapoliticii.ro/?name=
-      {%- for value in person.name.split(' ') %}
-        {%- for nume in value.split('-') %}
-          {{- nume+'+' -}}
-        {% endfor -%}
-      {% endfor -%}
-      " target="_blank">{{ person.name }}</a>
+      {% set url = ("http://hartapoliticii.ro/" +
+              "?name=" + person.name.replace(' ', '+').replace('-', '+') +
+              "&id=" + person.get_meta('hpol_id')) %}
+      <dd><a href="{{ url }}" target="_blank">{{ person.name }}</a>
     </dl>
 
   </div>
