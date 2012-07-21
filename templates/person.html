@@ -30,12 +30,16 @@
       {% endfor -%}
 
     {% endfor -%}
-    <dt>Harta Politicii</dt>
-      {% set url = ("http://hartapoliticii.ro/" +
-              "?name=" + person.name.replace(' ', '+').replace('-', '+') +
-              "&id=" + person.get_meta('hpol_id')) %}
-      <dd><a href="{{ url }}" target="_blank">{{ person.name }}</a>
-    </dl>
+
+    {% set hpol_id = person.get_meta('hpol_id') %}
+    {% if hpol_id %}
+      <dt>Harta Politicii</dt>
+        {% set url = ("http://hartapoliticii.ro/" +
+                "?name=" + person.name.replace(' ', '+').replace('-', '+') +
+                "&id=" + hpol_id) %}
+        <dd><a href="{{ url }}" target="_blank">{{ person.name }}</a>
+      </dl>
+    {% endif %}
 
   </div>
   <div class="span4">
