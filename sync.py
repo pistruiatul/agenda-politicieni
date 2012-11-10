@@ -3,6 +3,7 @@ from path import path
 import flask
 import requests
 import database
+from datetime import datetime
 
 
 def refresh_json():
@@ -24,6 +25,8 @@ def update_identities():
     if not json_path.isfile():
         refresh_json()
 
+    now = datetime.utcnow().strftime('%Y-%m-%d')
+
     hpol_map = {}
     with json_path.open() as f:
         for hpol_person in flask.json.load(f):
@@ -31,11 +34,11 @@ def update_identities():
 
     for person in database.Person.objects_current().all():
         hpol_id = person.get_meta('hpol_id')
-        print "ok:", hpol_id, person.id
+        #print "ok:", hpol_id, person.id
         hpol_map.pop(hpol_id, None)
 
     for hpol_id, hpol_name in hpol_map.iteritems():
-        print hpol_id, hpol_name
+        print "importing: %r %r %s" % (hpol_id, hpol_name, now)
         person = database.Person(name=hpol_name)
         database.db.session.add(person)
         meta = database.PersonMeta(person=person, key='hpol_id', value=hpol_id)
