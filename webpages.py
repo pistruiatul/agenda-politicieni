@@ -140,6 +140,20 @@ def edit(person_id):
     }
 
 
+@webpages.route('/by_hpol_id/<int:hpol_id>')
+def hpol_view(hpol_id):
+    query = database.PersonMeta.query.filter_by(key='hpol_id', value=hpol_id)
+    person = query.first_or_404().person
+    return flask.redirect(flask.url_for('.person', person_id=person.id))
+
+
+@webpages.route('/by_hpol_id/<int:hpol_id>/edit')
+def hpol_edit(hpol_id):
+    query = database.PersonMeta.query.filter_by(key='hpol_id', value=hpol_id)
+    person = query.first_or_404().person
+    return flask.redirect(flask.url_for('.edit', person_id=person.id))
+
+
 @webpages.route('/history')
 @with_template('all_history.html')
 def all_history():
