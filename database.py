@@ -34,8 +34,11 @@ class Person(db.Model):
     name = db.Column(db.Text())
 
     def get_content(self):
-        version = self.versions.order_by(ContentVersion.time.desc()).first()
-        return {} if version is None else version.get_content()
+        if self.versions:
+            version = sorted(self.versions, key=lambda v: v.time)[-1]
+            return version.get_content()
+        else:
+            return {}
 
     def save_content_version(self, new_content, user):
         utcnow = datetime.utcnow()
@@ -46,8 +49,11 @@ class Person(db.Model):
                  self.id, version.id)
 
     def get_meta(self, key):
-        meta = self.meta.filter_by(key=key).first()
-        return None if meta is None else meta.value
+        for meta in self.meta:
+            if meta.key == key:
+                return meta.value
+        else:
+            return None
 
     @classmethod
     def objects_current(cls):
@@ -64,8 +70,7 @@ class Person(db.Model):
 class ContentVersion(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     person_id = db.Column(db.Integer, db.ForeignKey('person.id'))
-    person = db.relationship('Person',
-        backref=db.backref('versions', lazy='dynamic'))
+    person = db.relationship('Person', backref=db.backref('versions'))
     content = db.Column(db.LargeBinary)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     user = db.relationship('User')
@@ -78,8 +83,7 @@ class ContentVersion(db.Model):
 class PersonMeta(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     person_id = db.Column(db.Integer, db.ForeignKey('person.id'))
-    person = db.relationship('Person',
-        backref=db.backref('meta', lazy='dynamic'))
+    person = db.relationship('Person', backref=db.backref('meta'))
     key = db.Column(db.Text)
     value = db.Column(db.Text)
 
