@@ -65,12 +65,18 @@ def download():
             if value:
                 meta[key] = value
         return meta
+
+    from sqlalchemy.orm import joinedload
+    query = (database.Person.objects_current()
+             .options(joinedload(database.Person.meta),
+                      joinedload(database.Person.versions)))
+
     if fmt == 'json':
         rows = [dict(person.get_content(),
                      id=person.id,
                      name=person.name,
                      _meta=get_meta(person))
-                for person in database.Person.objects_current().all()]
+                for person in query.all()]
         return flask.jsonify({'persons': rows})
 
     elif fmt == 'csv':
@@ -83,7 +89,7 @@ def download():
         csvwriter = csv.DictWriter(csvfile, fields)
         csvwriter.writerow(header)
 
-        for person in database.Person.objects_current().all():
+        for person in query.all():
             bytes_row = {'id': str(person.id), 'name': utf8(person.name)}
             for key, value_list in person.get_content().iteritems():
                 bytes_row[key] = '; '.join(utf8(v) for v in value_list)
