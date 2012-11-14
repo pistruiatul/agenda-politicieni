@@ -174,9 +174,11 @@ def all_history():
 def history(person_id):
     person = database.Person.query.get_or_404(person_id)
     time_desc = database.ContentVersion.time.desc()
+    person_versions = person.versions
+    person_versions.sort(key=lambda v: v.time, reverse=True)
     return {
         'person': person,
-        'versions': person.versions.order_by(time_desc).all(),
+        'versions': person_versions,
     }
 
 
@@ -184,8 +186,10 @@ def history(person_id):
 @with_template('diff.html')
 def diff(person_id, a_id, b_id):
     person = database.Person.query.get_or_404(person_id)
-    a = person.versions.filter_by(id=a_id).first_or_404()
-    b = person.versions.filter_by(id=b_id).first_or_404()
+    person_versions = (database.ContentVersion.query
+                       .filter_by(person_id=person.id))
+    a = person_versions.filter_by(id=a_id).first_or_404()
+    b = person_versions.filter_by(id=b_id).first_or_404()
     def flat_version_items(version):
         items = []
         for key, values in version.get_content().items():
