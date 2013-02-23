@@ -51,6 +51,7 @@ def stats():
         'data': {
             'edits_today': edits_today.count(),
             'users': database.User.query.count(),
+            'persons': database.Person.query.count(),
         },
     }
 
