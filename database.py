@@ -136,6 +136,17 @@ def import_json(json_path):
         log.info("JSON import from %r completed; %r", json_path, dict(count))
 
 
+def add_people(iterable):
+    try:
+        n = 0
+        for name in iterable:
+            person = Person(name=name)
+            db.session.add(person)
+            n += 1
+    finally:
+        log.info("imported %d people", n)
+
+
 def fix_senator_names(json_path):
     with open(json_path, 'rb') as f:
         for s in json.load(f):

@@ -78,6 +78,10 @@ def main():
         import sync
         with app.test_request_context():
             sync.update_identities()
+    elif cmd == 'new_people':
+        with app.test_request_context():
+            database.add_people(line.strip() for line in sys.stdin)
+            database.db.session.commit()
 
 
 if __name__ == '__main__':
