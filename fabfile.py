@@ -28,7 +28,7 @@ def install():
         run("git init '%s'" % REMOTE_REPO)
 
     git_remote = "%s:%s" % (get_git_remote(), REMOTE_REPO)
-    local("git push -f '%s' master:incoming" % git_remote)
+    local("git push -f '%s' HEAD:incoming" % git_remote)
     with cd(REMOTE_REPO):
         run("git reset incoming --hard")
 
