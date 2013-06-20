@@ -209,9 +209,15 @@ def diff(person_id, a_id, b_id):
 @webpages.route('/')
 @with_template('search.html')
 def search():
-    persons = database.Person.objects_current()
+    q = flask.request.args.get('q')
+    if q is None:
+        return {}
+    persons = database.Person.objects_current().filter(
+                    database.Person.name.like('%' + q + '%'))
     return {
-        'persons': persons.order_by('name').all(),
+        'q': q,
+        'count': persons.count(),
+        'persons': persons[:50],
     }
 
 

@@ -15,16 +15,32 @@
   <div class="row-fluid">
     <div class="span11 person-listing">
 
-      <ul class="unstyled">
-      {%- for person in persons %}
+      <form class="form-search">
+        <input type="search" name="q" value="{{ q }}"
+               class="input-medium search-query">
+        <button type="submit" class="btn btn-primary">search</button>
+      </form>
 
-        <li>
-          {% set url = url_for('webpages.person', person_id=person.id) %}
-          <a href="{{ url }}">{{ person.name }}</a>
-        </li>
+      {% if q %}
+        {% set display_count = persons|length %}
+        <p>
+          Am găsit {{ count }} rezultate.
+          {% if display_count < count %}
+            Primele {{ display_count }}:
+          {% endif %}
+        </p>
 
-      {% endfor -%}
-      </ul>
+        <ul>
+        {%- for person in persons %}
+
+          <li>
+            {% set url = url_for('webpages.person', person_id=person.id) %}
+            <a href="{{ url }}">{{ person.name }}</a>
+          </li>
+
+        {% endfor -%}
+        </ul>
+      {% endif %}
 
     </div>
   </div>
