@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='lib/bootstrap/css/bootstrap.min.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='lib/bootstrap/css/bootstrap-responsive.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-  <title>Agenda de parlamentari</title>
+  <title>Agenda cu oameni publici</title>
 </head>
 <body>
 
@@ -20,7 +20,7 @@
   <div class="navbar-inner">
     <div class="container">
       {% set url = url_for('webpages.search') %}
-      <a class="brand" href="{{ url }}">Agenda de parlamentari</a>
+      <a class="brand" href="{{ url }}">Agenda cu oameni publici</a>
         <ul class="nav pull-right">
         {% if g.user %}
           <li>
@@ -59,7 +59,7 @@
         >Atribuire 3.0 România Creative Commons</a>.
 
       Codul sursă este disponibil liber <a
-        href="https://github.com/alex-morega/agenda-politicieni"
+        href="https://github.com/pistruiatul/agenda-politicieni"
         >pe GitHub</a>.
 
     </p>

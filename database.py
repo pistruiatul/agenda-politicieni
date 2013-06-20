@@ -2,7 +2,7 @@ import os.path
 from datetime import datetime
 from collections import defaultdict
 from flask import json
-from flaskext.sqlalchemy import SQLAlchemy
+from flask.ext.sqlalchemy import SQLAlchemy
 import logging
 
 log = logging.getLogger(__name__)

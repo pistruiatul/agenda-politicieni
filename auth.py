@@ -2,7 +2,7 @@
 import os.path
 from functools import wraps
 import flask
-from flaskext.openid import OpenID, COMMON_PROVIDERS
+from flask.ext.openid import OpenID, COMMON_PROVIDERS
 import database
 
 oid = OpenID()
