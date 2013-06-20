@@ -212,8 +212,9 @@ def search():
     q = flask.request.args.get('q')
     if q is None:
         return {}
-    persons = database.Person.objects_current().filter(
-                    database.Person.name.like('%' + q + '%'))
+    persons = database.Person.objects_current()
+    for part in q.split():
+        persons = persons.filter(database.Person.name.like('%' + part + '%'))
     return {
         'q': q,
         'count': persons.count(),
