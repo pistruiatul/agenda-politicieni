@@ -1,3 +1,4 @@
+# encoding: utf-8
 import os.path
 from datetime import datetime
 from collections import defaultdict
@@ -8,13 +9,16 @@ import logging
 log = logging.getLogger(__name__)
 log.setLevel(logging.INFO)
 
+prop_defs = {
+  'phone': "Telefon",
+  'email': "Email",
+  'website': "Website",
+  'facebook': "Facebook",
+  'twitter': "Twitter",
+  'address': "Adresa poștală",
+}
 
-_data_dir = os.path.join(os.path.dirname(__file__), 'data')
-with open(os.path.join(_data_dir, 'prop_defs.json'), 'rb') as f:
-    prop_defs = json.load(f)
-with open(os.path.join(_data_dir, 'hartapoliticii.json'), 'rb') as f:
-    hartapoliticii_data = dict((int(k), v) for k, v in
-                               json.load(f).iteritems())
+
 meta_defs = ['office', 'college', 'hpol_id']
 
 
