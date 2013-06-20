@@ -205,7 +205,14 @@ def diff(person_id, a_id, b_id):
         'version_b_items': flat_version_items(b),
     }
 
-import search
+
+@webpages.route('/')
+@with_template('search.html')
+def search():
+    persons = database.Person.objects_current()
+    return {
+        'persons': persons.order_by('name').all(),
+    }
 
 
 def init_app(app):
