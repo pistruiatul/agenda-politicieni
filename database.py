@@ -1,3 +1,4 @@
+# encoding: utf-8
 import os.path
 from datetime import datetime
 from collections import defaultdict
@@ -8,13 +9,16 @@ import logging
 log = logging.getLogger(__name__)
 log.setLevel(logging.INFO)
 
+prop_defs = {
+  'phone': "Telefon",
+  'email': "Email",
+  'website': "Website",
+  'facebook': "Facebook",
+  'twitter': "Twitter",
+  'address': "Adresa poștală",
+}
 
-_data_dir = os.path.join(os.path.dirname(__file__), 'data')
-with open(os.path.join(_data_dir, 'prop_defs.json'), 'rb') as f:
-    prop_defs = json.load(f)
-with open(os.path.join(_data_dir, 'hartapoliticii.json'), 'rb') as f:
-    hartapoliticii_data = dict((int(k), v) for k, v in
-                               json.load(f).iteritems())
+
 meta_defs = ['office', 'college', 'hpol_id']
 
 
@@ -86,76 +90,6 @@ class PersonMeta(db.Model):
     person = db.relationship('Person', backref=db.backref('meta'))
     key = db.Column(db.Text)
     value = db.Column(db.Text)
-
-
-def import_json(json_path):
-    utcnow = datetime.utcnow()
-    count = defaultdict(int)
-
-    with open(json_path, 'rb') as f:
-        people_data = json.load(f)
-
-    for person_data in people_data['persons']:
-        found_persons = Person.query.filter_by(name=person_data['name']).all()
-        if found_persons:
-            assert len(found_persons) == 1
-            person = found_persons[0]
-
-        else:
-            person = Person(name=person_data['name'])
-            db.session.add(person)
-            log.info('New person %r', person_data['name'])
-            count['new-person'] += 1
-
-        content = {}
-        for key in prop_defs:
-            values = person_data.get(key, [])
-            if values:
-                content[key] = values
-
-        if content != person.get_content():
-            version = ContentVersion(person=person, time=utcnow)
-            version.content = json.dumps(content)
-            db.session.add(version)
-            log.info('Content update for person id=%r', person.id)
-            count['new-version'] += 1
-
-        for key in meta_defs:
-            value = person_data.get('_meta', {}).get(key, None)
-            if value is None:
-                continue
-            meta = person.meta.filter_by(key=key).first()
-            if meta is None:
-                meta = PersonMeta(person=person, key=key, value=value)
-            else:
-                meta.value = value
-            db.session.add(meta)
-
-    db.session.commit()
-    if count:
-        log.info("JSON import from %r completed; %r", json_path, dict(count))
-
-
-def add_people(iterable):
-    try:
-        n = 0
-        for name in iterable:
-            person = Person(name=name)
-            db.session.add(person)
-            n += 1
-    finally:
-        log.info("imported %d people", n)
-
-
-def fix_senator_names(json_path):
-    with open(json_path, 'rb') as f:
-        for s in json.load(f):
-            persons = Person.query.filter_by(name=s['inverse_name']).all()
-            assert len(persons) == 1
-            [person] = persons
-            person.name = s['name']
-            db.session.add(person)
-    db.session.commit()
 
 
 def get_user(openid_url):

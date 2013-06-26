@@ -205,7 +205,21 @@ def diff(person_id, a_id, b_id):
         'version_b_items': flat_version_items(b),
     }
 
-import search
+
+@webpages.route('/')
+@with_template('search.html')
+def search():
+    q = flask.request.args.get('q')
+    if q is None:
+        return {}
+    persons = database.Person.objects_current()
+    for part in q.split():
+        persons = persons.filter(database.Person.name.like('%' + part + '%'))
+    return {
+        'q': q,
+        'count': persons.count(),
+        'persons': persons[:50],
+    }
 
 
 def init_app(app):
