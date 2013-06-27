@@ -10,12 +10,12 @@ log = logging.getLogger(__name__)
 log.setLevel(logging.INFO)
 
 prop_defs = {
-  'phone': "Telefon",
-  'email': "Email",
-  'website': "Website",
-  'facebook': "Facebook",
-  'twitter': "Twitter",
-  'address': "Adresa poștală",
+  'phone': u"Telefon",
+  'email': u"Email",
+  'website': u"Website",
+  'facebook': u"Facebook",
+  'twitter': u"Twitter",
+  'address': u"Adresa poștală",
 }
 
 
