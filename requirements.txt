@@ -3,7 +3,6 @@ decorator==3.4.0
 Flask-OpenID==1.1.1
 Flask-SQLAlchemy==0.16
 Flask==0.10.1
-flatland==dev
 flup==1.0.3.dev-20110405
 itsdangerous==0.21
 Jinja2==2.7
