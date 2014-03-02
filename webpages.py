@@ -2,8 +2,8 @@
 import os.path
 from functools import wraps
 from pytz import timezone
-import cStringIO
 import csv
+import tempfile
 import flask
 import auth
 import database
@@ -58,7 +58,6 @@ def stats():
 
 @webpages.route('/download')
 def download():
-    return "Download-ul nu mai este disponibil din lipsa de resurse :("
     fmt = flask.request.args.get('format')
     def get_meta(person):
         meta = {}
@@ -68,40 +67,25 @@ def download():
                 meta[key] = value
         return meta
 
-    from sqlalchemy.orm import joinedload
-    query = (database.Person.objects_current()
-             .options(joinedload(database.Person.meta),
-                      joinedload(database.Person.versions)))
+    utf8 = lambda v: unicode(v).encode('utf-8')
+    fields = ['id', 'name'] + sorted(database.prop_defs.keys())
+    header = dict((k, utf8(v)) for k, v in database.prop_defs.iteritems())
+    header.update(id='id', name='Nume')
 
-    if fmt == 'json':
-        rows = [dict(person.get_content(),
-                     id=person.id,
-                     name=person.name,
-                     _meta=get_meta(person))
-                for person in query]
-        return flask.jsonify({'persons': rows})
+    csvfile = tempfile.NamedTemporaryFile()
+    csvwriter = csv.DictWriter(csvfile, fields)
+    csvwriter.writerow(header)
 
-    elif fmt == 'csv':
-        utf8 = lambda v: unicode(v).encode('utf-8')
-        fields = ['id', 'name'] + sorted(database.prop_defs.keys())
-        header = dict((k, utf8(v)) for k, v in database.prop_defs.iteritems())
-        header.update(id='id', name='Nume')
+    for person_id in database.db.session.query(database.Person.id):
+        person = database.Person.query.get(person_id)
+        bytes_row = {'id': str(person.id), 'name': utf8(person.name)}
+        for key, value_list in person.get_content().iteritems():
+            bytes_row[key] = '; '.join(utf8(v) for v in value_list)
 
-        csvfile = cStringIO.StringIO()
-        csvwriter = csv.DictWriter(csvfile, fields)
-        csvwriter.writerow(header)
+        csvwriter.writerow(bytes_row)
 
-        for person in query:
-            bytes_row = {'id': str(person.id), 'name': utf8(person.name)}
-            for key, value_list in person.get_content().iteritems():
-                bytes_row[key] = '; '.join(utf8(v) for v in value_list)
-
-            csvwriter.writerow(bytes_row)
-
-        return flask.Response(csvfile.getvalue(), mimetype='text/csv')
-
-    else:
-        flask.abort(404)
+    csvfile.seek(0)
+    return flask.send_file(csvfile, mimetype='text/csv')
 
 
 @webpages.route('/person/<int:person_id>')
